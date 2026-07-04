@@ -1,0 +1,499 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Services — Sipply Consulting</title>
+    <!-- Meta description for SEO -->
+    <meta
+      name="description"
+      content="Digital marketing consulting that ditches AI-flavored content for human-driven strategy, SEO, CRO, and copywriting."
+    />
+
+    <!-- Google Analytics 4 -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"
+    ></script>
+
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-XXXXXXXXXX");
+    </script>
+
+    <script>
+      (function () {
+        var t;
+        try {
+          t = localStorage.getItem("sipply-theme");
+        } catch (e) {}
+        if (!t)
+          t = matchMedia("(prefers-color-scheme:dark)").matches
+            ? "dark"
+            : "light";
+        document.documentElement.setAttribute("data-theme", t);
+      })();
+    </script>
+    <link
+      href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,600,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+    <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
+
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/IMG/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/IMG/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/IMG/favicon-16x16.png"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="logo" href="index.html">SIPPLY Consulting</a>
+      <div class="header-right">
+        <nav class="site-nav">
+          <a href="services.html" aria-current="page">Services</a>
+          <a href="work.html">Work</a>
+          <a href="about.html">About</a>
+          <a href="consultation.html">Consultation</a>
+          <a href="faq.html">FAQ</a>
+        </nav>
+        <button
+          class="theme-toggle"
+          id="theme-toggle"
+          type="button"
+          aria-label="Toggle theme"
+        >
+          <span class="theme-icon sun">☀</span>
+          <span class="theme-icon moon">☾</span>
+        </button>
+        <button
+          class="burger"
+          id="burger"
+          type="button"
+          aria-label="Open menu"
+          aria-expanded="false"
+        >
+          <span class="burger-line"></span>
+          <span class="burger-line"></span>
+          <span class="burger-line"></span>
+        </button>
+      </div>
+    </header>
+
+    <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+      <button
+        class="mobile-nav-close"
+        id="mobile-nav-close"
+        type="button"
+        aria-label="Close menu"
+      >
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+        >
+          <line x1="5" y1="5" x2="19" y2="19" />
+          <line x1="19" y1="5" x2="5" y2="19" />
+        </svg>
+      </button>
+      <nav class="mobile-nav-links">
+        <a href="services.html">Services</a>
+        <a href="work.html">Work</a>
+        <a href="about.html">About</a>
+        <a href="consultation.html">Consultation</a>
+        <a href="faq.html">FAQ</a>
+      </nav>
+      <div class="mobile-nav-footer">
+        <button
+          class="theme-toggle theme-toggle-mobile"
+          id="theme-toggle-mobile"
+          type="button"
+          aria-label="Toggle theme"
+        >
+          <span class="theme-icon sun">☀</span>
+          <span class="theme-icon moon">☾</span>
+        </button>
+      </div>
+    </div>
+
+    <main>
+      <!-- HERO -->
+      <section class="srv-hero">
+        <div
+          class="srv-hero-inner"
+          style="width: min(1200px, calc(100% - 40px)); margin: 0 auto"
+        >
+          <div>
+            <span class="srv-eyebrow"><span>services i offer</span></span>
+            <h1 class="srv-hero-title">
+              <span class="tline"><span>Digital</span></span>
+              <span class="tline"><span>marketing</span></span>
+              <span class="tline"><span>that earns</span></span>
+              <span class="tline"><span>trust.</span></span>
+            </h1>
+          </div>
+          <div class="srv-hero-right">
+            <p class="srv-hero-desc">
+              At Sipply Consulting, I want to focus on client’s growth and ROI for service businesses (and SaaS companies) across the US & Canada.
+            </p>
+            <div class="srv-hero-stats">
+              <div>
+                <span class="stat-num">8+</span
+                ><span class="stat-lbl">Brands served</span>
+              </div>
+              <div>
+                <span class="stat-num">6</span
+                ><span class="stat-lbl">Core services</span>
+              </div>
+              <div>
+                <span class="stat-num">0</span
+                ><span class="stat-lbl">AI strategies and content</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- STICKY SERVICES -->
+      <div class="srv-sticky-wrap" id="srv-sticky-wrap">
+        <div class="srv-sticky-panel" id="srv-panel" data-active="0">
+          <div class="srv-panel-top">
+            <div class="srv-panel-tag">
+              <span id="panel-tag">Strategy</span>
+            </div>
+            <h2 class="srv-panel-title" id="panel-title">
+              <span>Content</span><span>Strategy</span>
+            </h2>
+            <div class="srv-panel-desc">
+              <span id="panel-desc"
+                >A content strategy is the backbone of every brand that earns
+                attention. We map your audience, define your voice, and build
+                editorial roadmaps that turn browsers into believers.</span
+              >
+            </div>
+            <a class="srv-panel-cta" href="consultation.html" id="panel-cta"
+              >Book a call →</a
+            >
+          </div>
+          <div class="srv-panel-bottom">
+            <div class="srv-panel-progress" id="panel-progress">
+              <div class="srv-prog-dot active"></div>
+              <div class="srv-prog-dot"></div>
+              <div class="srv-prog-dot"></div>
+              <div class="srv-prog-dot"></div>
+              <div class="srv-prog-dot"></div>
+              <div class="srv-prog-dot"></div>
+            </div>
+            <div class="srv-panel-count">
+              <strong id="panel-count">01</strong> / 06
+            </div>
+          </div>
+          <div class="srv-panel-index" id="panel-index">01</div>
+        </div>
+
+        <div class="srv-entries" id="srv-entries">
+          <div class="srv-entry is-active" data-index="0" id="srv-strategy">
+            <span class="srv-entry-num">01 — Strategy</span>
+            <h3 class="srv-entry-title">
+              <div class="srv-entry-title-wrap">
+                <span class="word"><span>Content</span></span>
+                <span class="word"><span>Strategy</span></span>
+                <div class="srv-entry-title-line"></div>
+              </div>
+            </h3>
+            <ul class="srv-entry-deliverables">
+              <li>Audience research &amp; persona development</li>
+              <li>Brand voice &amp; tone guidelines</li>
+              <li>Editorial calendar planning</li>
+              <li>Content gap analysis</li>
+              <li>Pillar &amp; cluster topic mapping</li>
+              <li>Distribution channel strategy</li>
+            </ul>
+            <p class="srv-entry-copy">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Pellentesque habitant morbi tristique senectus et netus et
+              malesuada fames ac turpis egestas. Proin dignissim erat vitae
+              libero vehicula, at pulvinar orci consequat.
+            </p>
+          </div>
+
+          <div class="srv-entry" data-index="1" id="srv-seo">
+            <span class="srv-entry-num">02 — Search</span>
+            <h3 class="srv-entry-title">
+              <div class="srv-entry-title-wrap">
+                <span class="word"><span>SEO</span></span>
+                <span class="word"><span>&amp;</span></span>
+                <span class="word"><span>AEO</span></span>
+                <div class="srv-entry-title-line"></div>
+              </div>
+            </h3>
+            <ul class="srv-entry-deliverables">
+              <li>Technical SEO audits</li>
+              <li>Keyword research &amp; mapping</li>
+              <li>On-page &amp; meta optimisation</li>
+              <li>Schema markup implementation</li>
+              <li>Answer Engine Optimisation (AEO)</li>
+              <li>Search performance reporting</li>
+            </ul>
+            <p class="srv-entry-copy">
+              I have a simple goal: your website should dominate above your competitors.  
+              My expertise in optimizing both the user experience and search rankings empowers your business to lead the pack, drive consistent traffic, and build lasting digital authority. 
+            </p>
+          </div>
+
+          <div class="srv-entry" data-index="2" id="srv-cro">
+            <span class="srv-entry-num">03 — Conversion</span>
+            <h3 class="srv-entry-title">
+              <div class="srv-entry-title-wrap">
+                <span class="word"><span>CRO</span></span>
+                <span class="word"><span>&amp;</span></span>
+                <span class="word"><span>Optimisation</span></span>
+                <div class="srv-entry-title-line"></div>
+              </div>
+            </h3>
+            <ul class="srv-entry-deliverables">
+              <li>Funnel audit &amp; heatmap analysis</li>
+              <li>Landing page copy rewrites</li>
+              <li>CTA architecture &amp; hierarchy</li>
+              <li>A/B testing strategy</li>
+              <li>Form &amp; checkout optimisation</li>
+              <li>Conversion-focused copy frameworks</li>
+            </ul>
+            <p class="srv-entry-copy">
+              At vero eos et accusamus et iusto odio dignissimos ducimus qui
+              blanditiis praesentium voluptatum deleniti atque corrupti quos
+              dolores et quas molestias excepturi sint occaecati cupiditate non
+              provident.
+            </p>
+          </div>
+
+          <div class="srv-entry" data-index="3" id="srv-copy">
+            <span class="srv-entry-num">04 — Copy</span>
+            <h3 class="srv-entry-title">
+              <div class="srv-entry-title-wrap">
+                <span class="word"><span>Website</span></span>
+                <span class="word"><span>Copywriting</span></span>
+                <div class="srv-entry-title-line"></div>
+              </div>
+            </h3>
+            <ul class="srv-entry-deliverables">
+              <li>Homepage &amp; hero copy</li>
+              <li>Service &amp; product page narratives</li>
+              <li>About &amp; team page storytelling</li>
+              <li>Brand messaging guides</li>
+              <li>UX microcopy &amp; UI labels</li>
+              <li>Long-form blog &amp; resource articles</li>
+            </ul>
+            <p class="srv-entry-copy">
+              Temporibus autem quibusdam et aut officiis debitis aut rerum
+              necessitatibus saepe eveniet ut et voluptates repudiandae sint et
+              molestiae non recusandae. Itaque earum rerum hic tenetur a
+              sapiente delectus.
+            </p>
+          </div>
+
+          <div class="srv-entry" data-index="4" id="srv-market">
+            <span class="srv-entry-num">05 — Research</span>
+            <h3 class="srv-entry-title">
+              <div class="srv-entry-title-wrap">
+                <span class="word"><span>Market</span></span>
+                <span class="word"><span>Analysis</span></span>
+                <div class="srv-entry-title-line"></div>
+              </div>
+            </h3>
+            <ul class="srv-entry-deliverables">
+              <li>Competitive landscape reports</li>
+              <li>SWOT &amp; gap analysis</li>
+              <li>Market positioning strategy</li>
+              <li>Trend &amp; opportunity identification</li>
+              <li>Audience sentiment research</li>
+              <li>Industry benchmark reporting</li>
+            </ul>
+            <p class="srv-entry-copy">
+              New opportunities for engagement are easy to miss. In-depth industry, competitor, and audience insights show you where to look.
+
+
+            </p>
+          </div>
+
+          <div class="srv-entry" data-index="5" id="srv-social">
+            <span class="srv-entry-num">06 — Social &amp; Email</span>
+            <h3 class="srv-entry-title">
+              <div class="srv-entry-title-wrap">
+                <span class="word"><span>Social</span></span>
+                <span class="word"><span>&amp;</span></span>
+                <span class="word"><span>Email</span></span>
+                <div class="srv-entry-title-line"></div>
+              </div>
+            </h3>
+            <ul class="srv-entry-deliverables">
+              <li>Social media content calendars</li>
+              <li>Platform-native copy (LinkedIn, IG, X)</li>
+              <li>Email campaign strategy &amp; writing</li>
+              <li>Newsletter series development</li>
+              <li>Engagement &amp; growth tactics</li>
+              <li>Analytics &amp; performance reviews</li>
+            </ul>
+            <p class="srv-entry-copy">
+              Quis autem vel eum iure reprehenderit qui in ea voluptate velit
+              esse quam nihil molestiae consequatur vel illum qui dolorem eum
+              fugiat quo voluptas nulla pariatur nec ullam rerum hic tenetur.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROCESS -->
+      <section class="srv-process">
+        <div style="width: min(1200px, calc(100% - 40px)); margin: 0 auto">
+          <div class="srv-process-header">
+            <h2 class="srv-process-title">
+              <span class="tline"><span>The process</span></span>
+              <span class="tline"><span>behind every</span></span>
+              <span class="tline"><span>project.</span></span>
+            </h2>
+            <p class="srv-process-intro">
+              Every engagement follows the same four-phase framework — research,
+              strategy, execution, measurement. No guesswork, no shortcuts, no
+              AI-generated filler handed off as deliverables.
+            </p>
+          </div>
+          <div class="srv-steps">
+            <div class="srv-step">
+              <span class="srv-step-num">01 — Discovery</span>
+              <h3 class="srv-step-title">Listen &amp; research</h3>
+              <p class="srv-step-desc">
+                We start by understanding your brand, audience, competitors, and
+                goals. Deep research precedes every recommendation.
+              </p>
+            </div>
+            <div class="srv-step">
+              <span class="srv-step-num">02 — Strategy</span>
+              <h3 class="srv-step-title">Map the plan</h3>
+              <p class="srv-step-desc">
+                A clear, documented strategy sets the direction — what we'll
+                create, why, for whom, and how success is measured.
+              </p>
+            </div>
+            <div class="srv-step">
+              <span class="srv-step-num">03 — Execution</span>
+              <h3 class="srv-step-title">Write &amp; build</h3>
+              <p class="srv-step-desc">
+                Human-crafted deliverables, reviewed and refined through
+                structured feedback rounds until they're exactly right.
+              </p>
+            </div>
+            <div class="srv-step">
+              <span class="srv-step-num">04 — Measure</span>
+              <h3 class="srv-step-title">Track &amp; iterate</h3>
+              <p class="srv-step-desc">
+                We review performance against benchmarks and refine continuously
+                — because good marketing is never finished.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="srv-cta">
+        <div class="srv-cta-bg"></div>
+        <div
+          style="
+            width: min(1200px, calc(100% - 40px));
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+          "
+        >
+          <span class="srv-cta-kicker"><span>Ready to start?</span></span>
+          <h2 class="srv-cta-title">
+            <span class="tline"><span>Let's build</span></span>
+            <span class="tline"><span>something</span></span>
+            <span class="tline"><span>real.</span></span>
+          </h2>
+          <div class="srv-cta-actions">
+            <a class="button primary large" href="consultation.html"
+              >Book Consultation</a
+            >
+            <a class="button secondary large" href="index.html#work"
+              >View Work</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <a href="index.html">
+              <img
+                src="IMG/logo.svg"
+                width="60"
+                height="60"
+                alt="Sipply Consulting"
+                loading="lazy"
+              />
+            </a>
+            <p class="footer-tagline">
+              Let us go back to human-centered marketing for brands that don't
+              rely on AI.
+            </p>
+          </div>
+
+          <nav class="footer-nav-grid">
+            <div class="footer-col">
+              <span class="footer-col-title">Site</span>
+              <a href="index.html#services">Services</a>
+              <a href="work.html">Work</a>
+              <a href="about.html">About</a>
+            </div>
+            <div class="footer-col">
+              <span class="footer-col-title">Connect</span>
+              <a href="consultation.html">Consultation</a>
+              <a href="faq.html">FAQ</a>
+            </div>
+            <div class="footer-col">
+              <span class="footer-col-title">Legal</span>
+              <a href="privacy-policy.html">Privacy Policy</a>
+              <a href="terms.html">Terms &amp; Conditions</a>
+            </div>
+          </nav>
+        </div>
+
+        <div class="footer-bottom">
+          <p>
+            Sipply Consulting &copy; 2026. All rights reserved. Website
+            development by Tom Sipply.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

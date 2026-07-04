@@ -1,0 +1,829 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FAQ — Sipply Consulting</title>
+    <!-- Meta description for SEO -->
+    <meta
+      name="description"
+      content="Digital marketing consulting that ditches AI-flavored content for human-driven strategy, SEO, CRO, and copywriting."
+    />
+
+    <!-- Google Analytics 4 -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"
+    ></script>
+
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-XXXXXXXXXX");
+    </script>
+
+    <script>
+      (function () {
+        var t;
+        try {
+          t = localStorage.getItem("sipply-theme");
+        } catch (e) {}
+        if (!t)
+          t = matchMedia("(prefers-color-scheme:dark)").matches
+            ? "dark"
+            : "light";
+        document.documentElement.setAttribute("data-theme", t);
+      })();
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+    <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/IMG/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/IMG/favicon-16x16.png"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="logo" href="index.html">SIPPLY Consulting</a>
+      <div class="header-right">
+        <nav class="site-nav">
+          <a href="services.html">Services</a>
+          <a href="work.html">Work</a>
+          <a href="about.html">About</a>
+          <a href="consultation.html">Consultation</a>
+          <a href="faq.html" aria-current="page" style="color: var(--text)"
+            >FAQ</a
+          >
+        </nav>
+        <button
+          class="theme-toggle"
+          id="theme-toggle"
+          type="button"
+          aria-label="Toggle theme"
+        >
+          <span class="theme-icon sun">&#9728;</span>
+          <span class="theme-icon moon">&#9790;</span>
+        </button>
+        <button
+          class="burger"
+          id="burger"
+          type="button"
+          aria-label="Open menu"
+          aria-expanded="false"
+        >
+          <span class="burger-line"></span>
+          <span class="burger-line"></span>
+          <span class="burger-line"></span>
+        </button>
+      </div>
+    </header>
+
+    <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+      <button
+        class="mobile-nav-close"
+        id="mobile-nav-close"
+        type="button"
+        aria-label="Close menu"
+      >
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+        >
+          <line x1="5" y1="5" x2="19" y2="19" />
+          <line x1="19" y1="5" x2="5" y2="19" />
+        </svg>
+      </button>
+      <nav class="mobile-nav-links">
+        <a href="services.html">Services</a>
+        <a href="work.html">Work</a>
+        <a href="about.html">About</a>
+        <a href="consultation.html">Consultation</a>
+        <a href="faq.html">FAQ</a>
+      </nav>
+      <div class="mobile-nav-footer">
+        <button
+          class="theme-toggle theme-toggle-mobile"
+          id="theme-toggle-mobile"
+          type="button"
+          aria-label="Toggle theme"
+        >
+          <span class="theme-icon sun">☀</span>
+          <span class="theme-icon moon">☾</span>
+        </button>
+      </div>
+    </div>
+
+    <main>
+      <!-- ══ HERO ══ -->
+      <section class="faq-hero">
+        <div class="faq-hero-inner">
+          <div>
+            <span class="faq-eyebrow"
+              ><span>Everything you need to know</span></span
+            >
+            <h1 class="faq-hero-title">
+              <span class="tline"><span>Frequently</span></span>
+              <span class="tline"><span>asked</span></span>
+              <span class="tline"><span>questions.</span></span>
+            </h1>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══ FILTER ══ -->
+      <nav class="faq-filter-wrap" aria-label="Filter by category">
+        <button class="faq-filter-btn active" data-cat="all">
+          All questions
+        </button>
+        <button class="faq-filter-btn" data-cat="process">Process</button>
+        <button class="faq-filter-btn" data-cat="content">
+          Content &amp; AI
+        </button>
+        <button class="faq-filter-btn" data-cat="consultation">
+          Consultation
+        </button>
+        <button class="faq-filter-btn" data-cat="practical">Practical</button>
+      </nav>
+
+      <!-- ══ GROUPS ══ -->
+      <div class="faq-groups">
+        <!-- Process -->
+        <div class="faq-group" data-group="process">
+          <div class="faq-group-meta">
+            <p class="faq-group-eyebrow">
+              <span
+                class="faq-group-dot"
+                style="background: rgba(124, 92, 255, 1)"
+              ></span>
+              Process
+            </p>
+            <h2 class="faq-group-title">How projects actually work</h2>
+          </div>
+          <div class="faq-list">
+            <article class="faq-item">
+              <button class="faq-toggle" aria-expanded="false">
+                <span>What's included in your strategy phase?</span>
+                <svg
+                  class="faq-chevron"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="6 9 12 15 18 9" />
+                </svg>
+              </button>
+              <div class="faq-body">
+                <p>
+                  Discovery means understanding your brand, audience,
+                  competitors, and goals before a single deliverable is written.
+                  That includes a structured intake brief, a competitor content
+                  audit, and a positioning session. Deep research precedes every
+                  recommendation — no guesswork, no generic strategy pulled from
+                  a template.
+                </p>
+              </div>
+            </article>
+            <article class="faq-item">
+              <button class="faq-toggle" aria-expanded="false">
+                <span>How long does a typical project take?</span>
+                <svg
+                  class="faq-chevron"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="6 9 12 15 18 9" />
+                </svg>
+              </button>
+              <div class="faq-body">
+                <p>
+                  It depends on scope. A focused strategy engagement runs 3–4
+                  weeks. Website copywriting for a standard 6–8 page site
+                  typically takes 2–3 weeks once the brief is complete. Ongoing
+                  retainers are scoped per cycle. You get a realistic timeline
+                  upfront and I stick to it.
+                </p>
+              </div>
+            </article>
+            <article class="faq-item">
+              <button class="faq-toggle" aria-expanded="false">
+                <span>How many revision rounds are included?</span>
+                <svg
+                  class="faq-chevron"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="6 9 12 15 18 9" />
+                </svg>
+              </button>
+              <div class="faq-body">
+                <p>
+                  Every project includes two structured feedback rounds. In
+                  practice most work lands on the first pass because the
+                  discovery phase does its job. Scope changes or new directions
+                  beyond the original brief are scoped separately.
+                </p>
+              </div>
+            </article>
+            <article class="faq-item">
+              <button class="faq-toggle" aria-expanded="false">
+                <span>What happens if I’m not sure which service I need?</span>
+                <svg
+                  class="faq-chevron"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="6 9 12 15 18 9" />
+                </svg>
+              </button>
+              <div class="faq-body">
+                <p>
+                  That is common, and it is exactly why the consultation and
+                  quote builder exist. You do not need to show up with a
+                  perfectly defined scope. We can work backward from the
+                  problem, look at what is blocking growth, and figure out
+                  whether you need strategy, copy, search support, or a
+                  combination.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!-- Content & AI -->
+        <div class="faq-group" data-group="content">
+          <div class="faq-group-meta">
+            <p class="faq-group-eyebrow">
+              <span
+                class="faq-group-dot"
+                style="background: rgba(0, 194, 255, 1)"
+              ></span>
+              Content &amp; AI
+            </p>
+            <h2 class="faq-group-title">The no&#8209;AI stance, explained</h2>
+          </div>
+          <div class="faq-list">
+            <article class="faq-item">
+              <button class="faq-toggle" aria-expanded="false">
+                <span>Why no AI-generated content?</span>
+                <svg
+                  class="faq-chevron"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="6 9 12 15 18 9" />
+                </svg>
+              </button>
+              <div class="faq-body">
+                <p>
+                  Enough with the AI slop flooding the internet. "Elevate", "in
+                  today's landscape", "synergize" — this language is an insult
+                  to trained journalistic work and to your readers. Search
+                  engines are already penalising it. More importantly, your
+                  audience can feel it. Human writing builds trust; AI filler
+                  erodes it quietly until you notice the drop in conversions.
+                </p>
+              </div>
+            </article>
+            <article class="faq-item">
+              <button class="faq-toggle" aria-expanded="false">
+                <span>Can you audit our existing content for AI patterns?</span>
+                <svg
+                  class="faq-chevron"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="6 9 12 15 18 9" />
+                </svg>
+              </button>
+              <div class="faq-body">
+                <p>
+                  Yes. A content audit is a standard deliverable in the strategy
+                  phase. Beyond detection tools (which are imperfect), I read
+                  for tone, specificity, and the structural patterns AI reliably
+                  produces — vague openers, hedge-heavy conclusions, hollow
+                  bullet lists. You'll get a clear picture of what works, what
+                  reads as machine-generated, and what needs rewriting.
+                </p>
+              </div>
+            </article>
+            <article class="faq-item">
+              <button class="faq-toggle" aria-expanded="false">
+                <span>What industries do you serve?</span>
+                <svg
+                  class="faq-chevron"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="6 9 12 15 18 9" />
+                </svg>
+              </button>
+              <div class="faq-body">
+                <p>
+                  B2B technology, manufacturing, professional services, and
+                  consumer brands — primarily companies where credibility
+                  matters. I've worked across SaaS, industrial sectors, retail,
+                  and media. What matters more than industry is whether you take
+                  your content seriously. I don't do work for companies that
+                  want volume over quality.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!-- Consultation -->
+        <div class="faq-group" data-group="consultation">
+          <div class="faq-group-meta">
+            <p class="faq-group-eyebrow">
+              <span
+                class="faq-group-dot"
+                style="background: rgba(0, 229, 160, 1)"
+              ></span>
+              Consultation
+            </p>
+            <h2 class="faq-group-title">Before you book a session</h2>
+          </div>
+          <div class="faq-list">
+            <article class="faq-item">
+              <button class="faq-toggle" aria-expanded="false">
+                <span>Do I need to prepare anything before a session?</span>
+                <svg
+                  class="faq-chevron"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="6 9 12 15 18 9" />
+                </svg>
+              </button>
+              <div class="faq-body">
+                <p>
+                  Just the pre-session brief. You don't need to build a
+                  presentation or gather a stack of reports — the brief takes
+                  about 15 minutes and gives us both a clear starting point. The
+                  session is a conversation, not a presentation.
+                </p>
+              </div>
+            </article>
+            <article class="faq-item">
+              <button class="faq-toggle" aria-expanded="false">
+                <span>Is this a sales call for a bigger project?</span>
+                <svg
+                  class="faq-chevron"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="6 9 12 15 18 9" />
+                </svg>
+              </button>
+              <div class="faq-body">
+                <p>
+                  No. If you decide afterward that you want more help, we can
+                  talk about it — but that isn't the purpose of the session. The
+                  90 minutes is yours. You'll leave with something usable
+                  regardless of whether we work together afterward.
+                </p>
+              </div>
+            </article>
+            <article class="faq-item">
+              <button class="faq-toggle" aria-expanded="false">
+                <span>What if 90 minutes isn't enough?</span>
+                <svg
+                  class="faq-chevron"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="6 9 12 15 18 9" />
+                </svg>
+              </button>
+              <div class="faq-body">
+                <p>
+                  It usually is. If something genuinely needs another session,
+                  I'll say so clearly and we can book a follow-up at the same
+                  rate — no pressure to commit to a bigger engagement.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!-- Practical -->
+        <div class="faq-group" data-group="practical">
+          <div class="faq-group-meta">
+            <p class="faq-group-eyebrow">
+              <span
+                class="faq-group-dot"
+                style="background: rgba(255, 59, 140, 1)"
+              ></span>
+              Practical
+            </p>
+            <h2 class="faq-group-title">Pricing, logistics &amp; policies</h2>
+          </div>
+          <div class="faq-list">
+            <article class="faq-item">
+              <button class="faq-toggle" aria-expanded="false">
+                <span>What's your pricing?</span>
+                <svg
+                  class="faq-chevron"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="6 9 12 15 18 9" />
+                </svg>
+              </button>
+              <div class="faq-body">
+                <p>
+                  Projects are scoped and priced individually — I don't publish
+                  flat rates because the work varies too much to make that
+                  honest. The quote builder on the homepage gives a rough range
+                  before any conversation. If budget is a concern, say so early.
+                </p>
+              </div>
+            </article>
+            <article class="faq-item">
+              <button class="faq-toggle" aria-expanded="false">
+                <span>Do you work with businesses outside Canada?</span>
+                <svg
+                  class="faq-chevron"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="6 9 12 15 18 9" />
+                </svg>
+              </button>
+              <div class="faq-body">
+                <p>
+                  Yes. Sessions and most project work are fully remote, so I
+                  work with clients across Canada and the U.S. For large
+                  projects requiring on-site time, that's a separate
+                  conversation — but it's the exception, not the rule.
+                </p>
+              </div>
+            </article>
+            <article class="faq-item">
+              <button class="faq-toggle" aria-expanded="false">
+                <span>What's your cancellation policy?</span>
+                <svg
+                  class="faq-chevron"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="6 9 12 15 18 9" />
+                </svg>
+              </button>
+              <div class="faq-body">
+                <p>
+                  Reschedule at least 48 hours in advance and there's no issue.
+                  Late cancellations under 24 hours forfeit the session fee.
+                  Once a session has happened, there are no refunds — but if you
+                  felt it wasn't useful, tell me why and we'll figure it out.
+                </p>
+              </div>
+            </article>
+            <article class="faq-item">
+              <button class="faq-toggle" aria-expanded="false">
+                <span>Do you offer ongoing retainers?</span>
+                <svg
+                  class="faq-chevron"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="6 9 12 15 18 9" />
+                </svg>
+              </button>
+              <div class="faq-body">
+                <p>
+                  Yes — ongoing retainers for content strategy, editorial
+                  oversight, and SEO maintenance are available for established
+                  clients. I keep a limited number of retainer clients so the
+                  work stays quality-controlled. Retainers are scoped after an
+                  initial project, not before.
+                </p>
+              </div>
+            </article>
+            <article class="faq-item">
+              <button class="faq-toggle" aria-expanded="false">
+                <span>Can I get a rough quote before booking?</span>
+                <svg
+                  class="faq-chevron"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="6 9 12 15 18 9" />
+                </svg>
+              </button>
+              <div class="faq-body">
+                <p>
+                  Yes. The quote builder on the homepage is there to give you a
+                  rough scope range before any conversation. It is not a formal
+                  proposal, but it helps you understand the likely size of the
+                  project and whether it makes sense to book a consultation.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+      <!-- /faq-groups -->
+
+      <!-- ══ CTA ══ -->
+      <section class="faq-cta">
+        <div class="faq-cta-bg"></div>
+        <div
+          style="
+            width: min(1200px, calc(100% - 40px));
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+          "
+        >
+          <span class="faq-cta-kicker"><span>Still have questions?</span></span>
+          <h2 class="faq-cta-title">
+            <span class="tline"><span>Ask</span></span>
+            <span class="tline"><span>directly.</span></span>
+          </h2>
+          <div class="faq-cta-actions">
+            <a class="button primary large" href="consultation.html"
+              >Book a consultation</a
+            >
+            <a class="button secondary large" href="consultation.html"
+              >Send a message</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <a href="index.html">
+              <img
+                src="IMG/logo.svg"
+                width="60"
+                height="60"
+                alt="Sipply Consulting"
+                loading="lazy"
+              />
+            </a>
+            <p class="footer-tagline">
+              Let us go back to human-centered marketing for brands that don't
+              rely on AI.
+            </p>
+          </div>
+
+          <nav class="footer-nav-grid">
+            <div class="footer-col">
+              <span class="footer-col-title">Site</span>
+              <a href="index.html#services">Services</a>
+              <a href="work.html">Work</a>
+              <a href="about.html">About</a>
+            </div>
+            <div class="footer-col">
+              <span class="footer-col-title">Connect</span>
+              <a href="consultation.html">Consultation</a>
+              <a href="faq.html">FAQ</a>
+            </div>
+            <div class="footer-col">
+              <span class="footer-col-title">Legal</span>
+              <a href="privacy-policy.html">Privacy Policy</a>
+              <a href="terms.html">Terms &amp; Conditions</a>
+            </div>
+          </nav>
+        </div>
+
+        <div class="footer-bottom">
+          <p>
+            Sipply Consulting &copy; 2026. All rights reserved. Website
+            development by Tom Sipply.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+      gsap.registerPlugin(ScrollTrigger);
+
+      /* ── Hero entrance ── */
+      gsap.fromTo(
+        ".faq-eyebrow span",
+        { y: "110%" },
+        { y: "0%", duration: 1, ease: "power4.out", delay: 0.1 },
+      );
+      gsap.fromTo(
+        ".faq-hero-title .tline span",
+        { y: "110%" },
+        {
+          y: "0%",
+          duration: 1.1,
+          ease: "power4.out",
+          stagger: 0.08,
+          delay: 0.2,
+        },
+      );
+
+      // gsap.fromTo(
+      //   ".faq-hero-right",
+      //   { opacity: 0, y: 40 },
+      //   { opacity: 1, y: 0, duration: 1.2, ease: "power4.out", delay: 0.4 },
+      // );
+
+      /* ── Filter pill + groups scroll reveal ── */
+      gsap.fromTo(
+        ".faq-filter-btn",
+        { opacity: 0, y: 16 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.6,
+          ease: "power3.out",
+          stagger: 0.06,
+          scrollTrigger: {
+            trigger: ".faq-filter-wrap",
+            start: "top 88%",
+            toggleActions: "play none none none",
+          },
+        },
+      );
+
+      document.querySelectorAll(".faq-group").forEach((group) => {
+        gsap.fromTo(
+          group.querySelector(".faq-group-meta"),
+          { opacity: 0, x: -24 },
+          {
+            opacity: 1,
+            x: 0,
+            duration: 0.9,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: group,
+              start: "top 82%",
+              toggleActions: "play none none none",
+            },
+          },
+        );
+        gsap.fromTo(
+          group.querySelectorAll(".faq-item"),
+          { opacity: 0, y: 20 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.7,
+            ease: "power3.out",
+            stagger: 0.08,
+            scrollTrigger: {
+              trigger: group,
+              start: "top 80%",
+              toggleActions: "play none none none",
+            },
+          },
+        );
+      });
+
+      /* ── CTA entrance ── */
+      gsap.fromTo(
+        ".faq-cta-kicker span",
+        { y: "110%" },
+        {
+          y: "0%",
+          duration: 0.9,
+          ease: "power4.out",
+          scrollTrigger: {
+            trigger: ".faq-cta",
+            start: "top 82%",
+            toggleActions: "play none none none",
+          },
+        },
+      );
+      gsap.fromTo(
+        ".faq-cta-title .tline span",
+        { y: "110%" },
+        {
+          y: "0%",
+          duration: 1.2,
+          ease: "power4.out",
+          stagger: 0.09,
+          delay: 0.1,
+          scrollTrigger: {
+            trigger: ".faq-cta",
+            start: "top 82%",
+            toggleActions: "play none none none",
+          },
+        },
+      );
+      gsap.fromTo(
+        ".faq-cta-actions",
+        { opacity: 0, y: 28 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1.0,
+          ease: "power3.out",
+          delay: 0.35,
+          scrollTrigger: {
+            trigger: ".faq-cta",
+            start: "top 82%",
+            toggleActions: "play none none none",
+          },
+        },
+      );
+
+      /* ── Accordion ── */
+      document.querySelectorAll(".faq-toggle").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const item = btn.closest(".faq-item");
+          const isOpen = item.classList.contains("is-open");
+          document.querySelectorAll(".faq-item.is-open").forEach((el) => {
+            el.classList.remove("is-open");
+            el.querySelector(".faq-toggle").setAttribute(
+              "aria-expanded",
+              "false",
+            );
+          });
+          if (!isOpen) {
+            item.classList.add("is-open");
+            btn.setAttribute("aria-expanded", "true");
+          }
+        });
+      });
+
+      /* ── Category filter ── */
+      document.querySelectorAll(".faq-filter-btn").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          document
+            .querySelectorAll(".faq-filter-btn")
+            .forEach((b) => b.classList.remove("active"));
+          btn.classList.add("active");
+          const cat = btn.dataset.cat;
+          document.querySelectorAll(".faq-group").forEach((g) => {
+            if (cat === "all" || g.dataset.group === cat) {
+              g.classList.remove("is-hidden");
+            } else {
+              g.classList.add("is-hidden");
+              g.querySelectorAll(".faq-item.is-open").forEach((el) => {
+                el.classList.remove("is-open");
+                el.querySelector(".faq-toggle").setAttribute(
+                  "aria-expanded",
+                  "false",
+                );
+              });
+            }
+          });
+          ScrollTrigger.refresh();
+        });
+      });
+
+      window.addEventListener("load", () => {
+        ScrollTrigger.refresh();
+      });
+    </script>
+  </body>
+</html>

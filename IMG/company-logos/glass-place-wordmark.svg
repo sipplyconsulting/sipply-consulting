@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 170" width="480" height="170">
+  <defs>
+    <style>
+      .glass { font-family: 'Helvetica Neue', Arial, sans-serif; font-weight:800; font-size:72px; letter-spacing:10px; fill:#ffffff; }
+      .place { font-family: 'Helvetica Neue', Arial, sans-serif; font-weight:600; font-size:20px; letter-spacing:10px; fill:#ffffff; }
+      .the { font-family: 'Segoe Script','Brush Script MT', cursive; font-size:30px; font-style:italic; fill:#ffffff; }
+      .rule { stroke:#ffffff; stroke-width:2; }
+    </style>
+  </defs>
+
+  <text x="240" y="46" text-anchor="middle" class="the">the</text>
+
+  <text x="240" y="120" text-anchor="middle" class="glass">GLASS</text>
+
+  <line x1="100" y1="142" x2="165" y2="142" class="rule"/>
+  <text x="240" y="149" text-anchor="middle" class="place">PLACE</text>
+  <line x1="315" y1="142" x2="380" y2="142" class="rule"/>
+</svg>

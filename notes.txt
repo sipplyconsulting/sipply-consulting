@@ -1,0 +1,10 @@
+'visit website' hover button over logos that can also change colours
+
+- buy a domain 
+- buy a email 
+- register to calendar 
+- new account for form submission 
+- register GA4 
+- setup stripe payment 
+- upload to github with new git account 
+- connect to cloudflare 

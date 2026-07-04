@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About — Sipply Consulting</title>
+    <!-- Meta description for SEO -->
+    <meta name="description" content="Digital marketing consulting that ditches AI-flavored content for human-driven strategy, SEO, CRO, and copywriting."/>
+
+  <!-- Google Analytics 4 -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-XXXXXXXXXX");
+    </script>
+
+    <script>
+      (function () {
+        var t;
+        try {
+          t = localStorage.getItem("sipply-theme");
+        } catch (e) {}
+        if (!t)
+          t = matchMedia("(prefers-color-scheme:dark)").matches
+            ? "dark"
+            : "light";
+        document.documentElement.setAttribute("data-theme", t);
+      })();
+    </script>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/IMG/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/IMG/favicon-16x16.png"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+    <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="logo" href="index.html">SIPPLY Consulting</a>
+      <div class="header-right">
+        <nav class="site-nav">
+          <a href="services.html">Services</a>
+          <a href="work.html">Work</a>
+          <a href="about.html" style="color:var(--text)">About</a>
+          <a href="consultation.html">Consultation</a>
+          <a href="faq.html">FAQ</a>
+        </nav>
+        <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle theme">
+          <span class="theme-icon sun">&#9728;</span>
+          <span class="theme-icon moon">&#9790;</span>
+        </button>
+        <button class="burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false">
+          <span class="burger-line"></span>
+          <span class="burger-line"></span>
+          <span class="burger-line"></span>
+        </button>
+      </div>
+    </header>
+
+
+    <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+      <button
+  class="mobile-nav-close"
+  id="mobile-nav-close"
+  type="button"
+  aria-label="Close menu"
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    aria-hidden="true"
+    focusable="false"
+  >
+    <line x1="5" y1="5" x2="19" y2="19"></line>
+    <line x1="19" y1="5" x2="5" y2="19"></line>
+  </svg>
+</button>
+      <nav class="mobile-nav-links">
+        <a href="services.html">Services</a>
+        <a href="work.html">Work</a>
+        <a href="about.html">About</a>
+        <a href="consultation.html">Consultation</a>
+        <a href="faq.html">FAQ</a>
+      </nav>
+      <div class="mobile-nav-footer">
+        <button class="theme-toggle theme-toggle-mobile" id="theme-toggle-mobile" type="button" aria-label="Toggle theme">
+          <span class="theme-icon sun">&#9728;</span>
+          <span class="theme-icon moon">&#9790;</span>
+        </button>
+      </div>
+    </div>
+
+
+    <main>
+      <section class="about-hero">
+        <div class="about-hero-text">
+          <p class="about-hero-eyebrow">About</p>
+          <h1 class="about-hero-title">The person behind the work.</h1>
+          <p class="about-hero-sub">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+        </div>
+        <div class="about-hero-image"></div>
+      </section>
+
+
+      <section class="location-section">
+        <div class="location-inner">
+          <h2 class="location-sentence">
+            I'm based in Calgary, Alberta, where it's currently
+            <span class="live-time" id="live-time">—:—</span> and
+            <span class="live-weather" id="live-weather">—°C</span>.
+          </h2>
+          <div class="location-bio">
+            <p class="location-bio-eyebrow">Background</p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip.
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute
+              irure dolor in reprehenderit in voluptate velit esse cillum dolore
+              eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+              proident.
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+            </p>
+            <ul class="credentials-list">
+              <li>
+                <span class="cred-num">01</span> Degree in Marketing &amp;
+                Journalism
+              </li>
+              <li>
+                <span class="cred-num">02</span> Lorem ipsum credential or
+                certification
+              </li>
+              <li>
+                <span class="cred-num">03</span> Lorem ipsum years of industry
+                experience
+              </li>
+              <li>
+                <span class="cred-num">04</span> Lorem ipsum notable client or
+                achievement
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="about-cta-section">
+        <div class="about-cta-bg"></div>
+        <h2 class="about-cta-title">Ready to work together?</h2>
+        <p class="about-cta-sub">Real value starts with a real conversation.</p>
+        <a class="button primary large" href="index.html#consultation"
+          >Book Consultation</a
+        >
+      </section>
+    </main>
+
+
+ <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <a href="index.html">
+              <img
+                src="IMG/logo.svg"
+                width="60"
+                height="60"
+                alt="Sipply Consulting"
+                loading="lazy"
+              />
+            </a>
+            <p class="footer-tagline">
+              Let us go back to human-centered marketing for brands that don't
+              rely on AI.
+            </p>
+          </div>
+
+
+          <nav class="footer-nav-grid">
+            <div class="footer-col">
+              <span class="footer-col-title">Site</span>
+              <a href="index.html#services">Services</a>
+              <a href="work.html">Work</a>
+              <a href="about.html">About</a>
+            </div>
+            <div class="footer-col">
+              <span class="footer-col-title">Connect</span>
+              <a href="consultation.html">Consultation</a>
+              <a href="faq.html">FAQ</a>
+            </div>
+            <div class="footer-col">
+              <span class="footer-col-title">Legal</span>
+              <a href="privacy-policy.html">Privacy Policy</a>
+              <a href="terms.html">Terms &amp; Conditions</a>
+            </div>
+          </nav>
+        </div>
+
+
+        <div class="footer-bottom">
+          <p>
+            Sipply Consulting &copy; 2026. All rights reserved. Website
+            development by Tom Sipply.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+
+    <script src="script.js"></script>
+    <script>
+      /* ── About-page-specific scroll reveals ── */
+      gsap.utils
+        .toArray(".about-hero-eyebrow, .about-hero-title, .about-hero-sub")
+        .forEach((el, i) => {
+          gsap.fromTo(
+            el,
+            { y: 40, opacity: 0 },
+            {
+              y: 0,
+              opacity: 1,
+              duration: 1.0,
+              ease: "power4.out",
+              delay: i * 0.12,
+            },
+          );
+        });
+      gsap.fromTo(
+        ".about-hero-image",
+        { x: 40, opacity: 0, scale: 1.04 },
+        {
+          x: 0,
+          opacity: 1,
+          scale: 1,
+          duration: 1.3,
+          ease: "power4.out",
+          delay: 0.15,
+        },
+      );
+
+
+      gsap.fromTo(
+        ".location-sentence",
+        { clipPath: "inset(100% 0% 0% 0%)", y: 36, opacity: 0 },
+        {
+          clipPath: "inset(0% 0% 0% 0%)",
+          y: 0,
+          opacity: 1,
+          duration: 1.2,
+          ease: "power4.out",
+          scrollTrigger: {
+            trigger: ".location-section",
+            start: "top 82%",
+            toggleActions: "play none none none",
+          },
+        },
+      );
+      gsap.utils.toArray(".location-bio > *").forEach((el, i) => {
+        gsap.fromTo(
+          el,
+          { y: 30, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.9,
+            ease: "power3.out",
+            delay: i * 0.1,
+            scrollTrigger: {
+              trigger: ".location-section",
+              start: "top 78%",
+              toggleActions: "play none none none",
+            },
+          },
+        );
+      });
+      gsap.fromTo(
+        ".about-cta-title, .about-cta-sub, .about-cta-section .button",
+        { y: 30, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.9,
+          ease: "power3.out",
+          stagger: 0.12,
+          scrollTrigger: {
+            trigger: ".about-cta-section",
+            start: "top 84%",
+            toggleActions: "play none none none",
+          },
+        },
+      );
+
+
+      /* ── Live clock ── */
+      function updateClock() {
+        const now = new Date();
+        const h = now.getHours();
+        const m = String(now.getMinutes()).padStart(2, "0");
+        const ampm = h >= 12 ? "PM" : "AM";
+        document.getElementById("live-time").textContent =
+          `${h % 12 || 12}:${m} ${ampm}`;
+      }
+      updateClock();
+      setInterval(updateClock, 1000);
+
+
+      /* ── Weather ── */
+      const WMO = {
+        0: "clear skies",
+        1: "mainly clear",
+        2: "partly cloudy",
+        3: "overcast",
+        45: "fog",
+        48: "icy fog",
+        51: "light drizzle",
+        53: "drizzle",
+        55: "heavy drizzle",
+        61: "light rain",
+        63: "rain",
+        65: "heavy rain",
+        71: "light snow",
+        73: "snow",
+        75: "heavy snow",
+        77: "snow grains",
+        80: "rain showers",
+        81: "showers",
+        82: "heavy showers",
+        85: "snow showers",
+        86: "heavy snow showers",
+        95: "thunderstorms",
+        96: "thunderstorms with hail",
+        99: "thunderstorms with hail",
+      };
+      async function fetchWeather() {
+        try {
+          const r = await fetch(
+            "https://api.open-meteo.com/v1/forecast?latitude=51.0447&longitude=-114.0719&current=temperature_2m,weathercode&temperature_unit=celsius&timezone=America%2FDenver",
+          );
+          const d = await r.json();
+          const temp = Math.round(d.current.temperature_2m);
+          const desc = WMO[d.current.weathercode] || "variable conditions";
+          document.getElementById("live-weather").textContent =
+            `${temp}°C and ${desc}`;
+        } catch {
+          document.getElementById("live-weather").textContent =
+            "conditions unavailable";
+        }
+      }
+      fetchWeather();
+
+
+      window.addEventListener("load", () => {
+        ScrollTrigger.refresh();
+      });
+    </script>
+  </body>
+</html>

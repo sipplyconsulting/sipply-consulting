@@ -1,0 +1,554 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Work — Sipply Consulting</title>
+    <!-- Meta description for SEO -->
+    <meta
+      name="description"
+      content="Digital marketing consulting that ditches AI-flavored content for human-driven strategy, SEO, CRO, and copywriting."
+    />
+
+    <!-- Google Analytics 4 -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"
+    ></script>
+
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-XXXXXXXXXX");
+    </script>
+
+    <script>
+      (function () {
+        var t;
+        try {
+          t = localStorage.getItem("sipply-theme");
+        } catch (e) {}
+        if (!t)
+          t = matchMedia("(prefers-color-scheme:dark)").matches
+            ? "dark"
+            : "light";
+        document.documentElement.setAttribute("data-theme", t);
+      })();
+    </script>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/IMG/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/IMG/favicon-16x16.png"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+    <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="logo" href="index.html">SIPPLY Consulting</a>
+      <div class="header-right">
+        <nav class="site-nav">
+          <a href="services.html">Services</a>
+          <a href="work.html" style="color: var(--text)">Work</a>
+          <a href="about.html">About</a>
+          <a href="consultation.html">Consultation</a>
+          <a href="faq.html">FAQ</a>
+        </nav>
+        <button
+          class="theme-toggle"
+          id="theme-toggle"
+          type="button"
+          aria-label="Toggle theme"
+        >
+          <span class="theme-icon sun">&#9728;</span>
+          <span class="theme-icon moon">&#9790;</span>
+        </button>
+        <button
+          class="burger"
+          id="burger"
+          type="button"
+          aria-label="Open menu"
+          aria-expanded="false"
+        >
+          <span class="burger-line"></span>
+          <span class="burger-line"></span>
+          <span class="burger-line"></span>
+        </button>
+      </div>
+    </header>
+
+    <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+      <button
+        class="mobile-nav-close"
+        id="mobile-nav-close"
+        type="button"
+        aria-label="Close menu"
+      >
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+        >
+          <line x1="5" y1="5" x2="19" y2="19" />
+          <line x1="19" y1="5" x2="5" y2="19" />
+        </svg>
+      </button>
+      <nav class="mobile-nav-links">
+        <a href="services.html">Services</a>
+        <a href="work.html">Work</a>
+        <a href="about.html">About</a>
+        <a href="consultation.html">Consultation</a>
+        <a href="faq.html">FAQ</a>
+      </nav>
+      <div class="mobile-nav-footer">
+        <button
+          class="theme-toggle theme-toggle-mobile"
+          id="theme-toggle-mobile"
+          type="button"
+          aria-label="Toggle theme"
+        >
+          <span class="theme-icon sun">&#9728;</span>
+          <span class="theme-icon moon">&#9790;</span>
+        </button>
+      </div>
+    </div>
+
+    <main>
+      <!-- Hero -->
+      <section class="work-hero">
+        <p class="work-eyebrow">Work</p>
+        <h1 class="work-title">Projects and outcomes.</h1>
+        <p class="work-sub">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis
+          nostrud exercitation ullamco laboris nisi.
+        </p>
+      </section>
+
+      <!-- Case Study Viewer -->
+      <section class="work-viewer-section" aria-label="Case studies">
+        <div class="work-viewer" id="work-viewer">
+          <!-- Left: image -->
+          <div class="wv-left" id="wv-left">
+            <img class="wv-img" id="wv-img" src="/" alt="" loading="lazy" />
+            <div class="wv-placeholder" id="wv-placeholder">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.4"
+              >
+                <rect x="3" y="3" width="18" height="18" rx="2" />
+                <circle cx="8.5" cy="8.5" r="1.5" />
+                <path d="M21 15l-5-5L5 21" />
+              </svg>
+              Add project image
+            </div>
+            <div class="wv-overlay"></div>
+            <div class="wv-lower">
+              <div class="wv-dots" id="wv-dots" aria-hidden="true"></div>
+              <span class="wv-counter"
+                ><strong id="wv-num">01</strong> / 08</span
+              >
+            </div>
+          </div>
+
+          <!-- Right: copy -->
+          <div class="wv-right" id="wv-right">
+            <p class="wv-label">Selected work</p>
+            <div class="wv-body">
+              <p class="wv-cat" id="wv-cat"></p>
+              <h2 class="wv-title" id="wv-title"></h2>
+              <div class="wv-rule"></div>
+              <p class="wv-desc" id="wv-desc"></p>
+              <div class="wv-tags" id="wv-tags"></div>
+              <a class="wv-cta" href="consultation.html#schedule"
+                >Book a call &#8594;</a
+              >
+            </div>
+            <div class="wv-nav">
+              <div class="wv-arrows">
+                <button
+                  class="wv-arrow"
+                  id="wv-prev"
+                  type="button"
+                  aria-label="Previous"
+                >
+                  &#8592;
+                </button>
+                <button
+                  class="wv-arrow"
+                  id="wv-next"
+                  type="button"
+                  aria-label="Next"
+                >
+                  &#8594;
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Project Index -->
+      <section class="work-index-section">
+        <div class="work-index-head" style="margin-bottom: 0">
+          <p class="work-index-label">Project index</p>
+          <span class="work-index-count">8 projects</span>
+        </div>
+        <div role="list">
+          <div class="work-index-row" role="listitem">
+            <span class="work-index-num">01</span>
+            <span class="work-index-name">INDUSTRIOS — Content Strategy</span>
+            <span class="work-index-service">Strategy &amp; Content</span>
+            <span class="work-index-industry">B2B Manufacturing</span>
+            <span class="work-index-year">2025</span>
+          </div>
+          <div class="work-index-row" role="listitem">
+            <span class="work-index-num">02</span>
+            <span class="work-index-name">Procom — SEO &amp; AEO Audit</span>
+            <span class="work-index-service">SEO / AEO</span>
+            <span class="work-index-industry">Staffing</span>
+            <span class="work-index-year">2025</span>
+          </div>
+          <div class="work-index-row" role="listitem">
+            <span class="work-index-num">03</span>
+            <span class="work-index-name"
+              >Shoplogix — Website Copy Rewrite</span
+            >
+            <span class="work-index-service">Copywriting</span>
+            <span class="work-index-industry">SaaS / Manufacturing</span>
+            <span class="work-index-year">2025</span>
+          </div>
+          <div class="work-index-row" role="listitem">
+            <span class="work-index-num">04</span>
+            <span class="work-index-name">GlassPlace — Market Analysis</span>
+            <span class="work-index-service">Market Analysis</span>
+            <span class="work-index-industry">Home Services</span>
+            <span class="work-index-year">2024</span>
+          </div>
+          <div class="work-index-row" role="listitem">
+            <span class="work-index-num">05</span>
+            <span class="work-index-name"
+              >Cartoon Network — Editorial Calendar</span
+            >
+            <span class="work-index-service">Strategy &amp; Content</span>
+            <span class="work-index-industry">Media &amp; Entertainment</span>
+            <span class="work-index-year">2024</span>
+          </div>
+          <div class="work-index-row" role="listitem">
+            <span class="work-index-num">06</span>
+            <span class="work-index-name">DASH — CRO &amp; Landing Pages</span>
+            <span class="work-index-service">CRO / SEO</span>
+            <span class="work-index-industry">FinTech</span>
+            <span class="work-index-year">2024</span>
+          </div>
+          <div class="work-index-row" role="listitem">
+            <span class="work-index-num">07</span>
+            <span class="work-index-name"
+              >FINN — Brand Voice &amp; Audience Research</span
+            >
+            <span class="work-index-service">Strategy</span>
+            <span class="work-index-industry">Auto / Leasing</span>
+            <span class="work-index-year">2024</span>
+          </div>
+          <div class="work-index-row" role="listitem">
+            <span class="work-index-num">08</span>
+            <span class="work-index-name">Simple Folds — Full-Site Copy</span>
+            <span class="work-index-service">Copywriting</span>
+            <span class="work-index-industry">E-commerce</span>
+            <span class="work-index-year">2023</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="work-cta">
+        <div class="work-cta-bg"></div>
+        <h2>Ready to see what this looks like for your business?</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. A working
+          session is often enough.
+        </p>
+        <div class="work-cta-actions">
+          <a class="button primary large" href="consultation.html#schedule"
+            >Book a consultation</a
+          >
+          <a class="button secondary large" href="index.html#services"
+            >View services</a
+          >
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <a href="index.html">
+              <img
+                src="IMG/logo.svg"
+                width="60"
+                height="60"
+                alt="Sipply Consulting"
+                loading="lazy"
+              />
+            </a>
+            <p class="footer-tagline">
+              Let us go back to human-centered marketing for brands that don't
+              rely on AI.
+            </p>
+          </div>
+
+          <nav class="footer-nav-grid">
+            <div class="footer-col">
+              <span class="footer-col-title">Site</span>
+              <a href="index.html#services">Services</a>
+              <a href="work.html">Work</a>
+              <a href="about.html">About</a>
+            </div>
+            <div class="footer-col">
+              <span class="footer-col-title">Connect</span>
+              <a href="consultation.html">Consultation</a>
+              <a href="faq.html">FAQ</a>
+            </div>
+            <div class="footer-col">
+              <span class="footer-col-title">Legal</span>
+              <a href="privacy-policy.html">Privacy Policy</a>
+              <a href="terms.html">Terms &amp; Conditions</a>
+            </div>
+          </nav>
+        </div>
+
+        <div class="footer-bottom">
+          <p>
+            Sipply Consulting &copy; 2026. All rights reserved. Website
+            development by Tom Sipply.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+      /*
+      HOW TO ADD IMAGES
+      -----------------
+      Each project below has an `img` key. Set it to a relative path:
+        img: './IMG/procom-screenshot.jpg'
+      Leave as '' to show the placeholder. The <img> tag fades in automatically
+      once the browser loads the file.
+    */
+      const projects = [
+        {
+          client: "Procom",
+          cat: "SEO / AEO",
+          title: "Lorem ipsum SEO audit and answer engine strategy.",
+          desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.",
+          tags: ["SEO / AEO", "Technical Audit"],
+          img: "",
+        },
+        {
+          client: "Shoplogix",
+          cat: "Copywriting",
+          title: "Lorem ipsum website copy rewrite for SaaS positioning.",
+          desc: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa quae ab illo inventore veritatis.",
+          tags: ["Copywriting", "Brand Messaging"],
+          img: "",
+        },
+        {
+          client: "GlassPlace",
+          cat: "Market Analysis",
+          title: "Lorem ipsum competitive landscape and market positioning.",
+          desc: "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.",
+          tags: ["Market Analysis", "Competitive Research"],
+          img: "",
+        },
+        {
+          client: "Cartoon Network",
+          cat: "Strategy & Content",
+          title: "Lorem ipsum editorial calendar and content roadmap.",
+          desc: "Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam nisi ut aliquid ex ea commodi consequatur quis autem vel eum iure.",
+          tags: ["Strategy & Content", "Editorial Planning"],
+          img: "",
+        },
+        {
+          client: "DASH",
+          cat: "CRO",
+          title: "Lorem ipsum CRO audit and landing page optimisation.",
+          desc: "Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur vel illum qui dolorem eum fugiat quo voluptas nulla.",
+          tags: ["CRO", "Landing Page Copy"],
+          img: "",
+        },
+        {
+          client: "FINN",
+          cat: "Strategy",
+          title: "Lorem ipsum audience research and brand voice guide.",
+          desc: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi.",
+          tags: ["Strategy", "Audience Research"],
+          img: "",
+        },
+        {
+          client: "Simple Folds",
+          cat: "Copywriting",
+          title: "Lorem ipsum full-site copy and service page narrative.",
+          desc: "Similique sunt in culpa qui officia deserunt mollitia animi id est laborum et dolorum fuga et harum quidem rerum facilis est et expedita distinctio.",
+          tags: ["Copywriting", "CTA Architecture"],
+          img: "",
+        },
+        {
+          client: "INDUSTRIOS",
+          cat: "Strategy & Content",
+          title:
+            "Lorem ipsum monthly content retainer and trend identification.",
+          desc: "Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.",
+          tags: ["Strategy & Content", "Retainer"],
+          img: "",
+        },
+      ];
+
+      let active = 0;
+      let busy = false;
+
+      const elImg = document.getElementById("wv-img");
+      const elPlaceholder = document.getElementById("wv-placeholder");
+      const elNum = document.getElementById("wv-num");
+      const elCat = document.getElementById("wv-cat");
+      const elTitle = document.getElementById("wv-title");
+      const elDesc = document.getElementById("wv-desc");
+      const elTags = document.getElementById("wv-tags");
+      const elDots = document.getElementById("wv-dots");
+      const elRight = document.getElementById("wv-right");
+      const elLeft = document.getElementById("wv-left");
+
+      function renderDots() {
+        elDots.innerHTML = projects
+          .map(
+            (_, i) =>
+              '<button class="wv-dot' +
+              (i === active ? " active" : "") +
+              '" data-i="' +
+              i +
+              '"></button>',
+          )
+          .join("");
+        elDots
+          .querySelectorAll(".wv-dot")
+          .forEach((d) => d.addEventListener("click", () => go(+d.dataset.i)));
+      }
+
+      function renderContent() {
+        const p = projects[active];
+        elNum.textContent = String(active + 1).padStart(2, "0");
+        elCat.textContent = p.cat;
+        elTitle.textContent = p.title;
+        elDesc.textContent = p.desc;
+        elTags.innerHTML = p.tags
+          .map((t) => '<span class="wv-tag">' + t + "</span>")
+          .join("");
+        elImg.alt = p.client + " — " + p.cat;
+
+        if (p.img) {
+          elImg.src = p.img;
+          elImg.classList.remove("loaded");
+          elImg.onload = () => elImg.classList.add("loaded");
+          elImg.onerror = () => {
+            elImg.src = "";
+          };
+          elPlaceholder.style.display = "none";
+        } else {
+          elImg.src = "";
+          elImg.classList.remove("loaded");
+          elPlaceholder.style.display = "";
+        }
+
+        renderDots();
+      }
+
+      function go(index) {
+        if (busy) return;
+        busy = true;
+        active =
+          ((index % projects.length) + projects.length) % projects.length;
+        elRight.classList.add("fading");
+        setTimeout(function () {
+          renderContent();
+          elRight.classList.remove("fading");
+          busy = false;
+        }, 240);
+      }
+
+      document
+        .getElementById("wv-prev")
+        .addEventListener("click", () => go(active - 1));
+      document
+        .getElementById("wv-next")
+        .addEventListener("click", () => go(active + 1));
+
+      let touchX = 0;
+      elLeft.addEventListener(
+        "touchstart",
+        (e) => {
+          touchX = e.changedTouches[0].clientX;
+        },
+        { passive: true },
+      );
+      elLeft.addEventListener("touchend", (e) => {
+        const d = e.changedTouches[0].clientX - touchX;
+        if (Math.abs(d) < 44) return;
+        go(d < 0 ? active + 1 : active - 1);
+      });
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "ArrowLeft") go(active - 1);
+        if (e.key === "ArrowRight") go(active + 1);
+      });
+
+      renderContent();
+
+      /* Scroll reveals (page-specific) */
+      gsap.utils.toArray(".work-index-row").forEach((el) => {
+        gsap.fromTo(
+          el,
+          { y: 22, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.72,
+            ease: "power3.out",
+            scrollTrigger: { trigger: el, start: "top 88%" },
+          },
+        );
+      });
+      gsap.utils.toArray(".work-hero > *").forEach((el, i) => {
+        gsap.fromTo(
+          el,
+          { y: 26, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.85,
+            ease: "power4.out",
+            delay: i * 0.09,
+          },
+        );
+      });
+    </script>
+  </body>
+</html>

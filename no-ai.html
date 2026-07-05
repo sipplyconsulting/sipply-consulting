@@ -1,0 +1,674 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>No AI — The effects of Artificial Intelligence on our planet. | Sipply Consulting</title>
+<meta name="description" content="Real statistics on AI's environmental cost, consumer trust collapse, and the growing movement against AI data centers. Sign real petitions." />
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-D6DXEQFZNW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-D6DXEQFZNW');
+</script>
+
+<script>
+  (function () {
+    var t;
+    try { t = localStorage.getItem("sipply-theme"); } catch (e) {}
+    if (!t) t = matchMedia("(prefers-color-scheme:dark)").matches ? "dark" : "light";
+    document.documentElement.setAttribute("data-theme", t);
+  })();
+</script>
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/IMG/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/IMG/favicon-16x16.png" />
+<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="no-ai.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+</head>
+<body class="noai-page">
+<header class="site-header">
+  <a class="logo" href="index.html">SIPPLY Consulting</a>
+  <div class="header-right">
+    <nav class="site-nav">
+      <a href="services.html">Services</a>
+      <a href="work.html">Work</a>
+      <a href="about.html">About</a>
+      <a href="consultation.html">Consultation</a>
+      <a href="faq.html">FAQ</a>
+      <a href="no-ai.html" style="color:var(--text)">No AI</a>
+    </nav>
+    <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle theme">
+      <span class="theme-icon sun">&#9728;</span>
+      <span class="theme-icon moon">&#9790;</span>
+    </button>
+    <button class="burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false">
+      <span class="burger-line"></span><span class="burger-line"></span><span class="burger-line"></span>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+  <button class="mobile-nav-close" id="mobile-nav-close" type="button" aria-label="Close menu">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="5" x2="19" y2="19"></line><line x1="19" y1="5" x2="5" y2="19"></line></svg>
+  </button>
+  <nav class="mobile-nav-links">
+    <a href="services.html">Services</a>
+    <a href="work.html">Work</a>
+    <a href="about.html">About</a>
+    <a href="consultation.html">Consultation</a>
+    <a href="faq.html">FAQ</a>
+    <a href="no-ai.html">No AI</a>
+  </nav>
+  <div class="mobile-nav-footer">
+    <button class="theme-toggle theme-toggle-mobile" id="theme-toggle-mobile" type="button" aria-label="Toggle theme">
+      <span class="theme-icon sun">&#9728;</span><span class="theme-icon moon">&#9790;</span>
+    </button>
+  </div>
+</div>
+
+<main>
+
+  <!-- HERO -->
+  <section class="noai-hero">
+    <p class="noai-eyebrow">The real cost of artificial intelligence</p>
+    <h1 class="noai-hero-title">
+      AI is <span class="noai-highlight">draining</span> the planet<br>
+      and <span class="noai-highlight">breaking</span> trust.
+    </h1>
+    <p class="noai-hero-sub">
+      Every statistic on this page is sourced from published research, government reports,
+      and verified news coverage — no exaggeration needed. Scroll to see the real numbers.
+    </p>
+    <div class="noai-hero-actions">
+      <a class="button primary large" href="#petitions">Petitions against AI</a>
+      <a class="button secondary large" href="#data">Explore data</a>
+    </div>
+    <div class="noai-scroll-cue">
+      <span></span>
+      <p>Scroll</p>
+    </div>
+  </section>
+
+  <!-- LIVE COUNTER STRIP -->
+  <section class="noai-counters">
+    <div class="noai-counter-item">
+      <div class="noai-counter-num" data-target="945" data-suffix=" TWh">0</div>
+      <p>Projected AI data center electricity use by 2030</p>
+      <p class="noai-counter-compare">= more than Japan's entire national electricity demand<sup>1</sup></p>
+    </div>
+    <div class="noai-counter-item">
+      <div class="noai-counter-num" data-target="80" data-suffix="M tons">0</div>
+      <p>CO2 emitted by AI systems in 2025 alone</p>
+      <p class="noai-counter-compare">= driving 20 million gas cars for a full year<sup>2</sup></p>
+    </div>
+    <div class="noai-counter-item">
+      <div class="noai-counter-num" data-target="17" data-suffix="B gal">0</div>
+      <p>Water consumed by US data centers per year</p>
+      <p class="noai-counter-compare">= annual water use of 160,000 American households<sup>3</sup></p>
+    </div>
+    <div class="noai-counter-item">
+      <div class="noai-counter-num" data-target="42" data-suffix="%">0</div>
+      <p>Consumers who distrust AI-generated images and video</p>
+      <p class="noai-counter-compare">= nearly 1 in every 2 people you show AI content to<sup>4</sup></p>
+    </div>
+  </section>
+
+  <!-- SECTION: ENVIRONMENT -->
+  <section id="data" class="content-section noai-section">
+    <p class="noai-section-eyebrow">01 — Environmental cost</p>
+    <h2 class="section-title">Every prompt has a footprint.</h2>
+    <p class="work-intro">
+      Behind every AI query is a real power plant burning fuel, a real grid straining under load, and real
+      water disappearing from real rivers. This isn't abstract — it's happening right now, to feed machines
+      that answer questions a search engine could answer for a fraction of the cost.
+    </p>
+
+    <div class="noai-stat-row">
+      <div class="noai-stat-tile noai-video-card">
+        <video class="noai-bg-video" autoplay muted loop playsinline poster="">
+          <source src="VID/electricity-grid.mp4" type="video/mp4">
+        </video>
+        <div class="noai-video-overlay"></div>
+        <div class="noai-video-content">
+          <div class="noai-stat-tile-top">
+            <span class="noai-stat-tile-label">Electricity demand growth</span>
+            <span class="noai-stat-tile-pill noai-pill-orange">2024 → 2030</span>
+          </div>
+          <div class="noai-stat-tile-value">
+            <span class="noai-stat-big" data-count-target="945">0</span><span class="noai-stat-unit">TWh</span>
+          </div>
+          <div class="noai-sparkline-wrap"><canvas id="sparkEnergy"></canvas></div>
+          <p class="noai-chart-note">This is the grid AI runs on — straining to keep up with demand that exceeds Japan's entire national electricity use by 2030.<sup>1</sup></p>
+          <p class="noai-chart-source">Source: <a href="https://www.carbonbrief.org/ai-five-charts-that-put-data-centre-energy-use-and-emissions-into-context/" target="_blank" rel="noopener">Carbon Brief / IEA (2025)</a></p>
+        </div>
+        <p class="noai-video-credit">Footage: 정규송 Nui MALAMA from PEXELS</p>
+      </div>
+
+      <div class="noai-stat-tile noai-video-card">
+        <video class="noai-bg-video" autoplay muted loop playsinline poster="">
+          <source src="VID/drought.mp4" type="video/mp4">
+        </video>
+        <div class="noai-video-overlay"></div>
+        <div class="noai-video-content">
+          <div class="noai-stat-tile-top">
+            <span class="noai-stat-tile-label">US water use growth</span>
+            <span class="noai-stat-tile-pill noai-pill-blue">2023 → 2028</span>
+          </div>
+          <div class="noai-stat-tile-value">
+            <span class="noai-stat-big" data-count-target="55">0</span><span class="noai-stat-unit">B gal</span>
+          </div>
+          <div class="noai-sparkline-wrap"><canvas id="sparkWater"></canvas></div>
+          <p class="noai-chart-note">This is what's left behind — freshwater pulled from aquifers and rivers to cool servers, projected to triple in five years.<sup>6</sup></p>
+          <p class="noai-chart-source">Source: <a href="https://mostpolicyinitiative.org/science-note/data-center-water-use/" target="_blank" rel="noopener">MOST Policy Initiative (2026)</a></p>
+        </div>
+        <p class="noai-video-credit">Footage: Philipp Kappler from PEXELS</p>
+      </div>
+    </div>
+
+    <div class="noai-versus-row">
+      <div class="noai-versus-card noai-video-card">
+        <video class="noai-bg-video" autoplay muted loop playsinline poster="">
+          <source src="VID/power-plant.mp4" type="video/mp4">
+        </video>
+        <div class="noai-video-overlay"></div>
+        <div class="noai-video-content">
+          <span class="noai-chart-badge noai-badge-float">Per single query</span>
+          <h3>What powers one AI answer vs. one search</h3>
+          <div class="noai-versus-bars" id="versusEnergy">
+            <div class="noai-versus-item">
+              <div class="noai-versus-label"><span>Google Search</span><strong>0.3 Wh</strong></div>
+              <div class="noai-versus-track"><div class="noai-versus-fill noai-fill-green" data-pct="10"></div></div>
+            </div>
+            <div class="noai-versus-item">
+              <div class="noai-versus-label"><span>AI Chatbot Query</span><strong>2.9 Wh</strong></div>
+              <div class="noai-versus-track"><div class="noai-versus-fill noai-fill-pink" data-pct="100"></div></div>
+            </div>
+          </div>
+          <p class="noai-chart-note">This is the smoke behind the screen — a single AI query draws roughly 10x more electricity than a search, most of it still generated by burning fossil fuel.<sup>5</sup></p>
+          <p class="noai-chart-source">Source: <a href="https://technical.ly/civics/chatgpt-vs-google-energy-use/" target="_blank" rel="noopener">Technical.ly, IEA analysis (2025)</a></p>
+        </div>
+        <p class="noai-video-credit">Footage: 'K' from PEXELS</p>
+      </div>
+
+      <div class="noai-versus-card noai-video-card">
+        <video class="noai-bg-video" autoplay muted loop playsinline poster="">
+          <source src="VID/wildfire.mp4" type="video/mp4">
+        </video>
+        <div class="noai-video-overlay"></div>
+        <div class="noai-video-content">
+          <span class="noai-chart-badge noai-badge-float">Per 100-word email</span>
+          <h3>Where the emissions end up</h3>
+          <div class="noai-versus-bars" id="versusWater">
+            <div class="noai-versus-item">
+              <div class="noai-versus-label"><span>Standard water bottle</span><strong>500 ml</strong></div>
+              <div class="noai-versus-track"><div class="noai-versus-fill noai-fill-blue" data-pct="96"></div></div>
+            </div>
+            <div class="noai-versus-item">
+              <div class="noai-versus-label"><span>AI-written email</span><strong>519 ml</strong></div>
+              <div class="noai-versus-track"><div class="noai-versus-fill noai-fill-orange" data-pct="100"></div></div>
+            </div>
+          </div>
+          <p class="noai-chart-note">Every extra ton of CO2 from AI's power draw feeds the same warming trend driving longer, more intense wildfire seasons.<sup>7</sup></p>
+          <p class="noai-chart-source">Source: <a href="https://www.eesi.org/articles/view/data-centers-and-water-consumption" target="_blank" rel="noopener">UC Riverside study, via EESI (2025)</a></p>
+        </div>
+        <p class="noai-video-credit">Footage: 'K' from PEXELS</p>
+      </div>
+    </div>
+<!-- 
+    <div class="noai-fact-grid">
+      <div class="noai-fact-card" data-glow="1">
+        <span class="noai-fact-num">80M tons</span>
+        <p>CO2 from AI in 2025 — equivalent to the annual emissions of roughly 20 million gasoline cars.<sup>2</sup></p>
+      </div>
+      <div class="noai-fact-card" data-glow="2">
+        <span class="noai-fact-num">5M gal/day</span>
+        <p>water used by one large data center — the same as a town of up to 50,000 people.<sup>8</sup></p>
+      </div>
+      <div class="noai-fact-card" data-glow="3">
+        <span class="noai-fact-num">10x</span>
+        <p>more electricity a single AI chatbot query uses compared to a standard Google search.<sup>5</sup></p>
+      </div>
+      <div class="noai-fact-card" data-glow="4">
+        <span class="noai-fact-num">3.3 pools</span>
+        <p>Olympic swimming pools' worth of water used daily by just one mid-size AI data center.<sup>9</sup></p>
+      </div>
+    </div> -->
+  </section>
+
+  <!-- SECTION: TRUST -->
+  <section class="content-section noai-section noai-trust">
+    <p class="noai-section-eyebrow">02 — Collapsing consumer trust</p>
+    <h2 class="section-title">Brands using AI content are losing customers.</h2>
+    <p class="work-intro">
+      Audiences can increasingly tell when content is AI-generated — and the reaction isn't neutral.
+      Disclosure of AI involvement measurably erodes perceived authenticity and brand credibility.<sup>10</sup>
+    </p>
+
+    <div class="noai-chart-grid">
+      <div class="noai-chart-card">
+        <div class="noai-chart-head">
+          <h3>Consumer reactions to AI-generated brand content</h3>
+          <span class="noai-chart-badge">% of respondents</span>
+        </div>
+        <canvas id="chartTrust" height="240"></canvas>
+        <p class="noai-chart-source">
+          Source: <a href="https://www.saltedstone.com/blog/generative-ai-design-credibility-navigating-brand-trust-challenges" target="_blank" rel="noopener">Cognizant Consumer Survey (2024)</a>
+        </p>
+      </div>
+      <div class="noai-chart-card">
+        <div class="noai-chart-head">
+          <h3>Why people still prefer humans over AI</h3>
+          <span class="noai-chart-badge">% agreeing</span>
+        </div>
+        <canvas id="chartWorkforce" height="240"></canvas>
+        <p class="noai-chart-source">
+          Source: <a href="https://www.cio.com/article/4138743/push-to-replace-workers-with-ai-faces-backlash-even-from-management.html" target="_blank" rel="noopener">Udacity workforce survey, via CIO.com (2026)</a>
+        </p>
+      </div>
+    </div>
+
+    <div class="noai-quote-block">
+      <p>"AI can't create the new products and services customers will want in the future" — cited by 62% of surveyed executives and managers as a reason to keep humans in the loop.<sup>11</sup></p>
+    </div>
+  </section>
+
+  <!-- SECTION: SHIFT AWAY -->
+  <section class="content-section noai-section">
+    <p class="noai-section-eyebrow">03 — The reversal is already happening</p>
+    <h2 class="section-title">Companies are rehiring the humans they replaced.</h2>
+    <p class="work-intro">
+      The rush to replace people with AI is colliding with reality. Quality drops, customers revolt,
+      and companies are quietly walking it back.
+    </p>
+    <div class="deliverables-grid noai-case-grid">
+      <div class="deliverable-card">
+        <h3>Klarna</h3>
+        <p>Replaced roughly 700 customer service employees with AI. Service quality declined, customers revolted, and the company had to rehire humans.<sup>12</sup></p>
+      </div>
+      <div class="deliverable-card">
+        <h3>29% and rising</h3>
+        <p>Share of companies that made AI-related layoffs and have already rehired staff back, according to Forbes reporting on 2026 workforce data.<sup>13</sup></p>
+      </div>
+      <div class="deliverable-card">
+        <h3>Only 9%</h3>
+        <p>of executives, managers and workers surveyed said they'd want to replace their entire workforce with AI tools.<sup>11</sup></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION: PETITIONS -->
+  <section id="petitions" class="content-section noai-section noai-petitions">
+    <p class="noai-section-eyebrow">04 — Take action</p>
+    <h2 class="section-title">Real petitions. Real impact.</h2>
+    <p class="work-intro">
+      These are active, verifiable petitions and campaigns opposing unchecked AI data center expansion
+      across North America and the UK. Read them, and sign if they align with your view.
+    </p>
+    <div class="noai-petition-grid">
+      <a class="noai-petition-card" href="https://www.ourcommons.ca/petitions/en/Petition/Details?Petition=e-7427" target="_blank" rel="noopener">
+        <span class="noai-petition-tag">Canada · House of Commons</span>
+        <h3>Petition e-7427 — Moratorium on Alberta AI data centres</h3>
+        <p>Calls for a federal moratorium on hyperscale AI data centres in Alberta, including the proposed Wonder Valley and Synapse Olds projects.<sup>14</sup></p>
+        <span class="noai-petition-link">View &amp; sign &#x2197;</span>
+      </a>
+      <a class="noai-petition-card" href="https://sign.moveon.org/petitions/fight-back-and-ban-construction-of-ai-data-centers" target="_blank" rel="noopener">
+        <span class="noai-petition-tag">United States · MoveOn</span>
+        <h3>Fight back and ban construction of AI data centers</h3>
+        <p>National petition backed by more than 200 environmental organizations urging a moratorium on new AI data center construction.<sup>15</sup></p>
+        <span class="noai-petition-link">View &amp; sign &#x2197;</span>
+      </a>
+      <a class="noai-petition-card" href="https://petition.parliament.uk/petitions/731939" target="_blank" rel="noopener">
+        <span class="noai-petition-tag">United Kingdom · Parliament</span>
+        <h3>Halt data centre construction until eco-friendly solutions found</h3>
+        <p>Official UK Parliament petition demanding a construction halt on new data centres until sustainable cooling and power solutions are established.<sup>16</sup></p>
+        <span class="noai-petition-link">View &amp; sign &#x2197;</span>
+      </a>
+      <a class="noai-petition-card" href="https://vancouver.citynews.ca/2026/06/28/hundreds-protested-ai-data-centres-vancouver-petition-signatures/" target="_blank" rel="noopener">
+        <span class="noai-petition-tag">Vancouver, Canada</span>
+        <h3>Community petition against proposed Vancouver-area AI data centres</h3>
+        <p>Grassroots petition that has already gathered thousands of signatures following public protests against proposed data centres.<sup>17</sup></p>
+        <span class="noai-petition-link">View &amp; sign &#x2197;</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- SOURCES -->
+  <section class="content-section noai-sources">
+    <p class="noai-section-eyebrow">Sources</p>
+    <ol class="noai-source-list">
+      <li>Carbon Brief / International Energy Agency, "Energy and AI," 2025 — projected 945 TWh by 2030, equal to Japan's electricity demand.</li>
+      <li>Food & Water Watch, "How AI's Energy and Water Footprints Threaten Climate Progress," 2026 — CO2 footprint estimate for AI in 2025.</li>
+      <li>MOST Policy Initiative, "Data Center Water Use," 2026 — US direct water consumption, 2023–2028 projection.</li>
+      <li>Cognizant Consumer Survey, 2024, via Salted Stone — consumer distrust of AI-generated content.</li>
+      <li>Technical.ly, "Does using ChatGPT really take 10x more energy than Googling?," 2025.</li>
+      <li>MOST Policy Initiative, 2026 — US data center water use growth projections through 2028.</li>
+      <li>EESI, "Data Centers and Water Consumption," 2025, citing UC Riverside research.</li>
+      <li>EESI, 2025 — daily water use of large hyperscale data centers.</li>
+      <li>Instagram / waterloop, 2026, citing utility disclosures — Olympic pool equivalent for mid-size data center daily water use.</li>
+      <li>American Impact Review, "Consumer Trust in AI-Generated Marketing Content," 2026.</li>
+      <li>CIO.com / Udacity workforce survey, "Push to replace workers with AI faces backlash," 2026.</li>
+      <li>HR Executive, "The AI layoff trap: Why half will be quietly rehired," 2025 — Klarna case.</li>
+      <li>Forbes, "Companies Fired Workers For AI. Now They Want Them Back," May 2026.</li>
+      <li>House of Commons of Canada, Petition e-7427, 2026.</li>
+      <li>MoveOn.org, "Fight back and ban construction of AI data centers," 2026.</li>
+      <li>UK Parliament Petitions, Petition 731939.</li>
+      <li>CityNews Vancouver, "Hundreds protested AI data centres in Vancouver," June 2026.</li>
+    </ol>
+  </section>
+
+  <!-- CTA -->
+  <section class="about-cta-section noai-cta">
+    <div class="about-cta-bg"></div>
+    <h2 class="about-cta-title">Choose human-made. Choose Sipply.</h2>
+    <p class="about-cta-sub">Marketing that doesn't cost the planet — or your customers' trust.</p>
+    <a class="button primary large" href="index.html#consultation">Book Consultation</a>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html"><img src="IMG/logo.svg" width="60" height="60" alt="Sipply Consulting" loading="lazy" /></a>
+        <p class="footer-tagline">Let us go back to human-centered marketing for brands that don't rely on AI.</p>
+      </div>
+      <nav class="footer-nav-grid">
+        <div class="footer-col">
+          <span class="footer-col-title">Site</span>
+          <a href="index.html#services">Services</a>
+          <a href="work.html">Work</a>
+          <a href="about.html">About</a>
+          <a href="no-ai.html">No A.I.</a>
+        </div>
+        <div class="footer-col">
+          <span class="footer-col-title">Connect</span>
+          <a href="consultation.html">Consultation</a>
+          <a href="faq.html">FAQ</a>
+        </div>
+        <div class="footer-col">
+          <span class="footer-col-title">Legal</span>
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <a href="terms.html">Terms &amp; Conditions</a>
+        </div>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <p>Sipply Consulting &copy; 2026. All rights reserved. Website development by Tom Sipply.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  if (typeof gsap !== "undefined" && typeof ScrollTrigger !== "undefined") {
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.fromTo(".noai-eyebrow, .noai-hero-title, .noai-hero-sub, .noai-hero-actions",
+      { y: 40, opacity: 0 },
+      { y: 0, opacity: 1, duration: 1, ease: "power4.out", stagger: 0.12 });
+
+    gsap.utils.toArray(".noai-fact-card, .noai-petition-card, .deliverable-card").forEach((el, i) => {
+      gsap.fromTo(el, { y: 34, opacity: 0 }, {
+        y: 0, opacity: 1, duration: 0.8, ease: "power3.out", delay: (i % 4) * 0.08,
+        scrollTrigger: { trigger: el, start: "top 90%", toggleActions: "play none none none" }
+      });
+    });
+
+    gsap.utils.toArray(".noai-section-eyebrow, .section-title, .work-intro").forEach((el) => {
+      gsap.fromTo(el, { y: 30, opacity: 0 }, {
+        y: 0, opacity: 1, duration: 0.9, ease: "power3.out",
+        scrollTrigger: { trigger: el, start: "top 90%", toggleActions: "play none none none" }
+      });
+    });
+
+    gsap.utils.toArray(".noai-chart-card, .noai-stat-tile, .noai-versus-card").forEach((el, i) => {
+      gsap.fromTo(el, { y: 40, opacity: 0, scale: 0.97 }, {
+        y: 0, opacity: 1, scale: 1, duration: 0.9, ease: "power4.out", delay: (i % 2) * 0.1,
+        scrollTrigger: { trigger: el, start: "top 88%", toggleActions: "play none none none" }
+      });
+    });
+
+    gsap.fromTo(".noai-quote-block", { opacity: 0, y: 20 }, {
+      opacity: 1, y: 0, duration: 1,
+      scrollTrigger: { trigger: ".noai-quote-block", start: "top 90%", toggleActions: "play none none none" }
+    });
+
+    gsap.fromTo(".noai-cta .about-cta-title, .noai-cta .about-cta-sub, .noai-cta .button",
+      { y: 30, opacity: 0 },
+      { y: 0, opacity: 1, duration: 0.9, ease: "power3.out", stagger: 0.12,
+        scrollTrigger: { trigger: ".noai-cta", start: "top 88%", toggleActions: "play none none none" } });
+  }
+
+  /* ── Lazy-load background videos when card scrolls into view ── */
+  document.querySelectorAll(".noai-bg-video").forEach(video => {
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          video.play().catch(() => {});
+        } else {
+          video.pause();
+        }
+      });
+    }, { threshold: 0.15 });
+    obs.observe(video);
+  });
+
+  /* ── Counter animation via IntersectionObserver (independent of GSAP) ── */
+  const counters = document.querySelectorAll(".noai-counter-num");
+  let countersStarted = false;
+
+  function runCounters() {
+    if (countersStarted) return;
+    countersStarted = true;
+    counters.forEach(el => {
+      const target = parseFloat(el.dataset.target);
+      const suffix = el.dataset.suffix || "";
+      const duration = 1600;
+      const startTime = performance.now();
+      function step(now) {
+        const progress = Math.min((now - startTime) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        const current = Math.round(target * eased);
+        el.textContent = current + suffix;
+        if (progress < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    });
+  }
+
+  const counterSection = document.querySelector(".noai-counters");
+  if (counterSection) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          runCounters();
+          observer.disconnect();
+        }
+      });
+    }, { threshold: 0.3 });
+    observer.observe(counterSection);
+  }
+
+  /* ── Chart theme + shared config ─────────────────────── */
+  function chartTheme() {
+    const dark = document.documentElement.getAttribute("data-theme") === "dark";
+    return {
+      text: dark ? "#a0a0a0" : "#666666",
+      grid: dark ? "rgba(255,255,255,0.06)" : "rgba(0,0,0,0.06)",
+      tooltipBg: dark ? "#1a1a1a" : "#ffffff",
+      tooltipText: dark ? "#ffffff" : "#111111",
+      orange: "#ff6a00",
+      orangeSoft: "rgba(255,106,0,0.22)",
+      pink: "#ff3b8c",
+      blue: "#00c2ff",
+      green: "#00e5a0",
+      purple: "#7c5cff"
+    };
+  }
+  const T = chartTheme();
+
+  const sharedTooltip = {
+    backgroundColor: T.tooltipBg,
+    titleColor: T.tooltipText,
+    bodyColor: T.tooltipText,
+    borderColor: T.grid,
+    borderWidth: 1,
+    padding: 12,
+    cornerRadius: 8,
+    titleFont: { size: 12, weight: "600" },
+    bodyFont: { size: 12 }
+  };
+
+  function makeGradient(ctx, colorStart) {
+    const g = ctx.createLinearGradient(0, 0, 0, 260);
+    g.addColorStop(0, colorStart);
+    g.addColorStop(1, "rgba(0,0,0,0)");
+    return g;
+  }
+
+  function animateOnVisible(canvasId, factory) {
+    const canvas = document.getElementById(canvasId);
+    if (!canvas) return;
+    let created = false;
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !created) {
+          created = true;
+          factory(canvas.getContext("2d"));
+          observer.disconnect();
+        }
+      });
+    }, { threshold: 0.2 });
+    observer.observe(canvas);
+  }
+
+  function miniLineChart(canvas, data, color, colorSoft) {
+    const ctx = canvas.getContext("2d");
+    return new Chart(ctx, {
+      type: "line",
+      data: {
+        labels: data.map((_, i) => i),
+        datasets: [{
+          data: data,
+          borderColor: color,
+          backgroundColor: makeGradient(ctx, colorSoft),
+          fill: true, tension: 0.45, pointRadius: 0, borderWidth: 2.5
+        }]
+      },
+      options: {
+        animation: { duration: 1800, easing: "easeOutQuart" },
+        plugins: { legend: { display: false }, tooltip: { enabled: false } },
+        scales: { x: { display: false }, y: { display: false } },
+        elements: { point: { radius: 0 } }
+      }
+    });
+  }
+
+  animateOnVisible("sparkEnergy", (ctx) => {
+    miniLineChart(ctx.canvas, [415, 480, 560, 660, 760, 860, 945], T.orange, T.orangeSoft);
+  });
+
+  animateOnVisible("sparkWater", (ctx) => {
+    miniLineChart(ctx.canvas, [17.4, 20, 24, 30, 38, 46, 55], T.blue, "rgba(0,194,255,0.22)");
+  });
+
+  function animateCountUp(el) {
+    const target = parseFloat(el.dataset.countTarget);
+    const duration = 1600;
+    const startTime = performance.now();
+    function step(now) {
+      const progress = Math.min((now - startTime) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = Math.round(target * eased).toLocaleString();
+      if (progress < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  document.querySelectorAll(".noai-stat-big").forEach(el => {
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) { animateCountUp(el); obs.disconnect(); }
+      });
+    }, { threshold: 0.4 });
+    obs.observe(el);
+  });
+
+  document.querySelectorAll(".noai-versus-fill").forEach(el => {
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const pct = el.dataset.pct;
+          requestAnimationFrame(() => { el.style.width = pct + "%"; });
+          obs.disconnect();
+        }
+      });
+    }, { threshold: 0.3 });
+    obs.observe(el);
+  });
+
+  animateOnVisible("chartTrust", (ctx) => {
+    new Chart(ctx, {
+      type: "doughnut",
+      data: {
+        labels: ["Distrust AI images/video", "Avoid sites suspected of AI content", "No strong reaction"],
+        datasets: [{
+          data: [42, 23, 35],
+          backgroundColor: [T.pink, T.orange, T.grid],
+          borderWidth: 0,
+          hoverOffset: 10
+        }]
+      },
+      options: {
+        cutout: "62%",
+        animation: { animateRotate: true, duration: 1400 },
+        plugins: {
+          legend: { position: "bottom", labels: { color: T.text, font: { size: 12 }, usePointStyle: true, pointStyle: "circle" } },
+          tooltip: { ...sharedTooltip, callbacks: { label: (c) => `${c.label}: ${c.parsed}%` } }
+        }
+      }
+    });
+  });
+
+  animateOnVisible("chartWorkforce", (ctx) => {
+    new Chart(ctx, {
+      type: "bar",
+      data: {
+        labels: ["AI can't create future products/services", "Customers prefer humans", "Security/privacy concerns", "Want full AI workforce"],
+        datasets: [{
+          data: [62, 53, 49, 9],
+          backgroundColor: T.green,
+          borderRadius: 6,
+          maxBarThickness: 28
+        }]
+      },
+      options: {
+        indexAxis: "y",
+        animation: { duration: 1500, easing: "easeOutQuart" },
+        plugins: { legend: { display: false }, tooltip: { ...sharedTooltip,
+          callbacks: { label: (c) => `${c.parsed.x}% agree` } } },
+        scales: {
+          x: { ticks: { color: T.text, callback: (v) => v + "%" }, grid: { color: T.grid }, max: 70 },
+          y: { ticks: { color: T.text, font: { size: 12 } }, grid: { display: false } }
+        }
+      }
+    });
+  });
+
+  if (typeof ScrollTrigger !== "undefined") {
+    window.addEventListener("load", () => { ScrollTrigger.refresh(); });
+  }
+});
+</script>
+</body>
+</html>

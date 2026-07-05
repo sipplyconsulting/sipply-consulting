@@ -9,11 +9,6 @@
 - upload to github with new git account  (done)
 - connect to cloudflare 
 
-Notes:
-- No need to repeat "git init" or "git remote add origin" — only done once when repo was first set up.
-- "git push" alone works after the first push since upstream is already linked (-u origin main was set initially).
-- Always write a clear commit message so you can track what changed later.
-
 GIT STATUS SYMBOLS
 --------------------
 M   = Modified        (file changed, not yet staged)

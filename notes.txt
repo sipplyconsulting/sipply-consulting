@@ -1,8 +1,8 @@
 'visit website' hover button over logos that can also change colours
 
 - buy a domain (done)
-- buy a email 
-- register to calendar 
+- buy a email (done)
+- register to calendar (done)
 - new account for form submission 
 - register GA4 
 - setup stripe payment 

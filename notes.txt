@@ -1,12 +1,12 @@
 'visit website' hover button over logos that can also change colours
 
-- buy a domain 
+- buy a domain (done)
 - buy a email 
 - register to calendar 
 - new account for form submission 
 - register GA4 
 - setup stripe payment 
-- upload to github with new git account 
+- upload to github with new git account  (done)
 - connect to cloudflare 
 
 
@@ -48,3 +48,11 @@ After running "git add .":
   Changes to be committed:
     modified:   work.html          <-- green M
     new file:   IMG/work/project-alpha.jpg   <-- green A
+
+
+    GIT VIA VS CODE (NO TERMINAL)
+------------------------------
+1. Open Source Control panel (left sidebar icon)
+2. Type commit message in top text box
+3. Cmd+Enter (or click "Commit") to commit
+4. Click cloud/sync icon at bottom to push

@@ -3,20 +3,12 @@
 - buy a domain (done)
 - buy a email (done)
 - register to calendar (done)
-- new account for form submission 
-- register GA4 
-- setup stripe payment 
+- new account for form submission (done)
+- register GA4 (done)
+- setup stripe payment (done)
 - upload to github with new git account  (done)
 - connect to cloudflare 
 
-
-GIT UPDATE WORKFLOW
---------------------
-1. cd path/to/your/sipply-consulting-project
-2. git status              (see what changed)
-3. git add .                (stage all changes)
-4. git commit -m "describe your change here"
-5. git push                 (send to GitHub)
 
 Notes:
 - No need to repeat "git init" or "git remote add origin" — only done once when repo was first set up.
@@ -48,11 +40,3 @@ After running "git add .":
   Changes to be committed:
     modified:   work.html          <-- green M
     new file:   IMG/work/project-alpha.jpg   <-- green A
-
-
-    GIT VIA VS CODE (NO TERMINAL)
-------------------------------
-1. Open Source Control panel (left sidebar icon)
-2. Type commit message in top text box
-3. Cmd+Enter (or click "Commit") to commit
-4. Click cloud/sync icon at bottom to push

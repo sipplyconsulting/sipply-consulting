@@ -744,41 +744,54 @@ window.addEventListener("load", () => {
     if (e.key === "Escape" && isPopupOpen) closeQuotePopup();
   });
 
-  const estimateResult = document.getElementById("quote-estimate-result");
-  const estimateBox = document.getElementById("quote-estimate-box");
-  const estimateRange = document.getElementById("quote-estimate-range");
-  const estimateNote = document.getElementById("quote-estimate-note");
-
   const pricing = {
     "Strategy & Content": {
-      "Small · 1–3 pieces": [800, 1500],
-      "Medium · 4–10 pieces": [1500, 3500],
-      "Large · 10+ pieces": [3500, 7000],
-      "Not sure yet": [1000, 4000],
+      "Small · 1–3 deliverables": [800, 1500],
+      "Medium · 4–8 deliverables": [1500, 3200],
+      "Large · 9+ deliverables": [3200, 6000],
+      "Not sure yet": [1100, 3200],
     },
     "SEO / AEO": {
-      "Small · 1–3 pieces": [600, 1200],
-      "Medium · 4–10 pieces": [1200, 3000],
-      "Large · 10+ pieces": [3000, 6000],
-      "Not sure yet": [800, 3500],
+      "Small · 1–3 deliverables": [600, 1200],
+      "Medium · 4–8 deliverables": [1200, 2800],
+      "Large · 9+ deliverables": [2800, 5500],
+      "Not sure yet": [800, 3000],
+    },
+    "CRO & Optimisation": {
+      "Small · 1–3 deliverables": [700, 1400],
+      "Medium · 4–8 deliverables": [1400, 3000],
+      "Large · 9+ deliverables": [3000, 5800],
+      "Not sure yet": [1000, 3200],
     },
     "Website Copy": {
-      "Small · 1–3 pieces": [700, 1400],
-      "Medium · 4–10 pieces": [1400, 3200],
-      "Large · 10+ pieces": [3200, 7500],
-      "Not sure yet": [1000, 4000],
+      "Small · 1–3 deliverables": [700, 1400],
+      "Medium · 4–8 deliverables": [1400, 3200],
+      "Large · 9+ deliverables": [3200, 6800],
+      "Not sure yet": [1000, 3600],
     },
     "Market Analysis": {
-      "Small · 1–3 pieces": [500, 1000],
-      "Medium · 4–10 pieces": [1000, 2500],
-      "Large · 10+ pieces": [2500, 5000],
-      "Not sure yet": [700, 3000],
+      "Small · 1–3 deliverables": [500, 1000],
+      "Medium · 4–8 deliverables": [1000, 2400],
+      "Large · 9+ deliverables": [2400, 4500],
+      "Not sure yet": [700, 2600],
+    },
+    "Social & Email": {
+      "Small · 1–3 deliverables": [500, 1000],
+      "Medium · 4–8 deliverables": [1000, 2200],
+      "Large · 9+ deliverables": [2200, 4200],
+      "Not sure yet": [700, 2400],
+    },
+    "Reputation & GMB": {
+      "Small · 1–3 deliverables": [450, 900],
+      "Medium · 4–8 deliverables": [900, 1900],
+      "Large · 9+ deliverables": [1900, 3600],
+      "Not sure yet": [600, 2000],
     },
     "Full Package": {
-      "Small · 1–3 pieces": [2000, 4000],
-      "Medium · 4–10 pieces": [4000, 9000],
-      "Large · 10+ pieces": [9000, 18000],
-      "Not sure yet": [3000, 10000],
+      "Small · 1–3 deliverables": [2200, 3800],
+      "Medium · 4–8 deliverables": [4800, 8500],
+      "Large · 9+ deliverables": [9500, 16000],
+      "Not sure yet": [3000, 8500],
     },
   };
 
@@ -789,6 +802,10 @@ window.addEventListener("load", () => {
     "Just exploring": 1.0,
   };
 
+  // Hourly rate is not finalized yet — set to null to hide hours in the estimate.
+  // Once a rate is confirmed, set this to a number (e.g. 175) to re-enable the hours line.
+  const HOURLY_RATE = null;
+
   function getSelected(group) {
     const btn = quotePopup.querySelector(
       `.quote-choice-row[data-group="${group}"] button.is-selected`,
@@ -796,49 +813,56 @@ window.addEventListener("load", () => {
     return btn ? btn.getAttribute("data-val") : null;
   }
 
-  function formatCAD(n) {
-    return "$" + Math.round(n / 100) * 100 + " CAD";
-  }
-
   function updateEstimate() {
     const service = getSelected("service");
-    const start = getSelected("start");
     const size = getSelected("size");
     const timeline = getSelected("timeline");
 
+    const estimateBoxEl = document.getElementById("quote-estimate-box");
+    const estimateResultEl = document.getElementById("quote-estimate-result");
+    const rangeEl = document.getElementById("quote-estimate-range");
+    const hoursEl = document.getElementById("quote-estimate-hours");
+    const noteEl = document.getElementById("quote-estimate-note");
+
     if (!service || !size) {
-      if (estimateResult) estimateResult.style.display = "none";
-      if (estimateBox) estimateBox.style.display = "flex";
+      estimateBoxEl.style.display = "block";
+      estimateResultEl.style.display = "none";
       return;
     }
 
-    if (start === "Ongoing monthly retainer") {
-      if (estimateRange) estimateRange.textContent = "Custom rate";
-      if (estimateNote) {
-        estimateNote.textContent =
-          "Retainer pricing is scoped monthly — book a consultation for a tailored rate.";
-      }
-    } else {
-      const base = pricing[service]?.[size] || [1000, 3000];
-      const mult = urgencyMultiplier[timeline] || 1.0;
-      const lo = base[0] * mult;
-      const hi = base[1] * mult;
-
-      if (estimateRange) {
-        estimateRange.textContent = formatCAD(lo) + " – " + formatCAD(hi);
-      }
-
-      const urgencyNote = mult > 1 ? " Rush rate applied." : "";
-      if (estimateNote) {
-        estimateNote.textContent =
-          "Rough estimate based on scope." +
-          urgencyNote +
-          " Final pricing confirmed after consultation.";
-      }
+    const baseRange = pricing[service] ? pricing[service][size] : null;
+    if (!baseRange) {
+      estimateBoxEl.style.display = "block";
+      estimateResultEl.style.display = "none";
+      return;
     }
 
-    if (estimateBox) estimateBox.style.display = "none";
-    if (estimateResult) estimateResult.style.display = "block";
+    const multiplier = timeline ? urgencyMultiplier[timeline] : 1.0;
+    const low = Math.round((baseRange[0] * multiplier) / 25) * 25;
+    const high = Math.round((baseRange[1] * multiplier) / 25) * 25;
+
+    rangeEl.textContent = `$${low.toLocaleString()} – $${high.toLocaleString()}`;
+
+    if (HOURLY_RATE) {
+      const lowHours = Math.round(low / HOURLY_RATE);
+      const highHours = Math.round(high / HOURLY_RATE);
+      hoursEl.textContent = `Roughly ${lowHours}–${highHours} hours at $${HOURLY_RATE}/hr`;
+      hoursEl.style.display = "block";
+    } else {
+      hoursEl.textContent = "";
+      hoursEl.style.display = "none";
+    }
+
+    let note = "This is a starting estimate. Final scope and pricing confirmed after a quick consultation.";
+    if (timeline === "Urgent · <2 weeks") {
+      note = "Includes a 30% rush fee for turnaround under 2 weeks. Final scope confirmed after a quick consultation.";
+    } else if (size === "Not sure yet") {
+      note = "This is a starting range — most projects like yours land here. We'll nail down specifics together.";
+    }
+    noteEl.textContent = note;
+
+    estimateBoxEl.style.display = "none";
+    estimateResultEl.style.display = "block";
   }
 
   quotePopup.querySelectorAll(".quote-choice-row button").forEach((btn) => {
@@ -953,12 +977,12 @@ if (document.getElementById("srv-sticky-wrap")) {
     {
       tag: "Strategy",
       title: ["Content", "Strategy"],
-      desc: "A content strategy is the backbone of every brand that earns attention. We map your audience, define your voice, and build editorial roadmaps that turn browsers into believers.",
+      desc: "Content strategy is the backbone of every brand to get you noticed. I will take a closer look at your audience, define your voice, and build editorial roadmaps so you can connect with your audience more efficiently."
     },
     {
       tag: "Search",
       title: ["SEO", "& AEO"],
-      desc: "Search engines reward expertise and clarity. We optimise for traditional search and the growing answer engine landscape — ensuring your brand shows up where decisions are made.",
+      desc: "My goal for your website is simple: I want you to rank above your competitors. My expertise in optimizing both the user experience and search rankings can help you achieve higher visibility, more traffic, and better conversions.",
     },
     {
       tag: "Conversion",
@@ -979,6 +1003,11 @@ if (document.getElementById("srv-sticky-wrap")) {
       tag: "Social & Email",
       title: ["Social &", "Email"],
       desc: "Consistent, human-written social content and email campaigns that build community and drive repeat engagement. No recycled templates, no AI-padded newsletters.",
+    },
+    {
+      tag: "Reputation",
+      title: ["Reputation", "& GMB"],
+      desc: "Your online reputation shapes every decision a potential customer makes before they ever contact you. We manage your Google Business Profile and review presence so your brand shows up accurately, ranks locally, and builds trust before the first conversation even happens.",
     },
   ];
 

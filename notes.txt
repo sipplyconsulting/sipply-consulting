@@ -9,6 +9,8 @@
 - upload to github with new git account  (done)
 - connect to cloudflare 
 
+- video  Thanh Văn
+
 GIT STATUS SYMBOLS
 --------------------
 M   = Modified        (file changed, not yet staged)

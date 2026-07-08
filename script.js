@@ -1,7 +1,3 @@
-/* ============================================================
-   Sipply Consulting — script.js
-   Stack: Lenis smooth scroll + GSAP ScrollTrigger + ScrollToPlugin
-   ============================================================ */
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 

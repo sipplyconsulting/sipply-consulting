@@ -988,12 +988,12 @@ if (document.getElementById("srv-sticky-wrap")) {
     {
       tag: "Copy",
       title: ["Website", "Copywriting"],
-      desc: "Your website is your best salesperson. We write homepage, service, and about copy that speaks to real humans — sharp, specific, and built to convert.",
+      desc: "Your website is your best salesperson. I write for you a homepage with copy that speaks to resonates with your audience.",
     },
     {
       tag: "Research",
       title: ["Market", "Analysis"],
-      desc: "Decisions without data are guesses. We deliver in-depth competitive research and market positioning reports that reveal where your brand stands — and how to move ahead.",
+      desc: "Decisions without data are guesses. I deliver in-depth competitive research and market positioning reports that reveal where your brand stands and how to move ahead.",
     },
     {
       tag: "Social & Email",
@@ -1003,7 +1003,7 @@ if (document.getElementById("srv-sticky-wrap")) {
     {
       tag: "Reputation",
       title: ["Reputation", "& GMB"],
-      desc: "Your online reputation shapes every decision a potential customer makes before they ever contact you. We manage your Google Business Profile and review presence so your brand shows up accurately, ranks locally, and builds trust before the first conversation even happens.",
+      desc: "Your online reputation shapes every decision a potential customer makes before they ever contact you. I manage your Google Business Profile and review presence so your brand shows up accurately, ranks locally, and builds trust before the first conversation even happens.",
     },
   ];
 

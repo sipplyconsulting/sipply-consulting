@@ -9,7 +9,6 @@
       content="SEO marketing consulting that ditches AI-flavored content for human-driven strategy, SEO, CRO, and copywriting."
     />
 
-    <!-- Google tag (gtag.js) -->
     <script
       async
       src="https://www.googletagmanager.com/gtag/js?id=G-D6DXEQFZNW"
@@ -20,7 +19,6 @@
         dataLayer.push(arguments);
       }
       gtag("js", new Date());
-
       gtag("config", "G-D6DXEQFZNW");
     </script>
     <script>
@@ -54,18 +52,348 @@
       href="/IMG/favicon-16x16.png"
     />
     <link rel="stylesheet" href="styles.css" />
+    <style>
+      .svc-showcase-section,
+      .contact-section {
+        padding: 140px 0;
+        border-top: 1px solid var(--line);
+      }
+
+      .svc-showcase-inner {
+        display: grid;
+        grid-template-columns: minmax(320px, 460px) minmax(0, 1fr);
+        gap: 100px;
+        align-items: start;
+      }
+
+      .svc-showcase-left {
+        width: 100%;
+        max-width: 460px;
+        min-width: 280px;
+      }
+
+      .svc-showcase-eyebrow {
+        margin: 0 0 20px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+
+      .svc-showcase-list {
+        margin: 0 0 40px;
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        list-style: none;
+        padding: 0;
+      }
+      .svc-showcase-item {
+        display: block;
+        font-size: clamp(1.9rem, 3.4vw, 2.6rem);
+        font-weight: 600;
+        line-height: 1.18;
+        letter-spacing: -0.02em;
+        padding: 4px 0;
+        cursor: pointer;
+        color: var(--muted);
+        opacity: 0.35;
+        white-space: normal;
+        transition:
+          color var(--transition),
+          opacity var(--transition);
+      }
+
+      .svc-showcase-item.is-active {
+        color: var(--text);
+        opacity: 1;
+      }
+
+      .svc-showcase-item:hover {
+        color: var(--text);
+        opacity: 0.8;
+      }
+
+      .svc-showcase-desc {
+        margin: 180px 0 32px;
+        max-width: 40ch;
+        color: var(--muted);
+        line-height: 1.7;
+      }
+      .svc-showcase-right {
+        display: flex;
+        flex-direction: row;
+        align-items: stretch;
+        gap: 12px;
+        width: 100%;
+      }
+
+      .svc-showcase-frame {
+        position: relative;
+        flex: 1 1 auto;
+        width: 100%;
+        height: 640px;
+        border-radius: 20px;
+        overflow: hidden;
+        background: var(--card);
+        border: none;
+        cursor: pointer;
+        order: 2;
+      }
+
+    .svc-showcase-color {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  overflow: hidden;
+  border-radius: inherit;
+}
+
+.svc-showcase-color.is-active {
+  opacity: 1;
+}
+
+.svc-showcase-color img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+#svc-showcase-img-0 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+      .svc-showcase-thumbs {
+        order: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 10px;
+        flex-shrink: 0;
+      }
+
+      .svc-showcase-thumb {
+        width: 64px;
+        height: 54px;
+        border-radius: 6px;
+        overflow: hidden;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+        opacity: 0.35;
+        transition: opacity 0.2s ease;
+        background: none;
+        flex-shrink: 0;
+      }
+
+      .svc-showcase-thumb-color {
+        width: 100%;
+        height: 100%;
+        display: block;
+      }
+
+      .svc-showcase-thumb.is-active {
+        opacity: 1;
+      }
+
+      .svc-showcase-thumb:hover {
+        opacity: 0.7;
+      }
+
+      .svc-showcase-thumb-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+  display: block;
+}
+
+      .svc-color-0 {
+        background: linear-gradient(135deg, #ff6a3d, #ffd3b3);
+      }
+      .svc-color-1 {
+        background: linear-gradient(135deg, #8ec5fc, #e0c3fc);
+      }
+      .svc-color-2 {
+        background: linear-gradient(135deg, #84fab0, #8fd3f4);
+      }
+      .svc-color-3 {
+        background: linear-gradient(135deg, #f6d365, #fda085);
+      }
+
+      /* ============ Contact Section ============ */
+      .contact-split {
+        display: grid;
+        grid-template-columns: minmax(0, 340px) minmax(0, 620px);
+        gap: 64px;
+        align-items: start;
+        justify-content: space-between;
+      }
+
+      .contact-left {
+        padding-top: 4px;
+      }
+
+      .contact-left .svc-showcase-eyebrow {
+        margin-bottom: 16px;
+      }
+
+      .contact-left h2.contact-heading {
+        font-size: clamp(2.2rem, 3.6vw, 2.8rem);
+        font-weight: 600;
+        letter-spacing: -0.03em;
+        line-height: 1.1;
+        margin: 0 0 16px;
+        color: var(--text);
+      }
+
+      .contact-intro-text {
+        font-size: 1.02rem;
+        color: var(--muted);
+        line-height: 1.75;
+        margin: 0;
+        max-width: 42ch;
+      }
+
+      .contact-form {
+        display: grid;
+        gap: 16px;
+        width: 100%;
+      }
+
+      .contact-form label {
+        display: block;
+        font-size: 0.78rem;
+        letter-spacing: 0.09em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin: 0 0 7px;
+      }
+
+      .contact-form input,
+      .contact-form textarea {
+        width: 100%;
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        background: var(--card);
+        color: var(--text);
+        padding: 14px 16px;
+        outline: none;
+        font-size: 0.97rem;
+        font-family: inherit;
+        transition:
+          border-color var(--transition),
+          background var(--transition);
+      }
+
+      .contact-form textarea {
+        min-height: 160px;
+        resize: vertical;
+        line-height: 1.7;
+      }
+
+      .contact-form input:focus,
+      .contact-form textarea:focus {
+        border-color: var(--text);
+        background: var(--bg);
+      }
+
+      .contact-form button.primary {
+        justify-self: start;
+      }
+
+      /* ── hero fixes ── */
+      .hero {
+        padding-top: 96px;
+      }
+
+      .hero-title {
+        overflow: visible;
+        padding-top: 0.1em;
+      }
+
+      .rotating-wheel {
+        display: inline-block;
+        position: relative;
+        height: 1.3em;
+        min-width: 1000px;
+        width: max-content;
+        overflow: hidden;
+        perspective: 600px;
+        transform-style: preserve-3d;
+        vertical-align: bottom;
+        white-space: nowrap;
+      }
+
+      .wheel-item {
+  display: block;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  text-align: left;
+  opacity: 0;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  overflow: hidden;
+}
+.wheel-item.active {
+  opacity: 1;
+}
+
+      /* ============ Responsive ============ */
+      @media (max-width: 860px) {
+        .svc-showcase-section,
+        .contact-section {
+          padding: 72px 0;
+        }
+
+        .svc-showcase-inner {
+          grid-template-columns: 1fr;
+          gap: 32px;
+        }
+
+        .svc-showcase-right {
+          flex-direction: column;
+        }
+
+        .svc-showcase-thumbs {
+          flex-direction: row;
+          order: 2;
+          justify-content: flex-start;
+        }
+
+        .svc-showcase-frame {
+          order: 1;
+          height: 380px;
+        }
+
+        .svc-showcase-item {
+          font-size: 1.6rem;
+        }
+
+        .contact-split {
+          grid-template-columns: 1fr;
+          gap: 32px;
+        }
+      }
+    </style>
   </head>
   <body>
     <header class="site-header">
       <a class="logo" href="index.html">SIPPLY Consulting</a>
       <div class="header-right">
         <nav class="site-nav">
-          <a href="services.html">My Services</a>
-          <a href="consultation.html">Consultation</a>
+          <a href="services.html">Services</a>
           <a href="work.html">Projects</a>
           <a href="about.html">About</a>
-          <a href="faq.html">FAQ</a>
-          <a href="no-ai.html">No AI</a>
+          <a href="#message">Contact</a>
+
         </nav>
         <button
           class="theme-toggle"
@@ -73,8 +401,8 @@
           type="button"
           aria-label="Toggle theme"
         >
-          <span class="theme-icon sun">☀</span>
-          <span class="theme-icon moon">☾</span>
+          <span class="theme-icon sun">☾</span>
+          <span class="theme-icon moon">☀</span>
         </button>
         <button
           class="burger"
@@ -109,12 +437,10 @@
         </svg>
       </button>
       <nav class="mobile-nav-links">
-        <a href="services.html">My Services</a>
-        <a href="consultation.html">Consultation</a>
+        <a href="services.html">Services</a>
         <a href="work.html">Projects</a>
         <a href="about.html">About</a>
-        <a href="faq.html">FAQ</a>
-        <a href="no-ai.html">No AI</a>
+        <a href="#message">Contact</a>
       </nav>
       <div class="mobile-nav-footer">
         <button
@@ -123,8 +449,8 @@
           type="button"
           aria-label="Toggle theme"
         >
-          <span class="theme-icon sun">☀</span>
-          <span class="theme-icon moon">☾</span>
+          <span class="theme-icon sun">☾</span>
+          <span class="theme-icon moon">☀</span>
         </button>
       </div>
     </div>
@@ -142,25 +468,20 @@
                 <span class="wheel-item"
                   >their business to rank efficiently.</span
                 >
-                <span class="wheel-item">to work with humans.</span>
-                <span class="wheel-item"
-                  >trustworthy SEO keyword research.</span
-                >
+                <span class="wheel-item">to work with a human.</span>
+                <span class="wheel-item">trustworthy SEO research.</span>
               </span>
             </h1>
             <p class="hero-sub">
-              'Stand out' again and get SEO marketing strategies or a
-              consultation that sets your brand apart from the current AI-driven
-              narrative. At the core of my consultation and content strategy
-              service is SEO (including local SEO), AEO, and GEO. I'll help you
-              with keyword research, on-page optimization, and content strategy
-              to improve your ranking and traffic.
+              Stand out and get SEO marketing strategies that set your brand apart from the current AI-driven narrative. 
+              At the core of my services is SEO (including local SEO), AEO, and GEO. 
+              I'll help you with keyword research, on-page optimization, and content strategy to improve your ranking and traffic.
             </p>
             <div class="hero-actions">
-              <a class="button primary" href="consultation.html"
+              <a class="button primary" href="services.html#book"
                 >Book consultation — CA$175</a
               >
-              <a class="button secondary" href="consultation.html#message"
+              <a class="button secondary" href="#message"
                 >Contact me</a
               >
             </div>
@@ -380,12 +701,12 @@
                           id="quote-estimate-note"
                         ></p>
                         <div class="quote-estimate-actions">
-                          <a class="button primary" href="consultation.html"
+                          <a class="button primary" href="services.html#book"
                             >Book a consultation</a
                           >
                           <a
                             class="button secondary"
-                            href="consultation.html#message"
+                            href="#message"
                             >Send a message first</a
                           >
                         </div>
@@ -397,540 +718,273 @@
             </div>
           </div>
         </div>
-
-        <div class="hero-client-strip" aria-label="Brands written for">
-          <div class="hero-client-track" id="client-logos-track">
-            <div class="client-logo-wrap">
-              <img
-                src="IMG/company-logos/industrios-logo.png"
-                alt="Industrios"
-                class="client-logo-img client-logo-img--large"
-              />
-              <a
-                class="client-visit-pill"
-                href="https://industrios.com/"
-                target="_blank"
-                rel="noopener"
-              >
-                <span class="pill-arrow">&#x2197;</span>
-                <span class="pill-text">Visit Website</span>
-              </a>
-            </div>
-            <div class="client-logo-wrap">
-              <img
-                src="IMG/company-logos/Procom_Logo_Path.svg"
-                alt="Procom"
-                class="client-logo-img"
-              />
-              <a
-                class="client-visit-pill"
-                href="https://procomservices.com/en-ca/"
-                target="_blank"
-                rel="noopener"
-              >
-                <span class="pill-arrow">&#x2197;</span>
-                <span class="pill-text">Visit Website</span>
-              </a>
-            </div>
-            <div class="client-logo-wrap">
-              <img
-                src="IMG/company-logos/Shoplogix_Logo.svg"
-                alt="Shoplogix"
-                class="client-logo-img"
-              />
-              <a
-                class="client-visit-pill"
-                href="https://shoplogix.com/"
-                target="_blank"
-                rel="noopener"
-              >
-                <span class="pill-arrow">&#x2197;</span>
-                <span class="pill-text">Visit Website</span>
-              </a>
-            </div>
-            <div class="client-logo-wrap">
-              <img
-                src="IMG/company-logos/glass-place-wordmark.svg"
-                alt="The Glass Place"
-                class="client-logo-img client-logo-img--no-filter"
-              />
-              <a
-                class="client-visit-pill"
-                href="https://glassplace.com/"
-                target="_blank"
-                rel="noopener"
-              >
-                <span class="pill-arrow">&#x2197;</span>
-                <span class="pill-text">Visit Website</span>
-              </a>
-            </div>
-            <div class="client-logo-wrap">
-              <img
-                src="IMG/company-logos/Cartoon_Net_transparent.svg"
-                alt="Cartoon Network"
-                class="client-logo-img"
-              />
-              <a
-                class="client-visit-pill"
-                href="https://wbd-deutschland.de/"
-                target="_blank"
-                rel="noopener"
-              >
-                <span class="pill-arrow">&#x2197;</span>
-                <span class="pill-text">Visit Website</span>
-              </a>
-            </div>
-            <div class="client-logo-wrap">
-              <img
-                src="IMG/company-logos/logo-white.png"
-                alt="DASH"
-                class="client-logo-img"
-              />
-              <a
-                class="client-visit-pill"
-                href="https://www.dashpm.ca/"
-                target="_blank"
-                rel="noopener"
-              >
-                <span class="pill-arrow">&#x2197;</span>
-                <span class="pill-text">Visit Website</span>
-              </a>
-            </div>
-            <div class="client-logo-wrap">
-              <img
-                src="IMG/company-logos/FINN-black.svg"
-                alt="FINN"
-                class="client-logo-img"
-              />
-              <a
-                class="client-visit-pill"
-                href="https://www.finn.com/en-DE/blog"
-                target="_blank"
-                rel="noopener"
-              >
-                <span class="pill-arrow">&#x2197;</span>
-                <span class="pill-text">Visit Website</span>
-              </a>
-            </div>
-            <div class="client-logo-wrap">
-              <img
-                src="IMG/company-logos/simple-folds.svg"
-                alt="Simple Folds"
-                class="client-logo-img"
-              />
-              <a
-                class="client-visit-pill"
-                href="https://simplefolds.ca/"
-                target="_blank"
-                rel="noopener"
-              >
-                <span class="pill-arrow">&#x2197;</span>
-                <span class="pill-text">Visit Website</span>
-              </a>
-            </div>
-
-            <!-- Duplicate set for seamless marquee loop -->
-            <div class="client-logo-wrap" aria-hidden="true">
-              <img
-                src="IMG/company-logos/industrios-logo.png"
-                alt="Industrios"
-                class="client-logo-img client-logo-img--large"
-              />
-              <a
-                class="client-visit-pill"
-                href="https://industrios.com/"
-                target="_blank"
-                rel="noopener"
-                tabindex="-1"
-              >
-                <span class="pill-arrow">&#x2197;</span>
-                <span class="pill-text">Visit Website</span>
-              </a>
-            </div>
-            <div class="client-logo-wrap" aria-hidden="true">
-              <img
-                src="IMG/company-logos/Procom_Logo_Path.svg"
-                alt=""
-                class="client-logo-img"
-              />
-              <a
-                class="client-visit-pill"
-                href="https://procomservices.com/en-ca/"
-                target="_blank"
-                rel="noopener"
-                tabindex="-1"
-              >
-                <span class="pill-arrow">&#x2197;</span>
-                <span class="pill-text">Visit Website</span>
-              </a>
-            </div>
-            <div class="client-logo-wrap" aria-hidden="true">
-              <img
-                src="IMG/company-logos/Shoplogix_Logo.svg"
-                alt="Shoplogix"
-                class="client-logo-img"
-              />
-              <a
-                class="client-visit-pill"
-                href="https://shoplogix.com/"
-                target="_blank"
-                rel="noopener"
-                tabindex="-1"
-              >
-                <span class="pill-arrow">&#x2197;</span>
-                <span class="pill-text">Visit Website</span>
-              </a>
-            </div>
-            <div class="client-logo-wrap">
-              <img
-                src="IMG/company-logos/glass-place-wordmark.svg"
-                alt="The Glass Place"
-                class="client-logo-img client-logo-img--no-filter"
-              />
-              <a
-                class="client-visit-pill"
-                href="https://glassplace.com/"
-                target="_blank"
-                rel="noopener"
-              >
-                <span class="pill-arrow">&#x2197;</span>
-                <span class="pill-text">Visit Website</span>
-              </a>
-            </div>
-            <div class="client-logo-wrap" aria-hidden="true">
-              <img
-                src="IMG/company-logos/Cartoon_Net_transparent.svg"
-                alt="Cartoon Network"
-                class="client-logo-img"
-              />
-              <a
-                class="client-visit-pill"
-                href="https://wbd-deutschland.de/"
-                target="_blank"
-                rel="noopener"
-                tabindex="-1"
-              >
-                <span class="pill-arrow">&#x2197;</span>
-                <span class="pill-text">Visit Website</span>
-              </a>
-            </div>
-            <div class="client-logo-wrap" aria-hidden="true">
-              <img
-                src="IMG/company-logos/logo-white.png"
-                alt="Dash"
-                class="client-logo-img"
-              />
-              <a
-                class="client-visit-pill"
-                href="https://www.dashpm.ca/"
-                target="_blank"
-                rel="noopener"
-                tabindex="-1"
-              >
-                <span class="pill-arrow">&#x2197;</span>
-                <span class="pill-text">Visit Website</span>
-              </a>
-            </div>
-            <div class="client-logo-wrap" aria-hidden="true">
-              <img
-                src="IMG/company-logos/FINN-black.svg"
-                alt="FINN"
-                class="client-logo-img"
-              />
-              <a
-                class="client-visit-pill"
-                href="https://www.finn.com/en-DE/blog"
-                target="_blank"
-                rel="noopener"
-                tabindex="-1"
-              >
-                <span class="pill-arrow">&#x2197;</span>
-                <span class="pill-text">Visit Website</span>
-              </a>
-            </div>
-            <div class="client-logo-wrap" aria-hidden="true">
-              <img
-                src="IMG/company-logos/simple-folds.svg"
-                alt="Simple Folds"
-                class="client-logo-img"
-              />
-              <a
-                class="client-visit-pill"
-                href="https://simplefolds.ca/"
-                target="_blank"
-                rel="noopener"
-                tabindex="-1"
-              >
-                <span class="pill-arrow">&#x2197;</span>
-                <span class="pill-text">Visit Website</span>
-              </a>
-            </div>
-          </div>
-        </div>
       </section>
 
-      <section id="services" class="content-section services-preview">
-        <p class="services-eyebrow">What I can do for you</p>
-        <h2 class="section-title">Services</h2>
-        <p class="work-intro">
-          I can help your brand back to valuable content and marketing in a
-          myriad of ways. Here are a few of the most common services I provide,
-          but if you have a unique situation, reach out and we can discuss a
-          custom solution.
-        </p>
-        <div class="services-preview-grid">
-          <div class="services-preview-item" data-glow="1">
-            <span class="service-num">01</span>
-            <h3>Strategy &amp; Content</h3>
-            <p>
-              I'll build you a content strategy that focuses on your audience.
+      <section id="explore" class="svc-showcase-section">
+        <div class="svc-showcase-inner">
+          <div class="svc-showcase-left">
+            <p class="svc-showcase-eyebrow">Get to know Sipply Consulting</p>
+            <ul class="svc-showcase-list" id="svc-showcase-list">
+              <li
+                class="svc-showcase-item is-active"
+                data-index="0"
+                data-target="services.html"
+              >
+                My services
+              </li>
+              <li
+                class="svc-showcase-item"
+                data-index="1"
+                data-target="work.html"
+              >
+                My projects
+              </li>
+              <li
+                class="svc-showcase-item"
+                data-index="2"
+                data-target="about.html"
+              >
+                About me
+              </li>
+              <li
+                class="svc-showcase-item"
+                data-index="3"
+                data-target="pricing.html"
+              >
+                Pricing
+              </li>
+            </ul>
+            <p class="svc-showcase-desc" id="svc-showcase-desc">
+              New opportunities for engagement are easy to miss. In-depth
+              industry, competitor, and audience insights show you where to
+              look.
             </p>
-          </div>
-          <div class="services-preview-item" data-glow="2">
-            <span class="service-num">02</span>
-            <h3>CRO, SEO &amp; AEO</h3>
-            <p>
-              Technical fixes and funnel work so people can find your services.
-            </p>
-          </div>
-          <div class="services-preview-item" data-glow="3">
-            <span class="service-num">03</span>
-            <h3>Website Copywriting</h3>
-            <p>
-              I create web pages that sound like you, and not like any other
-              website.
-            </p>
-          </div>
-          <div class="services-preview-item" data-glow="4">
-            <span class="service-num">04</span>
-            <h3>Market Analysis</h3>
-            <p>Competitive research that tells you what to do next.</p>
-          </div>
-        </div>
-        <a class="button primary section-cta-btn" href="services.html"
-          >View all services</a>
-      </section>
-
-      <!-- Work section -->
-      <section id="work" class="content-section">
-        <h2 class="section-title">Projects</h2>
-        <p class="work-intro">
-          From consultation to content strategy, I've taken on a variety of
-          services to help your brands visibility, and drive a sustainable
-          business growth, without stretching your internal team.
-        </p>
-        <div class="work-grid">
-          <div class="work-card parallax-work">
-            <div class="work-image">
-              <img
-                src="IMG/industrios/industrios-1.png"
-                alt="Industrios Work 1"
-                class="work-image-img"
-              />
-              <div class="work-overlay">
-                <span class="work-overlay-tag">Website Copy</span>
-                <p class="work-overlay-text">
-                  Rebuilt content strategy from scratch, driving a 3x increase
-                  in organic traffic within 6 months.
-                </p>
-                <!-- <a class="work-overlay-link" href="work.html"
-                  >View case study &#x2192;</a> -->
-              </div>
-            </div>
-            <div class="work-content">
-              <h3>Industrios ERP</h3>
-              <p>
-                INDUSTRIOS Software, Inc. uses technology and business process
-                improvements to help small and medium sized manufacturing firms
-                optimize their investment in inventory, improve customer
-                satisfaction, and profitability.
-              </p>
-            </div>
-          </div>
-          <div class="work-card parallax-work">
-            <div class="work-image">
-              <img
-                src="IMG/the-glass-place/glass-place-2.png"
-                alt="The Glass Place Work 1"
-                class="work-image-img"
-              />
-              <div class="work-overlay">
-                <span class="work-overlay-tag">Local SEO</span>
-                <p class="work-overlay-text">
-                  Website copywriting and local SEO optimization to increase
-                  leads and calls.
-                </p>
-                <!-- <a class="work-overlay-link" href="work.html"
-                  >View case study &#x2192;</a> -->
-              </div>
-            </div>
-            <div class="work-content">
-              <h3>The Glass Place</h3>
-              <p>
-                The Glass Place is a one-stop shop for stained-glass and all the
-                tools, supplies, and accessories for glass artists.
-              </p>
-            </div>
-          </div>
-          <div class="work-card parallax-work">
-            <div class="work-image">
-              <img
-                src="IMG/finn/finn-6.png"
-                alt="FINN Work 1"
-                class="work-image-img"
-              />
-              <div class="work-overlay">
-                <span class="work-overlay-tag">AEO/GEO Blogs</span>
-                <p class="work-overlay-text">
-                  Writing and editing SEO content for their North American
-                  market.
-                </p>
-                <!-- <a class="work-overlay-link" href="work.html"
-                  >View case study &#x2192;</a> -->
-              </div>
-            </div>
-            <div class="work-content">
-              <h3>FINN</h3>
-              <p>Car subscription company from Munich, Germany.</p>
-            </div>
-          </div>
-        </div>
-        <a class="button primary section-cta-btn" href="work.html"
-          >Explore all projects </a>
-      </section>
-
-      <!-- About section -->
-      <section id="about" class="content-section split">
-        <div class="about-text">
-          <h2 class="section-title">About</h2>
-          <p>
-            Hi, my name is Tom and I'm a full-stack digital marketer. I
-            specialize in writing and optimizing websites, creating solid SEO
-            strategies, and engaging marketing campaigns that will help your
-            business to grow. Whether you're a small local business or an
-            established enterprise, I have the experience and tools to improve
-            your online presence and turn your visitors into loyal customers.
-          </p>
-          <a class="button primary section-cta-btn" href="about.html"
-            >More about me</a>
-        </div>
-        <div class="about-image parallax-about">
-          <img
-            src="IMG/profile-index.jpeg"
-            alt="Tom Sipply"
-            class="about-image-img"
-          />
-        </div>
-      </section>
-
-      <section id="consultation" class="content-section">
-        <div class="form-wrap">
-          <div class="form-intro">
-            <h2 class="section-title">Consultation</h2>
-            <span class="consult-price-tag">1-hour session — CA$175</span>
-            <p>
-              A focused working session on your marketing. Bring your situation
-              and leave with a clear read on what's not working, what to fix
-              first, and what to ignore.
-            </p>
-            <div
-              style="
-                display: flex;
-                gap: 12px;
-                flex-wrap: wrap;
-                margin-top: 28px;
-              "
+            <a class="button primary" href="services.html" id="svc-showcase-cta"
+              >Explore services</a
             >
-              <a class="button primary" href="consultation.html#schedule"
-                >Book a time</a
-              >
-              <a class="button secondary" href="consultation.html"
-                >Learn more</a
-              >
-            </div>
           </div>
-          <div>
-            <h3 class="section-title">Get in Touch</h3>
-            <p class="consult-form-label">
-              Just have a question? Send me a message first.
-            </p>
-            <form
-              class="contact-form"
-              id="index-contact-form"
-              action="https://api.web3forms.com/submit"
-              method="POST"
-            >
-              <input
-                type="hidden"
-                name="access_key"
-                value="5f9a1ac8-174d-4b20-a79a-7e77ac85a983"
-              />
-              <input
-                type="hidden"
-                name="subject"
-                value="New quick question — Sipply Consulting"
-              />
-              <input
-                type="hidden"
-                name="from_name"
-                value="Sipply Consulting Website"
-              />
-              <input type="checkbox" name="botcheck" style="display: none" />
 
-              <div>
-                <label for="idx-name">Name</label
-                ><input
-                  id="idx-name"
-                  name="name"
-                  type="text"
-                  placeholder="Your name"
-                  required
-                />
-              </div>
-              <div>
-                <label for="idx-email">Email</label
-                ><input
-                  id="idx-email"
-                  name="email"
-                  type="email"
-                  placeholder="you@example.com"
-                  required
-                />
-              </div>
-              <div>
-                <label for="idx-website">Website (optional)</label
-                ><input
-                  id="idx-website"
-                  name="website"
-                  type="text"
-                  placeholder="yourcompany.com"
-                />
-              </div>
-              <div>
-                <label for="idx-message"
-                  >What are you trying to figure out?</label
-                ><textarea
-                  id="idx-message"
-                  name="message"
-                  placeholder="Share as much or as little as you like."
-                ></textarea>
-              </div>
-              <button
-                class="button primary"
-                type="submit"
-                id="index-submit-btn"
-              >
-                Send message
-              </button>
-              <p class="form-note" id="index-form-status"></p>
-            </form>
+          <div class="svc-showcase-right">
+            <div class="svc-showcase-thumbs" id="svc-showcase-thumbs">
+             <button type="button" class="svc-showcase-thumb is-active" data-index="0" aria-label="View My services">
+  <img src="IMG/index-wheel/index-services.png" alt="" class="svc-showcase-thumb-img" />
+</button>
+             <button type="button" class="svc-showcase-thumb is-active" data-index="0" aria-label="View My services">
+  <img src="IMG/index-wheel/index-projects.png" alt="" class="svc-showcase-thumb-img" />
+</button>
+              <button type="button" class="svc-showcase-thumb is-active" data-index="0" aria-label="View My services">
+  <img src="IMG/index-wheel/index-profile.jpeg" alt="" class="svc-showcase-thumb-img" />
+</button>
+               <button type="button" class="svc-showcase-thumb is-active" data-index="0" aria-label="View My services">
+  <img src="IMG/index-wheel/index-pricing.png" alt="" class="svc-showcase-thumb-img" />
+</button>
+            </div>
+
+            <div class="svc-showcase-frame" id="svc-showcase-frame">
+  <div class="svc-showcase-color svc-color-0 is-active" id="svc-showcase-img-0">
+    <img src="IMG/index-wheel/index-services.png" alt="My services" loading="lazy" />
+  </div>
+  <div class="svc-showcase-color svc-color-1" id="svc-showcase-img-1">
+    <img src="IMG/index-wheel/index-projects.png" alt="My projects" loading="lazy" />
+  </div>
+  <div class="svc-showcase-color svc-color-2" id="svc-showcase-img-2">
+    <img src="IMG/index-wheel/index-profile.jpeg" alt="About me" loading="lazy" />
+  </div>
+  <div class="svc-showcase-color svc-color-3" id="svc-showcase-img-3">
+    <img src="IMG/index-wheel/index-pricing.png" alt="Pricing" loading="lazy" />
+  </div>
+</div>
           </div>
+        </div>
+        <!-- <div class="svc-cursor-tag" id="svc-cursor-tag">Explore services</div> -->
+      </section>
+
+      <!-- Contact form -->
+      <section class="consult-block contact-section" id="message">
+        <div class="contact-split">
+          <div class="contact-left">
+            <p class="svc-showcase-eyebrow">Send me a message</p>
+            <h2 class="contact-heading">Get in touch</h2>
+            <p class="contact-intro-text">
+              Tell me a bit about your business, what you're trying to figure
+              out, and where things feel stuck. I read every message and reply
+              within 1–2 business days.
+            </p>
+          </div>
+
+          <form
+            class="contact-form"
+            id="index-contact-form"
+            action="https://api.web3forms.com/submit"
+            method="POST"
+          >
+            <input
+              type="hidden"
+              name="access_key"
+              value="5f9a1ac8-174d-4b20-a79a-7e77ac85a983"
+            />
+            <input
+              type="hidden"
+              name="subject"
+              value="New consultation inquiry — Sipply Consulting"
+            />
+            <input
+              type="hidden"
+              name="from_name"
+              value="Sipply Consulting Website"
+            />
+            <input type="checkbox" name="botcheck" style="display: none" />
+
+            <div>
+              <label for="index-name">Name</label>
+              <input
+                id="index-name"
+                name="name"
+                type="text"
+                placeholder="Your name"
+                required
+              />
+            </div>
+            <div>
+              <label for="index-email">Email</label>
+              <input
+                id="index-email"
+                name="email"
+                type="email"
+                placeholder="you@example.com"
+                required
+              />
+            </div>
+            <div>
+              <label for="index-website">Website (optional)</label>
+              <input
+                id="index-website"
+                name="website"
+                type="text"
+                placeholder="yourcompany.com"
+              />
+            </div>
+            <div>
+              <label for="index-message-field"
+                >What are you trying to figure out?</label
+              >
+              <textarea
+                id="index-message-field"
+                name="message"
+                placeholder="Share as much or as little as you like."
+              ></textarea>
+            </div>
+            <button class="button primary" type="submit" id="index-submit-btn">
+              Send message
+            </button>
+            <p id="index-form-status" role="status" aria-live="polite"></p>
+          </form>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
       <div class="footer-inner">
+        <div class="hero-client-strip" aria-label="Brands written for">
+          <div class="hero-client-track" id="client-logos-track">
+            <div class="client-logo-wrap">
+              <img
+                src="IMG/company-logos/industrios-logo.png"
+                alt="Industrios"
+                class="client-logo-img client-logo-img--large"/>
+            </div>
+            <div class="client-logo-wrap">
+              <img
+                src="IMG/company-logos/Procom_Logo_Path.svg"
+                alt="Procom"
+                class="client-logo-img"/>
+            </div>
+            <div class="client-logo-wrap">
+              <img
+                src="IMG/company-logos/Shoplogix_Logo.svg"
+                alt="Shoplogix"
+                class="client-logo-img"/>
+            </div>
+            <div class="client-logo-wrap">
+              <img
+                src="IMG/company-logos/glass-place-wordmark.svg"
+                alt="The Glass Place"
+                class="client-logo-img client-logo-img--no-filter"/>
+            </div>
+            <div class="client-logo-wrap">
+              <img
+                src="IMG/company-logos/Cartoon_Net_transparent.svg"
+                alt="Cartoon Network"
+                class="client-logo-img"/>
+            </div>
+            <div class="client-logo-wrap">
+              <img
+                src="IMG/company-logos/logo-white.png"
+                alt="DASH"
+                class="client-logo-img"/>
+            </div>
+            <div class="client-logo-wrap">
+              <img
+                src="IMG/company-logos/FINN-black.svg"
+                alt="FINN"
+                class="client-logo-img">
+            </div>
+            <div class="client-logo-wrap">
+              <img
+                src="IMG/company-logos/simple-folds.svg"
+                alt="Simple Folds"
+                class="client-logo-img"/>
+            </div>
+            <div class="client-logo-wrap" aria-hidden="true">
+              <img
+                src="IMG/company-logos/industrios-logo.png"
+                alt="Industrios"
+                class="client-logo-img client-logo-img--large"/>
+            </div>
+            <div class="client-logo-wrap" aria-hidden="true">
+              <img
+                src="IMG/company-logos/Procom_Logo_Path.svg"
+                alt=""
+                class="client-logo-img"/>
+            </div>
+            <div class="client-logo-wrap" aria-hidden="true">
+              <img
+                src="IMG/company-logos/Shoplogix_Logo.svg"
+                alt="Shoplogix"
+                class="client-logo-img"/>
+            </div>
+            <div class="client-logo-wrap">
+              <img
+                src="IMG/company-logos/glass-place-wordmark.svg"
+                alt="The Glass Place"
+                class="client-logo-img client-logo-img--no-filter"/>
+            </div>
+            <div class="client-logo-wrap" aria-hidden="true">
+              <img
+                src="IMG/company-logos/Cartoon_Net_transparent.svg"
+                alt="Cartoon Network"
+                class="client-logo-img">
+            </div>
+            <div class="client-logo-wrap" aria-hidden="true">
+              <img
+                src="IMG/company-logos/logo-white.png"
+                alt="Dash"
+                class="client-logo-img"/>
+            </div>
+            <div class="client-logo-wrap" aria-hidden="true">
+              <img
+                src="IMG/company-logos/FINN-black.svg"
+                alt="FINN"
+                class="client-logo-img">
+            </div>
+            <div class="client-logo-wrap" aria-hidden="true">
+              <img
+                src="IMG/company-logos/simple-folds.svg"
+                alt="Simple Folds"
+                class="client-logo-img"/>
+            </div>
+          </div>
+        </div>
         <div class="footer-top">
           <div class="footer-brand">
             <a href="index.html">
@@ -939,8 +993,7 @@
                 width="60"
                 height="60"
                 alt="Sipply Consulting"
-                loading="lazy"
-              />
+                loading="lazy"/>
             </a>
             <p class="footer-tagline">
               Let us go back to reliable marketing strategies for brands that do
@@ -953,19 +1006,22 @@
               <span class="footer-col-title">Site</span>
               <a href="services.html">Services</a>
               <a href="work.html">Projects</a>
+              <a href="pricing.html">Pricing</a>
               <a href="about.html">About</a>
-              <a href="no-ai.html">No AI</a>
             </div>
             <div class="footer-col">
               <span class="footer-col-title">Connect</span>
-              <a href="consultation.html">Consultation</a>
-              <a href="consultation.html#message">Contact Me</a>
+              <a href="l#message">Contact</a>
               <a href="faq.html">FAQ</a>
             </div>
             <div class="footer-col">
               <span class="footer-col-title">Legal</span>
               <a href="privacy-policy.html">Privacy Policy</a>
               <a href="terms.html">Terms &amp; Conditions</a>
+            </div>
+            <div class="footer-col">
+              <span class="footer-col-title">Extra</span>
+              <a href="no-ai.html">No AI</a>
             </div>
           </nav>
         </div>
@@ -981,54 +1037,159 @@
 
     <script src="script.js"></script>
     <script>
-      const indexForm = document.getElementById("index-contact-form");
-      const indexStatus = document.getElementById("index-form-status");
-      const indexBtn = document.getElementById("index-submit-btn");
+      const indexContactForm = document.getElementById("index-contact-form");
+      const indexFormStatus = document.getElementById("index-form-status");
+      const indexSubmitBtn = document.getElementById("index-submit-btn");
 
-      indexForm.addEventListener("submit", function (e) {
-        e.preventDefault();
-        indexBtn.disabled = true;
-        indexBtn.textContent = "Sending...";
-        if (indexStatus) indexStatus.textContent = "";
+      if (indexContactForm) {
+        indexContactForm.addEventListener("submit", function (e) {
+          e.preventDefault();
+          indexSubmitBtn.disabled = true;
+          indexSubmitBtn.textContent = "Sending...";
+          if (indexFormStatus) indexFormStatus.textContent = "";
 
-        const formData = new FormData(indexForm);
-        const object = Object.fromEntries(formData);
-        const json = JSON.stringify(object);
+          const formData = new FormData(indexContactForm);
+          const object = Object.fromEntries(formData);
+          const json = JSON.stringify(object);
 
-        fetch("https://api.web3forms.com/submit", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json",
-          },
-          body: json,
-        })
-          .then(async (response) => {
-            let result = await response.json();
-            if (result.success) {
-              indexForm.reset();
-              if (indexStatus) {
-                indexStatus.textContent =
-                  "Message sent. I'll reply within 1–2 business days.";
+          fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              Accept: "application/json",
+            },
+            body: json,
+          })
+            .then(async (response) => {
+              let result = await response.json();
+              if (result.success) {
+                indexContactForm.reset();
+                if (indexFormStatus) {
+                  indexFormStatus.textContent =
+                    "Message sent. I'll reply within 1–2 business days.";
+                }
+              } else {
+                if (indexFormStatus) {
+                  indexFormStatus.textContent =
+                    "Something went wrong. Please try again or email tom@sipplyconsulting.ca directly.";
+                }
               }
-            } else {
-              if (indexStatus) {
-                indexStatus.textContent =
+              indexSubmitBtn.textContent = "Send message";
+              indexSubmitBtn.disabled = false;
+            })
+            .catch(() => {
+              if (indexFormStatus) {
+                indexFormStatus.textContent =
                   "Something went wrong. Please try again or email tom@sipplyconsulting.ca directly.";
               }
-            }
-            indexBtn.textContent = "Send message";
-            indexBtn.disabled = false;
-          })
-          .catch(() => {
-            if (indexStatus) {
-              indexStatus.textContent =
-                "Something went wrong. Please try again or email tom@sipplyconsulting.ca directly.";
-            }
-            indexBtn.textContent = "Send message";
-            indexBtn.disabled = false;
+              indexSubmitBtn.textContent = "Send message";
+              indexSubmitBtn.disabled = false;
+            });
+        });
+      }
+
+      (function () {
+        var descriptions = [
+          "New opportunities for engagement are easy to miss. In-depth industry, competitor, and audience insights show you where to look.",
+          "I look at your past work and case studies to show real, applied results rather than theory.",
+          "Get to know how I work, my background, and why I ditched the AI-flavored approach to marketing.",
+          "Transparent pricing for every service tier, so you know exactly what you're investing in before you book.",
+        ];
+
+        var ctaLabels = [
+          "Explore services",
+          "Explore projects",
+          "Explore about me",
+          "Explore pricing",
+        ];
+
+        var items = document.querySelectorAll(".svc-showcase-item");
+        var thumbs = document.querySelectorAll(".svc-showcase-thumb");
+        var colors = document.querySelectorAll(".svc-showcase-color");
+        var descEl = document.getElementById("svc-showcase-desc");
+        var ctaEl = document.getElementById("svc-showcase-cta");
+        var cursorTag = document.getElementById("svc-cursor-tag");
+        var frame = document.getElementById("svc-showcase-frame");
+
+        function setActive(index) {
+          items.forEach(function (el) {
+            el.classList.toggle(
+              "is-active",
+              parseInt(el.dataset.index, 10) === index,
+            );
           });
-      });
+          thumbs.forEach(function (el) {
+            el.classList.toggle(
+              "is-active",
+              parseInt(el.dataset.index, 10) === index,
+            );
+          });
+          colors.forEach(function (el, i) {
+            el.classList.toggle("is-active", i === index);
+          });
+          descEl.textContent = descriptions[index];
+          if (items[index] && items[index].dataset.target) {
+            ctaEl.setAttribute("href", items[index].dataset.target);
+          }
+          ctaEl.textContent = ctaLabels[index];
+          if (cursorTag) cursorTag.textContent = ctaLabels[index];
+        }
+
+        items.forEach(function (el) {
+          el.addEventListener("click", function () {
+            setActive(parseInt(el.dataset.index, 10));
+          });
+        });
+        thumbs.forEach(function (el) {
+          el.addEventListener("click", function () {
+            setActive(parseInt(el.dataset.index, 10));
+          });
+        });
+
+        if (frame && cursorTag) {
+          frame.addEventListener("mouseenter", function () {
+            cursorTag.classList.add("is-visible");
+          });
+          frame.addEventListener("mousemove", function (e) {
+            cursorTag.style.transform =
+              "translate(" +
+              (e.clientX + 18) +
+              "px, " +
+              (e.clientY + 18) +
+              "px)";
+          });
+          frame.addEventListener("mouseleave", function () {
+            cursorTag.classList.remove("is-visible");
+          });
+          frame.addEventListener("click", function () {
+            window.location.href = ctaEl.getAttribute("href");
+          });
+        }
+
+        setActive(0);
+
+        if (
+          typeof gsap !== "undefined" &&
+          typeof ScrollTrigger !== "undefined"
+        ) {
+          gsap.registerPlugin(ScrollTrigger);
+          gsap.fromTo(
+            ".svc-showcase-section",
+            { opacity: 0, y: 24 },
+            {
+              opacity: 1,
+              y: 0,
+              duration: 0.8,
+              ease: "power3.out",
+              scrollTrigger: {
+                trigger: ".svc-showcase-section",
+                start: "top 85%",
+                toggleActions: "play none none none",
+              },
+            },
+          );
+        }
+      })();
     </script>
   </body>
 </html>

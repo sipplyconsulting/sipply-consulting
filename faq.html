@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FAQ — Sipply Consulting</title>
-    
+
     <!-- Meta description for SEO -->
     <meta
       name="meta description"
@@ -57,7 +57,7 @@
       <div class="header-right">
         <nav class="site-nav">
           <a href="services.html">My Services</a>
-          <a href="consultation.html">Consultation</a>
+          <a href="pricing.html">Pricing</a>
           <a href="work.html">Projects</a>
           <a href="about.html">About</a>
           <a href="faq.html" aria-current="page" style="color: var(--text)"
@@ -108,9 +108,9 @@
       </button>
       <nav class="mobile-nav-links">
         <a href="services.html">Services</a>
+        <a href="pricing.html">Pricing</a>
         <a href="work.html">Work</a>
         <a href="about.html">About</a>
-        <a href="consultation.html">Consultation</a>
         <a href="faq.html">FAQ</a>
         <a href="no-ai.html">No AI</a>
 
@@ -156,6 +156,7 @@
         <button class="faq-filter-btn" data-cat="consultation">
           Consultation
         </button>
+        <button class="faq-filter-btn" data-cat="pricing">Pricing</button>
         <button class="faq-filter-btn" data-cat="practical">Practical</button>
       </nav>
 
@@ -370,27 +371,6 @@
             <h2 class="faq-group-title">Before you book a session</h2>
           </div>
           <div class="faq-list">
-            <!-- <article class="faq-item">
-              <button class="faq-toggle" aria-expanded="false">
-                <span>Do I need to prepare anything before a session?</span>
-                <svg
-                  class="faq-chevron"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                >
-                  <polyline points="6 9 12 15 18 9" />
-                </svg>
-              </button>
-              <div class="faq-body">
-                <p>
-                  Just the pre-session brief. You don't need to build a
-                  presentation or gather a stack of reports, the brief takes
-                  about 15 minutes and gives us both a clear starting point. 
-                </p>
-              </div>
-            </article> -->
             <article class="faq-item">
               <button class="faq-toggle" aria-expanded="false">
                 <span>Is this a sales call for a bigger project?</span>
@@ -437,22 +417,22 @@
           </div>
         </div>
 
-        <!-- Practical -->
-        <div class="faq-group" data-group="practical">
+        <!-- Pricing -->
+        <div class="faq-group" data-group="pricing" id="pricing">
           <div class="faq-group-meta">
             <p class="faq-group-eyebrow">
               <span
                 class="faq-group-dot"
-                style="background: rgba(255, 59, 140, 1)"
+                style="background: rgba(255, 149, 0, 1)"
               ></span>
-              Practical
+              Pricing
             </p>
-            <h2 class="faq-group-title">Pricing, logistics &amp; policies</h2>
+            <h2 class="faq-group-title">How pricing works</h2>
           </div>
           <div class="faq-list">
             <article class="faq-item">
               <button class="faq-toggle" aria-expanded="false">
-                <span>What's your pricing?</span>
+                <span>How is a project's price actually decided?</span>
                 <svg
                   class="faq-chevron"
                   viewBox="0 0 24 24"
@@ -465,13 +445,119 @@
               </button>
               <div class="faq-body">
                 <p>
-                  Projects are scoped and priced individually. I don't publish
-                  flat rates because the work varies too much to make that
-                  honest. The quote builder on the homepage gives a rough range
-                  before any conversation. If budget is a concern, say so early.
+                  Three things: scope (how many deliverables), starting point
+                  (building from scratch vs. rewriting existing work vs. an
+                  audit-only engagement), and timeline. See
+                  <a href="pricing.html">the pricing page</a> for starting
+                  ranges by service and project size, the numbers there
+                  reflect real quotes, not placeholders.
                 </p>
               </div>
             </article>
+            <article class="faq-item">
+              <button class="faq-toggle" aria-expanded="false">
+                <span>Does a rush timeline cost more?</span>
+                <svg
+                  class="faq-chevron"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="6 9 12 15 18 9" />
+                </svg>
+              </button>
+              <div class="faq-body">
+                <p>
+                  Yes. Turnaround under 2 weeks adds a 30% rush fee across
+                  every service. Standard timelines (within 1–3 months) get
+                  standard pricing with no surcharge.
+                </p>
+              </div>
+            </article>
+            <article class="faq-item">
+              <button class="faq-toggle" aria-expanded="false">
+                <span>Is the price I see final, or does it change later?</span>
+                <svg
+                  class="faq-chevron"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="6 9 12 15 18 9" />
+                </svg>
+              </button>
+              <div class="faq-body">
+                <p>
+                  The ranges on the pricing page and quote builder are
+                  starting estimates, not final invoices. The exact number is
+                  confirmed after a quick consultation once we've nailed down
+                  real scope, no surprise fees added mid-project without you
+                  knowing first.
+                </p>
+              </div>
+            </article>
+            <article class="faq-item">
+              <button class="faq-toggle" aria-expanded="false">
+                <span>Can I combine services into a package for a better rate?</span>
+                <svg
+                  class="faq-chevron"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="6 9 12 15 18 9" />
+                </svg>
+              </button>
+              <div class="faq-body">
+                <p>
+                  Yes. Bundling services (e.g. SEO plus copywriting, or a
+                  full brand-and-site relaunch) is priced as one coordinated
+                  engagement rather than separate invoices. See the package
+                  options on the <a href="pricing.html">pricing page</a>.
+                </p>
+              </div>
+            </article>
+            <article class="faq-item">
+              <button class="faq-toggle" aria-expanded="false">
+                <span>Do you charge hourly?</span>
+                <svg
+                  class="faq-chevron"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="6 9 12 15 18 9" />
+                </svg>
+              </button>
+              <div class="faq-body">
+                <p>
+                  Most projects are priced by scope, not by the hour, so you
+                  know the total cost upfront rather than watching a clock.
+                  Ongoing retainers are the exception and are scoped per
+                  cycle after an initial project together.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!-- Practical -->
+        <div class="faq-group" data-group="practical">
+          <div class="faq-group-meta">
+            <p class="faq-group-eyebrow">
+              <span
+                class="faq-group-dot"
+                style="background: rgba(255, 59, 140, 1)"
+              ></span>
+              Practical
+            </p>
+            <h2 class="faq-group-title">Logistics &amp; policies</h2>
+          </div>
+          <div class="faq-list">
             <article class="faq-item">
               <button class="faq-toggle" aria-expanded="false">
                 <span>Do you work with businesses outside Canada?</span>
@@ -581,9 +667,9 @@
             <span class="tline"><span>directly.</span></span>
           </h2>
           <div class="faq-cta-actions">
-            <a class="button primary large" href="consultation.html#schedule"
+            <a class="button primary large" href="services.html#book"
               >Book a consultation</a>
-            <a class="button secondary large" href="consultation.html#message"
+            <a class="button secondary large" href="index.html#message"
               >Send a message</a>
           </div>
         </div>
@@ -611,14 +697,15 @@
             <div class="footer-col">
               <span class="footer-col-title">Site</span>
               <a href="services.html">My Services</a>
+              <a href="pricing.html">Pricing</a>
               <a href="work.html">Projects</a>
               <a href="about.html">About</a>
               <a href="no-ai.html">No AI</a>
             </div>
             <div class="footer-col">
               <span class="footer-col-title">Connect</span>
-              <a href="consultation.html">Consultation</a>
-              <a href="consultation.html#message">Contact Me</a>
+              <a href="services.html#book">Consultation</a>
+              <a href="index.html#message">Contact Me</a>
               <a href="faq.html">FAQ</a>
             </div>
             <div class="footer-col">
@@ -659,12 +746,6 @@
           delay: 0.2,
         },
       );
-
-      // gsap.fromTo(
-      //   ".faq-hero-right",
-      //   { opacity: 0, y: 40 },
-      //   { opacity: 1, y: 0, duration: 1.2, ease: "power4.out", delay: 0.4 },
-      // );
 
       /* ── Filter pill + groups scroll reveal ── */
       gsap.fromTo(

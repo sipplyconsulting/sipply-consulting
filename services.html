@@ -1,485 +1,823 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Services — Sipply Consulting Services for small businesses or bigger enterprises</title>
-    <!-- Meta description for SEO -->
-    <meta
-      name="description"
-      content="Digital marketing services that do not rely on AI content, providing you with trusthworthy SEO, CRO, and copywriting."
-    />
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-D6DXEQFZNW"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>
+    Services & Consultation — Sipply Consulting | Human-Led SEO, Content & CRO
+  </title>
+  <meta name="description"
+    content="Hire Sipply Consulting for SEO, content, CRO, or copywriting — or book a 1-hour paid consultation for expert marketing advice. Calgary and Canada-wide." />
+  <link rel="canonical" href="https://www.sipplyconsulting.ca/services.html" />
 
-  gtag('config', 'G-D6DXEQFZNW');
-</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-D6DXEQFZNW"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+    gtag("config", "G-D6DXEQFZNW");
+  </script>
+  <script>
+    (function () {
+      var t;
+      try {
+        t = localStorage.getItem("sipply-theme");
+      } catch (e) { }
+      if (!t)
+        t = matchMedia("(prefers-color-scheme:dark)").matches
+          ? "dark"
+          : "light";
+      document.documentElement.setAttribute("data-theme", t);
+    })();
+  </script>
 
-    <script>
-      (function () {
-        var t;
-        try {
-          t = localStorage.getItem("sipply-theme");
-        } catch (e) {}
-        if (!t)
-          t = matchMedia("(prefers-color-scheme:dark)").matches
-            ? "dark"
-            : "light";
-        document.documentElement.setAttribute("data-theme", t);
-      })();
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/IMG/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/IMG/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/IMG/favicon-16x16.png" />
+  <link rel="stylesheet" href="styles.css" />
+
+  <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "serviceType": "Digital Marketing Consulting",
+        "provider": {
+          "@type": "LocalBusiness",
+          "name": "Sipply Consulting",
+          "areaServed": ["Calgary", "Canada", "United States"]
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "175",
+          "priceCurrency": "CAD",
+          "name": "1-Hour Marketing Consultation"
+        }
+      }
     </script>
-    <link
-      href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,600,700&display=swap"
-      rel="stylesheet"
-    />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
-    <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
 
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="/IMG/apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="/IMG/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="/IMG/favicon-16x16.png"
-    />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <header class="site-header">
-      <a class="logo" href="index.html">SIPPLY Consulting</a>
-      <div class="header-right">
-        <nav class="site-nav">
-          <a href="services.html" style="color: var(--text)">My Services</a>
-          <a href="consultation.html">Consultation</a>
-          <a href="work.html">Projects</a>
-          <a href="about.html">About</a>
-          <a href="faq.html">FAQ</a>
-          <a href="no-ai.html">No AI</a>
+  <style>
+    .paths-hero {
+      padding: 70px 0 80px;
+    }
 
-        </nav>
-        <button
-          class="theme-toggle"
-          id="theme-toggle"
-          type="button"
-          aria-label="Toggle theme"
-        >
-          <span class="theme-icon sun">☀</span>
-          <span class="theme-icon moon">☾</span>
-        </button>
-        <button
-          class="burger"
-          id="burger"
-          type="button"
-          aria-label="Open menu"
-          aria-expanded="false"
-        >
-          <span class="burger-line"></span>
-          <span class="burger-line"></span>
-          <span class="burger-line"></span>
-        </button>
-      </div>
-    </header>
+    .paths-hero-head {
+      max-width: 900px;
+      margin: 0 0 56px;
+    }
 
-    <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
-      <button
-        class="mobile-nav-close"
-        id="mobile-nav-close"
-        type="button"
-        aria-label="Close menu"
-      >
-        <svg
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-        >
-          <line x1="5" y1="5" x2="19" y2="19" />
-          <line x1="19" y1="5" x2="5" y2="19" />
-        </svg>
-      </button>
-      <nav class="mobile-nav-links">
-        <a href="services.html">My Services</a>
-        <a href="consultation.html">Consultation</a>
+    .srv-eyebrow {
+      display: block;
+      overflow: hidden;
+      margin-bottom: 18px;
+    }
+
+    .srv-eyebrow span {
+      display: inline-block;
+      font-size: 0.78rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .paths-hero-title {
+      font-size: clamp(2.6rem, 5vw, 4.2rem);
+      font-weight: 500;
+      letter-spacing: -0.03em;
+      line-height: 1.06;
+      margin: 0 0 22px;
+    }
+
+    .paths-hero-title .tline {
+      display: block;
+      overflow: hidden;
+    }
+
+    .paths-hero-title .tline span {
+      display: inline-block;
+    }
+
+    .paths-hero-desc {
+      font-size: 1.05rem;
+      color: var(--muted);
+      line-height: 1.7;
+      max-width: 62ch;
+      margin: 0;
+    }
+
+    .paths-hero-desc strong {
+      color: var(--text);
+    }
+
+    .paths-band-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .path-card-bold {
+      position: relative;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 44px 40px;
+      overflow: hidden;
+      cursor: pointer;
+      transition:
+        border-color 0.4s ease,
+        transform 0.4s ease;
+      isolation: isolate;
+      display: block;
+      min-height: 280px;
+    }
+
+    .path-card-bold:hover {
+      transform: translateY(-6px);
+      border-color: transparent;
+    }
+
+    .path-card-bold::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      z-index: -1;
+    }
+
+    .path-card-bold.path-a::before {
+      background: linear-gradient(135deg,
+          #7c5cff 0%,
+          #00c2ff 60%,
+          #34c759 100%);
+    }
+
+    .path-card-bold.path-b::before {
+      background: linear-gradient(135deg,
+          #ff3b3b 0%,
+          #ff9500 55%,
+          #ffd60a 100%);
+    }
+
+    .path-card-bold:hover::before {
+      opacity: 1;
+    }
+
+    .path-card-bold:hover .path-card-tag,
+    .path-card-bold:hover .path-card-title,
+    .path-card-bold:hover .path-card-desc,
+    .path-card-bold:hover .path-card-cta {
+      color: #000;
+    }
+
+    .path-card-bold:hover .path-card-num {
+      opacity: 0.18;
+    }
+
+    .path-card-num {
+      position: absolute;
+      top: -10px;
+      right: 10px;
+      font-size: 9rem;
+      font-weight: 700;
+      letter-spacing: -0.05em;
+      color: var(--text);
+      opacity: 0.06;
+      line-height: 1;
+      pointer-events: none;
+      transition: opacity 0.4s ease;
+    }
+
+    .path-card-tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 20px;
+      position: relative;
+      transition: color 0.4s ease;
+    }
+
+    .path-card-title {
+      font-size: clamp(1.7rem, 2.6vw, 2.3rem);
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      margin: 0 0 14px;
+      position: relative;
+      transition: color 0.4s ease;
+    }
+
+    .path-card-desc {
+      font-size: 1rem;
+      color: var(--muted);
+      line-height: 1.65;
+      margin: 0 0 32px;
+      max-width: 42ch;
+      position: relative;
+      transition: color 0.4s ease;
+    }
+
+    .path-card-cta {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.98rem;
+      font-weight: 600;
+      color: var(--text);
+      transition: color 0.4s ease;
+    }
+
+    .path-card-cta svg {
+      width: 16px;
+      height: 16px;
+      transition: transform 0.3s ease;
+    }
+
+    .path-card-bold:hover .path-card-cta svg {
+      transform: translateX(4px);
+    }
+
+    .srv-acc-section {
+      padding: 20px 0 100px;
+      border-top: 1px solid var(--line);
+    }
+
+    .srv-acc-head {
+      margin: 40px 0 44px;
+    }
+
+    .srv-tabs-eyebrow {
+      font-size: 0.75rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 0 0 16px;
+    }
+
+    .srv-acc-title {
+      font-size: clamp(2.2rem, 3.8vw, 3.2rem);
+      font-weight: 500;
+      letter-spacing: -0.03em;
+      line-height: 1.08;
+      margin: 0 0 12px;
+    }
+
+    .srv-acc-sub {
+      color: var(--muted);
+      font-size: 0.98rem;
+      margin: 0;
+      max-width: 60ch;
+    }
+
+    .srv-acc-list {
+      border-top: 1px solid var(--line);
+    }
+
+    .srv-acc-item {
+      border-bottom: 1px solid var(--line);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .srv-acc-item::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      transform: scaleY(0);
+      transform-origin: top;
+      transition: transform 0.45s ease;
+    }
+
+    .srv-acc-item.is-open::before {
+      transform: scaleY(1);
+    }
+
+    .srv-acc-item[data-accent="1"]::before {
+      background: #7c5cff;
+    }
+
+    .srv-acc-item[data-accent="2"]::before {
+      background: #00c2ff;
+    }
+
+    .srv-acc-item[data-accent="3"]::before {
+      background: #ff3b3b;
+    }
+
+    .srv-acc-item[data-accent="4"]::before {
+      background: #34c759;
+    }
+
+    .srv-acc-item[data-accent="5"]::before {
+      background: #ff9500;
+    }
+
+    .srv-acc-item[data-accent="6"]::before {
+      background: #ffd60a;
+    }
+
+    .srv-acc-item[data-accent="7"]::before {
+      background: #bf5af2;
+    }
+
+    .srv-acc-trigger {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      background: none;
+      border: none;
+      padding: 30px 8px;
+      cursor: pointer;
+      text-align: left;
+      font-family: inherit;
+    }
+
+    .srv-acc-trigger-num {
+      font-size: 0.85rem;
+      color: var(--muted);
+      font-weight: 500;
+      width: 32px;
+      flex-shrink: 0;
+    }
+
+    .srv-acc-trigger-title {
+      font-size: clamp(1.3rem, 2.2vw, 1.7rem);
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      flex: 1;
+      transition: color 0.3s ease;
+    }
+
+    .srv-acc-item.is-open .srv-acc-trigger-title {
+      color: var(--text);
+    }
+
+    .srv-acc-trigger-icon {
+      width: 34px;
+      height: 34px;
+      flex-shrink: 0;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition:
+        transform 0.4s ease,
+        border-color 0.3s ease;
+    }
+
+    .srv-acc-item.is-open .srv-acc-trigger-icon {
+      transform: rotate(45deg);
+      border-color: var(--text);
+    }
+
+    .srv-acc-trigger-icon svg {
+      width: 14px;
+      height: 14px;
+    }
+
+    .srv-acc-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease;
+    }
+
+    .srv-acc-body-inner {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(260px, 340px);
+      gap: 48px;
+      padding: 0 8px 40px 68px;
+    }
+
+    .srv-acc-desc {
+      font-size: 1rem;
+      color: var(--muted);
+      line-height: 1.75;
+      max-width: 56ch;
+      margin: 0 0 24px;
+    }
+
+    .srv-acc-cta-row {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .srv-acc-cta-secondary {
+      font-size: 0.86rem;
+      color: var(--muted);
+      text-decoration: underline;
+    }
+
+    .srv-acc-cta-secondary:hover {
+      color: var(--text);
+    }
+
+    .srv-acc-deliverables {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 9px;
+    }
+
+    .srv-acc-deliverables li {
+      font-size: 0.88rem;
+      color: var(--text);
+      padding: 9px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .srv-acc-deliverables li:first-child {
+      border-top: none;
+    }
+
+    /* ── BOOK SECTION — clean summary card above calendar ── */
+    .book-section {
+      padding: 80px 0 100px;
+      border-top: 1px solid var(--line);
+    }
+
+    .book-head {
+      margin: 0 0 40px;
+      max-width: 62ch;
+    }
+
+    .book-head h2 {
+      font-size: clamp(2.2rem, 3.6vw, 3rem);
+      font-weight: 500;
+      letter-spacing: -0.03em;
+      margin: 0 0 14px;
+    }
+
+    .book-head p {
+      color: var(--muted);
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    .book-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    .book-above {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+      padding: 28px 32px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: var(--card);
+    }
+
+    .book-price-tag {
+      display: inline-block;
+      background: var(--bg);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 8px 18px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .book-summary {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      flex: 1;
+      min-width: 0;
+    }
+
+    .book-summary li {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.5;
+      padding-left: 18px;
+      position: relative;
+      white-space: nowrap;
+    }
+
+    .book-summary li::before {
+      content: "—";
+      position: absolute;
+      left: 0;
+      color: var(--text);
+    }
+
+    .book-above .button {
+      flex-shrink: 0;
+      margin: 0;
+    }
+
+    #cal-booking-inline {
+      width: 100%;
+      min-height: 680px;
+    }
+
+    #cal-booking-inline iframe {
+      width: 100% !important;
+      border: 0;
+    }
+
+    @media (max-width: 900px) {
+      .paths-band-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .srv-acc-body-inner {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding-left: 8px;
+      }
+
+      .book-above {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 24px;
+      }
+
+      .book-summary {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .book-above .button {
+        width: 100%;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .path-card-num {
+        font-size: 6rem;
+      }
+
+      .path-card-bold {
+        min-height: 240px;
+        padding: 34px 28px;
+      }
+
+      .srv-acc-trigger {
+        gap: 16px;
+      }
+
+      .srv-acc-trigger-num {
+        width: 24px;
+      }
+
+      #cal-booking-inline {
+        min-height: 620px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <a class="logo" href="index.html">SIPPLY Consulting</a>
+    <div class="header-right">
+      <nav class="site-nav">
+        <a href="services.html" style="color: var(--text)">Services</a>
         <a href="work.html">Projects</a>
         <a href="about.html">About</a>
-        <a href="faq.html">FAQ</a>
-        <a href="no-ai.html">No AI</a>
-
+        <a href="index.html#message">Contact</a>
       </nav>
-      <div class="mobile-nav-footer">
-        <button
-          class="theme-toggle theme-toggle-mobile"
-          id="theme-toggle-mobile"
-          type="button"
-          aria-label="Toggle theme"
-        >
-          <span class="theme-icon sun">☀</span>
-          <span class="theme-icon moon">☾</span>
-        </button>
-      </div>
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle theme">
+        <span class="theme-icon sun">☾</span>
+        <span class="theme-icon moon">☀</span>
+      </button>
+      <button class="burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false">
+        <span class="burger-line"></span>
+        <span class="burger-line"></span>
+        <span class="burger-line"></span>
+      </button>
     </div>
+  </header>
 
-    <main>
-      <!-- HERO -->
-      <section class="srv-hero">
-        <div
-          class="srv-hero-inner"
-          style="width: min(1200px, calc(100% - 40px)); margin: 0 auto"
-        >
-          <div>
-            <span class="srv-eyebrow"><span>services i offer</span></span>
-            <h1 class="srv-hero-title">
-              <span class="tline"><span>Digital marketing</span></span>
-              <span class="tline"><span>and content strategies made</span></span>
-              <span class="tline"><span>for your brand.</span></span>
-            </h1>
-          </div>
-          <div class="srv-hero-right">
-            <p class="srv-hero-desc">
-              While AI may be taking over any second now, I offer the services of a real-life human who bring different ideas, diverse perspectives, and unique capabilities to the drawing board.             </p>
-            <div class="srv-hero-stats">
-              <div>
-                <span class="stat-num">10+</span
-                ><span class="stat-lbl">Brands served</span>
-              </div>
-              <div>
-                <span class="stat-num">7</span
-                ><span class="stat-lbl">Core services</span>
-              </div>
-              <div>
-                <span class="stat-num">0</span
-                ><span class="stat-lbl">AI generated content</span>
-              </div>
+  <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+    <button class="mobile-nav-close" id="mobile-nav-close" type="button" aria-label="Close menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="5" y1="5" x2="19" y2="19" />
+        <line x1="19" y1="5" x2="5" y2="19" />
+      </svg>
+    </button>
+    <nav class="mobile-nav-links">
+      <a href="services.html">Services</a>
+      <a href="work.html">Projects</a>
+      <a href="about.html">About</a>
+      <a href="index.html#message">Contact</a>
+    </nav>
+    <div class="mobile-nav-footer">
+      <button class="theme-toggle theme-toggle-mobile" id="theme-toggle-mobile" type="button" aria-label="Toggle theme">
+        <span class="theme-icon sun">☾</span>
+        <span class="theme-icon moon">☀</span>
+      </button>
+    </div>
+  </div>
+
+  <main>
+    <section class="paths-hero">
+      <div style="width: min(1200px, calc(100% - 40px)); margin: 0 auto">
+        <div class="paths-hero-head">
+          <span class="srv-eyebrow"><span>Services &amp; consultation</span></span>
+          <h1 class="paths-hero-title">
+            <span class="tline"><span>There are two ways</span></span>
+            <span class="tline"><span>we can work together.</span></span>
+          </h1>
+        </div>
+
+        <div class="paths-band-inner">
+          <a class="path-card-bold path-a" href="#services">
+            <span class="path-card-num">01</span>
+            <span class="path-card-tag">Path 1 — Hire me</span>
+            <h3 class="path-card-title">I know what I need done.</h3>
+            <p class="path-card-desc">
+              Pick a service below, send me the details, and I'll follow up
+              with scope and pricing.
+            </p>
+            <span class="path-card-cta">See services
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <polyline points="12 5 19 12 12 19" />
+              </svg></span>
+          </a>
+          <a class="path-card-bold path-b" href="#book">
+            <span class="path-card-num">02</span>
+            <span class="path-card-tag">Path 2 — Consultation</span>
+            <h3 class="path-card-title">I want expert advice.</h3>
+            <p class="path-card-desc">
+              Book a paid 60-minute working session — CA$175 — and leave with
+              concrete next steps for your marketing strategy.
+            </p>
+            <span class="path-card-cta">Book now
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <polyline points="12 5 19 12 12 19" />
+              </svg></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="srv-acc-section" id="services">
+      <div style="width: min(1200px, calc(100% - 40px)); margin: 0 auto">
+        <div class="srv-acc-head">
+          <p class="srv-tabs-eyebrow">Path 1 · What I offer</p>
+          <h2 class="srv-acc-title">
+            Seven services to help with your brand.
+          </h2>
+          <p class="srv-acc-sub">
+            Each service can be hired on its own or combined. Click to expand,
+            then request the one that fits.
+          </p>
+        </div>
+
+        <div class="srv-acc-list" id="srv-acc-list"></div>
+      </div>
+    </section>
+
+    <section class="book-section" id="book">
+      <div style="width: min(1200px, calc(100% - 40px)); margin: 0 auto">
+        <div class="book-head">
+          <h2>Book a consultation - $175/hr</h2>
+          <p>
+            This is for people who want an expert opinion before committing to
+            a project — not a required first step. A 60-minute working
+            session, CA$175, with a written follow-up within 48 hours.
+          </p>
+          <!-- <a class="button secondary" href="faq.html">More FAQs</a> -->
+        </div>
+        <div class="book-grid">
+          <div id="cal-booking-inline" data-lenis-prevent></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+   <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="hero-client-strip" aria-label="Brands written for">
+          <div class="hero-client-track" id="client-logos-track">
+            <div class="client-logo-wrap">
+              <img
+                src="IMG/company-logos/industrios-logo.png"
+                alt="Industrios"
+                class="client-logo-img client-logo-img--large"/>
+            </div>
+            <div class="client-logo-wrap">
+              <img
+                src="IMG/company-logos/Procom_Logo_Path.svg"
+                alt="Procom"
+                class="client-logo-img"/>
+            </div>
+            <div class="client-logo-wrap">
+              <img
+                src="IMG/company-logos/Shoplogix_Logo.svg"
+                alt="Shoplogix"
+                class="client-logo-img"/>
+            </div>
+            <div class="client-logo-wrap">
+              <img
+                src="IMG/company-logos/glass-place-wordmark.svg"
+                alt="The Glass Place"
+                class="client-logo-img client-logo-img--no-filter"/>
+            </div>
+            <div class="client-logo-wrap">
+              <img
+                src="IMG/company-logos/Cartoon_Net_transparent.svg"
+                alt="Cartoon Network"
+                class="client-logo-img"/>
+            </div>
+            <div class="client-logo-wrap">
+              <img
+                src="IMG/company-logos/logo-white.png"
+                alt="DASH"
+                class="client-logo-img"/>
+            </div>
+            <div class="client-logo-wrap">
+              <img
+                src="IMG/company-logos/FINN-black.svg"
+                alt="FINN"
+                class="client-logo-img">
+            </div>
+            <div class="client-logo-wrap">
+              <img
+                src="IMG/company-logos/simple-folds.svg"
+                alt="Simple Folds"
+                class="client-logo-img"/>
+            </div>
+            <div class="client-logo-wrap" aria-hidden="true">
+              <img
+                src="IMG/company-logos/industrios-logo.png"
+                alt="Industrios"
+                class="client-logo-img client-logo-img--large"/>
+            </div>
+            <div class="client-logo-wrap" aria-hidden="true">
+              <img
+                src="IMG/company-logos/Procom_Logo_Path.svg"
+                alt=""
+                class="client-logo-img"/>
+            </div>
+            <div class="client-logo-wrap" aria-hidden="true">
+              <img
+                src="IMG/company-logos/Shoplogix_Logo.svg"
+                alt="Shoplogix"
+                class="client-logo-img"/>
+            </div>
+            <div class="client-logo-wrap">
+              <img
+                src="IMG/company-logos/glass-place-wordmark.svg"
+                alt="The Glass Place"
+                class="client-logo-img client-logo-img--no-filter"/>
+            </div>
+            <div class="client-logo-wrap" aria-hidden="true">
+              <img
+                src="IMG/company-logos/Cartoon_Net_transparent.svg"
+                alt="Cartoon Network"
+                class="client-logo-img">
+            </div>
+            <div class="client-logo-wrap" aria-hidden="true">
+              <img
+                src="IMG/company-logos/logo-white.png"
+                alt="Dash"
+                class="client-logo-img"/>
+            </div>
+            <div class="client-logo-wrap" aria-hidden="true">
+              <img
+                src="IMG/company-logos/FINN-black.svg"
+                alt="FINN"
+                class="client-logo-img">
+            </div>
+            <div class="client-logo-wrap" aria-hidden="true">
+              <img
+                src="IMG/company-logos/simple-folds.svg"
+                alt="Simple Folds"
+                class="client-logo-img"/>
             </div>
           </div>
         </div>
-      </section>
-
-      <!-- STICKY SERVICES -->
-<div class="srv-sticky-wrap" id="srv-sticky-wrap">
-  <div class="srv-sticky-panel" id="srv-panel" data-active="0">
-    <div class="srv-panel-top">
-      <div class="srv-panel-tag">
-        <span id="panel-tag">Strategy</span>
-      </div>
-      <h2 class="srv-panel-title" id="panel-title">
-        <span>Content</span><span>Strategy</span>
-      </h2>
-      <div class="srv-panel-desc">
-        <span id="panel-desc">Content strategy is the backbone of every 
-          brand that wants to get noticed. I take a close look at your audience, 
-          define your voice, and build editorial roadmaps so you can 
-          connect with your audience more efficiently.</span>
-      </div>
-      <a class="srv-panel-cta" href="consultation.html#schedule" id="panel-cta"
-        >Book consultation →</a>
-    </div>
-    <div class="srv-panel-bottom">
-      <div class="srv-panel-progress" id="panel-progress">
-        <div class="srv-prog-dot active"></div>
-        <div class="srv-prog-dot"></div>
-        <div class="srv-prog-dot"></div>
-        <div class="srv-prog-dot"></div>
-        <div class="srv-prog-dot"></div>
-        <div class="srv-prog-dot"></div>
-        <div class="srv-prog-dot"></div>
-      </div>
-      <div class="srv-panel-count">
-        <strong id="panel-count">01</strong> / 07
-      </div>
-    </div>
-    <div class="srv-panel-index" id="panel-index">01</div>
-  </div>
-
-  <div class="srv-entries" id="srv-entries">
-    <div class="srv-entry is-active" data-index="0" id="srv-strategy">
-      <span class="srv-entry-num">01 / Strategy</span>
-      <h3 class="srv-entry-title">
-        <div class="srv-entry-title-wrap">
-          <span class="word"><span>Content</span></span>
-          <span class="word"><span>Strategy</span></span>
-          <div class="srv-entry-title-line"></div>
-        </div>
-      </h3>
-      <ul class="srv-entry-deliverables">
-        <li>Audience research &amp; persona development</li>
-        <li>Brand voice &amp; tone guidelines</li>
-        <li>Editorial calendar planning</li>
-        <li>Content gap analysis</li>
-        <li>Pillar &amp; cluster topic mapping</li>
-        <li>Distribution channel strategy</li>
-      </ul>
-      <p class="srv-entry-copy">
-        During the content strategy phase, 
-        I work with you to understand your brand, 
-        your content, and your site structure goals. 
-        From there, I build a content strategy that aligns with your business 
-        objectives and helps you reach the outcomes you're after.
-      </p>
-    </div>
-
-    <div class="srv-entry" data-index="1" id="srv-seo">
-      <span class="srv-entry-num">02 / Search</span>
-      <h3 class="srv-entry-title">
-        <div class="srv-entry-title-wrap">
-          <span class="word"><span>SEO</span></span>
-          <span class="word"><span>&amp;</span></span>
-          <span class="word"><span>AEO</span></span>
-          <div class="srv-entry-title-line"></div>
-        </div>
-      </h3>
-      <ul class="srv-entry-deliverables">
-        <li>Technical SEO audits</li>
-        <li>Local SEO implementations</li>
-        <li>Keyword research &amp; mapping</li>
-        <li>On-page &amp; meta optimisation</li>
-        <li>Schema markup implementation</li>
-        <li>Answer Engine Optimisation (AEO)</li>
-        <li>Search performance reporting</li>
-      </ul>
-      <p class="srv-entry-copy">
-        I run a detailed SEO audit, identify where you're losing visibility, and implement fixes that actually move the needle. From early strategy through to content and structure, the goal is making sure your website performs across both traditional search and AI-driven discovery.
-      </p>
-    </div>
-
-    <div class="srv-entry" data-index="2" id="srv-cro">
-      <span class="srv-entry-num">03 / Conversion</span>
-      <h3 class="srv-entry-title">
-        <div class="srv-entry-title-wrap">
-          <span class="word"><span>CRO</span></span>
-          <span class="word"><span>&amp;</span></span>
-          <span class="word"><span>Optimisation</span></span>
-          <div class="srv-entry-title-line"></div>
-        </div>
-      </h3>
-      <ul class="srv-entry-deliverables">
-        <li>Funnel audit &amp; heatmap analysis</li>
-        <li>Landing page copy rewrites</li>
-        <li>CTA architecture &amp; hierarchy</li>
-        <li>A/B testing strategy</li>
-        <li>Form &amp; checkout optimisation</li>
-        <li>Conversion-focused copy frameworks</li>
-      </ul>
-      <p class="srv-entry-copy">
-        I audit where people drop off in your funnel, 
-        rewrite the copy and layout around what's actually stopping them, 
-        and test changes.
-      </p>
-    </div>
-
-    <div class="srv-entry" data-index="3" id="srv-copy">
-      <span class="srv-entry-num">04 / Copy</span>
-      <h3 class="srv-entry-title">
-        <div class="srv-entry-title-wrap">
-          <span class="word"><span>Website</span></span>
-          <span class="word"><span>Copywriting</span></span>
-          <div class="srv-entry-title-line"></div>
-        </div>
-      </h3>
-      <ul class="srv-entry-deliverables">
-        <li>Homepage &amp; hero copy</li>
-        <li>Service &amp; product page narratives</li>
-        <li>About &amp; team page storytelling</li>
-        <li>Brand messaging guides</li>
-        <li>UX microcopy &amp; UI labels</li>
-        <li>Long-form blog &amp; resource articles</li>
-      </ul>
-      <p class="srv-entry-copy">
-        I write copy that reflects your brands tone and style, 
-        guides visitors toward the action you want, 
-        and holds up whether someone's reading your homepage or a 
-        product description three clicks deep.
-      </p>
-    </div>
-
-    <div class="srv-entry" data-index="4" id="srv-market">
-      <span class="srv-entry-num">05 / Research</span>
-      <h3 class="srv-entry-title">
-        <div class="srv-entry-title-wrap">
-          <span class="word"><span>Market</span></span>
-          <span class="word"><span>Analysis</span></span>
-          <div class="srv-entry-title-line"></div>
-        </div>
-      </h3>
-      <ul class="srv-entry-deliverables">
-        <li>Competitive landscape reports</li>
-        <li>SWOT &amp; gap analysis</li>
-        <li>Market positioning strategy</li>
-        <li>Trend &amp; opportunity identification</li>
-        <li>Audience sentiment research</li>
-        <li>Industry benchmark reporting</li>
-      </ul>
-      <p class="srv-entry-copy">
-        New opportunities for engagement are easy to miss. 
-        In-depth industry, competitor, and audience insights 
-        show you exactly where to look.
-      </p>
-    </div>
-
-    <div class="srv-entry" data-index="5" id="srv-social">
-      <span class="srv-entry-num">06 / Social &amp; Email</span>
-      <h3 class="srv-entry-title">
-        <div class="srv-entry-title-wrap">
-          <span class="word"><span>Social</span></span>
-          <span class="word"><span>&amp;</span></span>
-          <span class="word"><span>Email</span></span>
-          <div class="srv-entry-title-line"></div>
-        </div>
-      </h3>
-      <ul class="srv-entry-deliverables">
-        <li>Social media content calendars</li>
-        <li>Platform-native copy (LinkedIn, IG)</li>
-        <li>Email campaign strategy &amp; writing</li>
-        <li>Newsletter series development</li>
-        <li>Engagement &amp; growth tactics</li>
-        <li>Analytics &amp; performance reviews</li>
-      </ul>
-      <p class="srv-entry-copy"> 
-        Whether you’re building brand awareness, driving traffic, 
-        or nurturing leads, I'll create content that resonates with your 
-        target audience and aligns with your business objectives. 
-      </p>
-    </div>
-
-    <div class="srv-entry" data-index="6" id="srv-reputation">
-      <span class="srv-entry-num">07 / Reputation</span>
-      <h3 class="srv-entry-title">
-        <div class="srv-entry-title-wrap">
-          <span class="word"><span>Reputation</span></span>
-          <span class="word"><span>&amp;</span></span>
-          <span class="word"><span>GMB</span></span>
-          <div class="srv-entry-title-line"></div>
-        </div>
-      </h3>
-      <ul class="srv-entry-deliverables">
-        <li>Google My Business (GMB) management &amp; optimisation</li>
-        <li>Review generation &amp; response strategy</li>
-        <li>Local ranking &amp; map pack visibility</li>
-        <li>Reputation monitoring across platforms</li>
-        <li>Citation building &amp; NAP consistency</li>
-        <li>Crisis response &amp; negative review mitigation</li>
-      </ul>
-      <p class="srv-entry-copy">
-        I'll help you build and protect a strong local reputation that 
-        boosts your search rankings. I'll monitor and respond to local reviews, 
-        turning negatives into proof of your great customer service 
-        while amplifying your positive experiences to build trust. 
-      </p>
-    </div>
-  </div>
-</div>
-
-      <!-- PROCESS -->
-<section class="srv-process">
-  <div style="width: min(1200px, calc(100% - 40px)); margin: 0 auto">
-    <div class="srv-process-header">
-      <h2 class="srv-process-title">
-        <span class="tline"><span>The process</span></span>
-        <span class="tline"><span>behind every</span></span>
-        <span class="tline"><span>project.</span></span>
-      </h2>
-      <p class="srv-process-intro">
-        A simple five-phase framework that combines strategic planning with
-        hands-on execution, so you get the marketing results you asked for
-        without the overwhelm.
-      </p>
-    </div>
-    <div class="srv-steps">
-      <div class="srv-step">
-        <span class="srv-step-num">Phase 01 / Discovery</span>
-        <h3 class="srv-step-title">Listen and research</h3>
-        <p class="srv-step-desc">
-          I start by understanding your brand, audience, competitors, and
-          goals. Every recommendation that follows is built on real research,
-          not guesswork.
-        </p>
-      </div>
-      <div class="srv-step">
-        <span class="srv-step-num">Phase 02 / Strategy</span>
-        <h3 class="srv-step-title">Map the plan</h3>
-        <p class="srv-step-desc">
-          A clear, documented strategy sets the direction: what we'll create,
-          why, for whom, and how success will be measured before any work
-          begins.
-        </p>
-      </div>
-      <div class="srv-step">
-        <span class="srv-step-num">Phase 03 / Execution</span>
-        <h3 class="srv-step-title">Write and build</h3>
-        <p class="srv-step-desc">
-          Precise deliverables, reviewed and refined through structured
-          feedback rounds until every detail is right.
-        </p>
-      </div>
-      <div class="srv-step">
-        <span class="srv-step-num">Phase 04 / Launch</span>
-        <h3 class="srv-step-title">Review and refine</h3>
-        <p class="srv-step-desc">
-          Once your project goes live, we review early performance against
-          the benchmarks set in Phase 02 and make adjustments before
-          scaling up.
-        </p>
-      </div>
-      <div class="srv-step">
-        <span class="srv-step-num">Phase 05 / Ongoing</span>
-        <h3 class="srv-step-title">Optimize and grow</h3>
-        <p class="srv-step-desc">
-          Marketing is never finished. I continue optimizing based on
-          real performance data to keep you competitive as the market shifts.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-      <!-- CTA -->
-      <section class="srv-cta">
-        <div class="srv-cta-bg"></div>
-        <div
-          style="
-            width: min(1200px, calc(100% - 40px));
-            margin: 0 auto;
-            position: relative;
-            z-index: 1;
-          "
-        >
-          <span class="srv-cta-kicker"><span>Ready to start?</span></span>
-          <h2 class="srv-cta-title">
-            <span class="tline"><span>Let's start</span></span>
-            <span class="tline"><span>a project together.</span></span>
-          </h2>
-          <div class="srv-cta-actions">
-            <a class="button primary large" href="consultation.htm#message"
-              >Book a consultation</a
-            >
-            <a class="button secondary large" href="consultation.html#message"
-              >Start a project</a
-            >
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <div class="footer-inner">
         <div class="footer-top">
           <div class="footer-brand">
             <a href="index.html">
@@ -488,34 +826,35 @@
                 width="60"
                 height="60"
                 alt="Sipply Consulting"
-                loading="lazy"
-              />
+                loading="lazy"/>
             </a>
             <p class="footer-tagline">
-            Let us go back to reliable marketing strategies
-            for brands that do not come from a chatbot and won't harm our planet.
+              Let us go back to reliable marketing strategies for brands that do
+              not come from a chatbot and won't harm our planet.
             </p>
           </div>
 
           <nav class="footer-nav-grid">
             <div class="footer-col">
               <span class="footer-col-title">Site</span>
-              <a href="index.html#services">My Services</a>
+              <a href="services.html">Services</a>
               <a href="work.html">Projects</a>
+              <a href="pricing.html">Pricing</a>
               <a href="about.html">About</a>
-              <a href="no-ai.html">No AI</a>
-
             </div>
             <div class="footer-col">
               <span class="footer-col-title">Connect</span>
-              <a href="consultation.html">Consultation</a>
-              <a href="consultation.html#message">Contact Me</a>
+              <a href="index.html#message">Contact</a>
               <a href="faq.html">FAQ</a>
             </div>
             <div class="footer-col">
               <span class="footer-col-title">Legal</span>
               <a href="privacy-policy.html">Privacy Policy</a>
               <a href="terms.html">Terms &amp; Conditions</a>
+            </div>
+            <div class="footer-col">
+              <span class="footer-col-title">Extra</span>
+              <a href="no-ai.html">No AI</a>
             </div>
           </nav>
         </div>
@@ -529,6 +868,313 @@
       </div>
     </footer>
 
-    <script src="script.js"></script>
-  </body>
+  <script src="script.js"></script>
+
+  <!-- Cal inline embed code begins -->
+  <script type="text/javascript">
+    (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+
+    Cal("init", "marketing-consultation", { origin: "https://app.cal.com" });
+    Cal.config = Cal.config || {};
+    Cal.config.forwardQueryParams = true;
+
+    Cal.ns["marketing-consultation"]("inline", {
+      elementOrSelector: "#cal-booking-inline",
+      config: { "layout": "month_view", "useSlotsViewOnSmallScreen": "true" },
+      calLink: "sipply-consulting/marketing-consultation",
+    });
+
+    Cal.ns["marketing-consultation"]("ui", {
+      "hideEventTypeDetails": false,
+      "layout": "month_view",
+      theme: document.documentElement.getAttribute("data-theme") === "dark" ? "dark" : "light",
+      cssVarsPerTheme: {
+        light: { "cal-brand": "#01696f" },
+        dark: { "cal-brand": "#01696f" },
+      },
+    });
+
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+      if (window.Cal && Cal.ns && Cal.ns["marketing-consultation"]) {
+        Cal.ns["marketing-consultation"]("ui", {
+          "hideEventTypeDetails": false,
+          "layout": "month_view",
+          theme: document.documentElement.getAttribute("data-theme") === "dark" ? "dark" : "light",
+          cssVarsPerTheme: {
+            light: { "cal-brand": "#01696f" },
+            dark: { "cal-brand": "#01696f" },
+          },
+        });
+      }
+    });
+  </script>
+  <!-- Cal inline embed code ends -->
+
+  <script>
+    gsap.fromTo(
+      ".srv-eyebrow span",
+      { y: "110%" },
+      { y: "0%", duration: 1, ease: "power4.out", delay: 0.1 },
+    );
+    gsap.fromTo(
+      ".paths-hero-title .tline span",
+      { y: "110%" },
+      {
+        y: "0%",
+        duration: 1.1,
+        ease: "power4.out",
+        stagger: 0.08,
+        delay: 0.2,
+      },
+    );
+
+    gsap.fromTo(
+      ".path-card-bold",
+      { opacity: 0, y: 40 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.9,
+        ease: "power4.out",
+        stagger: 0.12,
+        delay: 0.65,
+      },
+    );
+
+    gsap.fromTo(
+      ".srv-acc-head",
+      { opacity: 0, y: 30 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: "power4.out",
+        scrollTrigger: {
+          trigger: ".srv-acc-section",
+          start: "top 80%",
+          toggleActions: "play none none none",
+        },
+      },
+    );
+
+    const servicesData = [
+      {
+        title: "Content Strategy",
+        desc: "Content strategy is the backbone of every brand that wants to get noticed. I take a close look at your audience, define your voice, and build editorial roadmaps so you can connect with your audience more efficiently.",
+        items: [
+          "Audience research & persona development",
+          "Brand voice & tone guidelines",
+          "Editorial calendar planning",
+          "Content gap analysis",
+          "Pillar & cluster topic mapping",
+          "Distribution channel strategy",
+        ],
+      },
+      {
+        title: "SEO & AEO",
+        desc: "I run a detailed SEO audit, identify where you're losing visibility, and implement fixes that actually move the needle. The goal is making sure your website performs across both traditional search and AI-driven discovery.",
+        items: [
+          "Technical SEO audits",
+          "Local SEO implementations",
+          "Keyword research & mapping",
+          "On-page & meta optimisation",
+          "Schema markup implementation",
+          "Answer Engine Optimisation (AEO)",
+          "Search performance reporting",
+        ],
+      },
+      {
+        title: "CRO & Optimisation",
+        desc: "I audit where people drop off in your funnel, rewrite the copy and layout around what's actually stopping them, and test changes.",
+        items: [
+          "Funnel audit & heatmap analysis",
+          "Landing page copy rewrites",
+          "CTA architecture & hierarchy",
+          "A/B testing strategy",
+          "Form & checkout optimisation",
+          "Conversion-focused copy frameworks",
+        ],
+      },
+      {
+        title: "Website Copywriting",
+        desc: "I write copy that reflects your brand's tone and style, guides visitors toward the action you want, and holds up whether someone's reading your homepage or a product description three clicks deep.",
+        items: [
+          "Homepage & hero copy",
+          "Service & product page narratives",
+          "About & team page storytelling",
+          "Brand messaging guides",
+          "UX microcopy & UI labels",
+          "Long-form blog & resource articles",
+        ],
+      },
+      {
+        title: "Market Analysis",
+        desc: "Decisions without data are guesses. I deliver in-depth competitive research and market positioning reports that reveal where your brand stands and how to move ahead.",
+        items: [
+          "Competitive landscape reports",
+          "SWOT & gap analysis",
+          "Market positioning strategy",
+          "Trend & opportunity identification",
+          "Audience sentiment research",
+          "Industry benchmark reporting",
+        ],
+      },
+      {
+        title: "Social & Email",
+        desc: "Whether you're building brand awareness, driving traffic, or nurturing leads, I'll create content that resonates with your target audience and aligns with your business objectives.",
+        items: [
+          "Social media content calendars",
+          "Platform-native copy (LinkedIn, IG)",
+          "Email campaign strategy & writing",
+          "Newsletter series development",
+          "Engagement & growth tactics",
+          "Analytics & performance reviews",
+        ],
+      },
+      {
+        title: "Reputation & GMB",
+        desc: "I'll help you build and protect a strong local reputation that boosts your search rankings, monitor and respond to local reviews, and amplify your positive experiences to build trust.",
+        items: [
+          "Google My Business (GMB) management & optimisation",
+          "Review generation & response strategy",
+          "Local ranking & map pack visibility",
+          "Reputation monitoring across platforms",
+          "Citation building & NAP consistency",
+          "Crisis response & negative review mitigation",
+        ],
+      },
+    ];
+
+    const accList = document.getElementById("srv-acc-list");
+    accList.innerHTML = servicesData
+      .map(
+        (s, i) => `
+        <div class="srv-acc-item" data-accent="${i + 1}">
+          <button class="srv-acc-trigger" aria-expanded="false">
+            <span class="srv-acc-trigger-num">${String(i + 1).padStart(2, "0")}</span>
+            <span class="srv-acc-trigger-title">${s.title}</span>
+            <span class="srv-acc-trigger-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </span>
+          </button>
+          <div class="srv-acc-body">
+            <div class="srv-acc-body-inner">
+              <div>
+                <p class="srv-acc-desc">${s.desc}</p>
+                <div class="srv-acc-cta-row">
+                  <a class="button primary" href="index.html#message">Request this service →</a>
+                  <a class="srv-acc-cta-secondary" href="#book">Not sure yet? Book a consult</a>
+                </div>
+              </div>
+              <ul class="srv-acc-deliverables">
+                ${s.items.map((it) => `<li>${it}</li>`).join("")}
+              </ul>
+            </div>
+          </div>
+        </div>
+      `,
+      )
+      .join("");
+
+    gsap.fromTo(
+      ".srv-acc-item",
+      { opacity: 0, y: 24 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.6,
+        ease: "power3.out",
+        stagger: 0.06,
+        scrollTrigger: {
+          trigger: "#srv-acc-list",
+          start: "top 85%",
+          toggleActions: "play none none none",
+        },
+      },
+    );
+
+    document.querySelectorAll(".srv-acc-trigger").forEach((trigger) => {
+      trigger.addEventListener("click", () => {
+        const item = trigger.closest(".srv-acc-item");
+        const body = item.querySelector(".srv-acc-body");
+        const isOpen = item.classList.contains("is-open");
+
+        document
+          .querySelectorAll(".srv-acc-item.is-open")
+          .forEach((openItem) => {
+            if (openItem !== item) {
+              openItem.classList.remove("is-open");
+              openItem
+                .querySelector(".srv-acc-trigger")
+                .setAttribute("aria-expanded", "false");
+              openItem.querySelector(".srv-acc-body").style.maxHeight = "0px";
+            }
+          });
+
+        if (!isOpen) {
+          item.classList.add("is-open");
+          trigger.setAttribute("aria-expanded", "true");
+          body.style.maxHeight = body.scrollHeight + "px";
+          gsap.fromTo(
+            item.querySelectorAll(".srv-acc-deliverables li"),
+            { opacity: 0, x: -10 },
+            {
+              opacity: 1,
+              x: 0,
+              duration: 0.4,
+              ease: "power2.out",
+              stagger: 0.04,
+              delay: 0.15,
+            },
+          );
+        } else {
+          item.classList.remove("is-open");
+          trigger.setAttribute("aria-expanded", "false");
+          body.style.maxHeight = "0px";
+        }
+
+        setTimeout(() => ScrollTrigger.refresh(), 550);
+      });
+    });
+
+    gsap.fromTo(
+      ".book-head",
+      { opacity: 0, y: 30 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: "power4.out",
+        scrollTrigger: {
+          trigger: ".book-section",
+          start: "top 82%",
+          toggleActions: "play none none none",
+        },
+      },
+    );
+    gsap.fromTo(
+      ".book-above, #cal-booking-inline",
+      { opacity: 0, y: 40 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: "power4.out",
+        delay: 0.1,
+        stagger: 0.1,
+        scrollTrigger: {
+          trigger: ".book-grid",
+          start: "top 82%",
+          toggleActions: "play none none none",
+        },
+        onComplete: () => {
+          gsap.set("#cal-booking-inline", { clearProps: "transform" });
+        },
+      },
+    );
+
+    window.addEventListener("load", () => ScrollTrigger.refresh());
+  </script>
+</body>
+
 </html>

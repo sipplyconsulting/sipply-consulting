@@ -1,4 +1,3 @@
-
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 /* ─── LENIS SMOOTH SCROLL ─────────────────────────────────── */
@@ -448,14 +447,29 @@ if (document.querySelector("#faq")) {
   );
 }
 
-/* ─── SMOOTH ANCHOR SCROLL (via Lenis) ────────────────────── */
-document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+/* ─── SMOOTH ANCHOR SCROLL (via Lenis) ─────────────────────
+   Handles same-page anchors (#section) AND cross-page anchors
+   (page.html#section) that point to a section on THIS page. ── */
+document.querySelectorAll('a[href*="#"]').forEach((anchor) => {
+  const href = anchor.getAttribute("href");
+  if (!href || href === "#") return;
+
+  const [linkPath, hash] = href.split("#");
+  if (!hash) return;
+
+  const currentPath = window.location.pathname.split("/").pop() || "index.html";
+  const targetPath = linkPath === "" ? currentPath : linkPath;
+
+  // Only intercept if the link points to a section on the CURRENT page.
+  // Cross-page links to a different file are left alone so the browser
+  // navigates normally — that case is handled by the on-load scroll below.
+  if (targetPath !== currentPath) return;
+
   anchor.addEventListener("click", function (e) {
     e.preventDefault();
-    const id = this.getAttribute("href");
-    if (id === "#") return;
-    const target = document.querySelector(id);
+    const target = document.querySelector("#" + hash);
     if (!target) return;
+    history.pushState(null, "", "#" + hash);
     lenis.scrollTo(target, {
       offset: -90,
       duration: 1.6,
@@ -464,6 +478,49 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     });
   });
 });
+
+/* ─── SMOOTH SCROLL TO HASH ON PAGE LOAD (cross-page links) ──
+   When arriving from another page via "page.html#section", the
+   browser performs an instant native jump before our JS runs.
+   This masks that jump with a fade, then replays it smoothly. ── */
+if (window.location.hash) {
+  const initialHash = window.location.hash;
+  const initialTarget = document.querySelector(initialHash);
+
+  if (initialTarget) {
+    history.replaceState(
+      null,
+      "",
+      window.location.pathname + window.location.search,
+    );
+
+    document.documentElement.style.visibility = "hidden";
+    window.scrollTo(0, 0);
+
+    window.addEventListener("load", () => {
+      ScrollTrigger.refresh();
+
+      requestAnimationFrame(() => {
+        document.documentElement.style.transition = "opacity 0.4s ease";
+        document.documentElement.style.opacity = "0";
+        document.documentElement.style.visibility = "visible";
+
+        requestAnimationFrame(() => {
+          document.documentElement.style.opacity = "1";
+        });
+
+        setTimeout(() => {
+          lenis.scrollTo(initialTarget, {
+            offset: -90,
+            duration: 2.4,
+            easing: (t) => 1 - Math.pow(1 - t, 3),
+          });
+          history.replaceState(null, "", initialHash);
+        }, 250);
+      });
+    });
+  }
+}
 
 /* ─── SELECTION COLOUR CYCLE ─────────────────────────────── */
 const selectionColours = [
@@ -948,249 +1005,3 @@ window.addEventListener("load", () => {
     });
   }
 })();
-
-/* ═══════════════════════════════════════════════════════════
-   services.html
-═══════════════════════════════════════════════════════════ */
-if (document.getElementById("srv-sticky-wrap")) {
-  gsap.fromTo(
-    ".srv-eyebrow span",
-    { y: "110%" },
-    { y: "0%", duration: 1, ease: "power4.out", delay: 0.1 },
-  );
-  gsap.fromTo(
-    ".srv-hero-title .tline span",
-    { y: "110%" },
-    { y: "0%", duration: 1.1, ease: "power4.out", stagger: 0.08, delay: 0.2 },
-  );
-  gsap.fromTo(
-    ".srv-hero-right",
-    { opacity: 0, y: 40 },
-    { opacity: 1, y: 0, duration: 1.2, ease: "power4.out", delay: 0.4 },
-  );
-
-  const srvServices = [
-    {
-      tag: "Strategy",
-      title: ["Content", "Strategy"],
-      desc: "Content strategy is the backbone of every brand to get you noticed. I will take a closer look at your audience, define your voice, and build editorial roadmaps so you can connect with your audience more efficiently."
-    },
-    {
-      tag: "Search",
-      title: ["SEO", "& AEO"],
-      desc: "My goal for your website is simple: I want you to rank above your competitors. My expertise in optimizing both the user experience and search rankings can help you achieve higher visibility, more traffic, and better conversions.",
-    },
-    {
-      tag: "Conversion",
-      title: ["CRO &", "Optimisation"],
-      desc: "Traffic without conversion is just noise. We analyse your funnel, identify where visitors drop off, and redesign the copy and flow to guide users confidently toward action.",
-    },
-    {
-      tag: "Copy",
-      title: ["Website", "Copywriting"],
-      desc: "Your website is your best salesperson. I write for you a homepage with copy that speaks to resonates with your audience.",
-    },
-    {
-      tag: "Research",
-      title: ["Market", "Analysis"],
-      desc: "Decisions without data are guesses. I deliver in-depth competitive research and market positioning reports that reveal where your brand stands and how to move ahead.",
-    },
-    {
-      tag: "Social & Email",
-      title: ["Social &", "Email"],
-      desc: "Consistent, human-written social content and email campaigns that build community and drive repeat engagement. No recycled templates, no AI-padded newsletters.",
-    },
-    {
-      tag: "Reputation",
-      title: ["Reputation", "& GMB"],
-      desc: "Your online reputation shapes every decision a potential customer makes before they ever contact you. I manage your Google Business Profile and review presence so your brand shows up accurately, ranks locally, and builds trust before the first conversation even happens.",
-    },
-  ];
-
-  const srvPanel = document.getElementById("srv-panel");
-  const srvPanelTag = document.getElementById("panel-tag");
-  const srvPanelTitle = document.getElementById("panel-title");
-  const srvPanelDesc = document.getElementById("panel-desc");
-  const srvPanelCount = document.getElementById("panel-count");
-  const srvPanelIndex = document.getElementById("panel-index");
-  const srvDots = document.querySelectorAll(".srv-prog-dot");
-  const srvEntries = document.querySelectorAll(".srv-entry");
-  let srvCurrentActive = 0;
-
-  function animateSrvPanelTo(idx) {
-    if (idx === srvCurrentActive) return;
-    const data = srvServices[idx];
-    gsap.to([srvPanelTag, srvPanelTitle, srvPanelDesc], {
-      y: -18,
-      opacity: 0,
-      duration: 0.25,
-      ease: "power2.in",
-      onComplete: () => {
-        srvPanelTag.textContent = data.tag;
-        srvPanelTitle.innerHTML = data.title
-          .map((l) => `<span>${l}</span>`)
-          .join("");
-        srvPanelDesc.textContent = data.desc;
-        srvPanelCount.textContent = String(idx + 1).padStart(2, "0");
-        srvPanelIndex.textContent = String(idx + 1).padStart(2, "0");
-        srvPanel.setAttribute("data-active", idx);
-        gsap.fromTo(
-          [srvPanelTag, srvPanelTitle, srvPanelDesc],
-          { y: 18, opacity: 0 },
-          {
-            y: 0,
-            opacity: 1,
-            duration: 0.55,
-            ease: "power3.out",
-            stagger: 0.06,
-          },
-        );
-      },
-    });
-    srvDots.forEach((d, i) => d.classList.toggle("active", i === idx));
-    srvEntries.forEach((e, i) => e.classList.toggle("is-active", i === idx));
-    srvCurrentActive = idx;
-  }
-
-  srvEntries.forEach((entry, i) => {
-    ScrollTrigger.create({
-      trigger: entry,
-      start: "top 55%",
-      end: "bottom 45%",
-      onEnter: () => animateSrvPanelTo(i),
-      onEnterBack: () => animateSrvPanelTo(i),
-    });
-  });
-
-  srvEntries.forEach((entry) => {
-    gsap.fromTo(
-      entry.querySelectorAll(".word span"),
-      { y: "105%" },
-      {
-        y: "0%",
-        duration: 0.9,
-        ease: "power4.out",
-        stagger: 0.05,
-        scrollTrigger: {
-          trigger: entry,
-          start: "top 80%",
-          toggleActions: "play none none none",
-        },
-      },
-    );
-    gsap.fromTo(
-      entry.querySelector(".srv-entry-num"),
-      { opacity: 0, x: -16 },
-      {
-        opacity: 1,
-        x: 0,
-        duration: 0.7,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: entry,
-          start: "top 82%",
-          toggleActions: "play none none none",
-        },
-      },
-    );
-  });
-
-  gsap.fromTo(
-    ".srv-process-title .tline span",
-    { y: "110%" },
-    {
-      y: "0%",
-      duration: 1.1,
-      ease: "power4.out",
-      stagger: 0.07,
-      scrollTrigger: {
-        trigger: ".srv-process",
-        start: "top 82%",
-        toggleActions: "play none none none",
-      },
-    },
-  );
-
-  gsap.fromTo(
-    ".srv-process-intro",
-    { opacity: 0, y: 28 },
-    {
-      opacity: 1,
-      y: 0,
-      duration: 1.0,
-      ease: "power3.out",
-      delay: 0.15,
-      scrollTrigger: {
-        trigger: ".srv-process",
-        start: "top 82%",
-        toggleActions: "play none none none",
-      },
-    },
-  );
-
-  gsap.fromTo(
-    ".srv-step",
-    { y: 56, opacity: 0 },
-    {
-      y: 0,
-      opacity: 1,
-      duration: 0.9,
-      ease: "power4.out",
-      stagger: 0.1,
-      scrollTrigger: {
-        trigger: ".srv-steps",
-        start: "top 84%",
-        toggleActions: "play none none none",
-      },
-    },
-  );
-
-  gsap.fromTo(
-    ".srv-cta-kicker span",
-    { y: "110%" },
-    {
-      y: "0%",
-      duration: 0.9,
-      ease: "power4.out",
-      scrollTrigger: {
-        trigger: ".srv-cta",
-        start: "top 82%",
-        toggleActions: "play none none none",
-      },
-    },
-  );
-
-  gsap.fromTo(
-    ".srv-cta-title .tline span",
-    { y: "110%" },
-    {
-      y: "0%",
-      duration: 1.2,
-      ease: "power4.out",
-      stagger: 0.09,
-      delay: 0.1,
-      scrollTrigger: {
-        trigger: ".srv-cta",
-        start: "top 82%",
-        toggleActions: "play none none none",
-      },
-    },
-  );
-
-  gsap.fromTo(
-    ".srv-cta-actions",
-    { opacity: 0, y: 28 },
-    {
-      opacity: 1,
-      y: 0,
-      duration: 1.0,
-      ease: "power3.out",
-      delay: 0.38,
-      scrollTrigger: {
-        trigger: ".srv-cta",
-        start: "top 82%",
-        toggleActions: "play none none none",
-      },
-    },
-  );
-}

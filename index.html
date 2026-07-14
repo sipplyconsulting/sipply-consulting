@@ -53,6 +53,85 @@
     />
     <link rel="stylesheet" href="styles.css" />
     <style>
+      /* ============ Hero ============ */
+      .hero {
+        padding-top: 64px;
+        padding-bottom: 100px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .hero-shell {
+        max-width: 1400px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 24px;
+      }
+
+      .hero-content {
+        max-width: 100%;
+      }
+
+      .hero-title {
+        margin: 0;
+        overflow: visible;
+        padding-bottom: 0.15em;
+        font-size: clamp(2.4rem, 5vw, 4.4rem);
+        line-height: 1.2;
+        letter-spacing: -0.03em;
+        color: var(--text);
+        font-weight: 500;
+        max-width: 100%;
+      }
+
+      .rotating-wheel {
+        display: grid;
+        grid-template-columns: 1fr;
+        overflow: hidden;
+        padding-bottom: 0.1em;
+      }
+
+      .wheel-item {
+        grid-row: 1;
+        grid-column: 1;
+        opacity: 0;
+        white-space: normal;
+      }
+      .wheel-item.active {
+        opacity: 1;
+      }
+
+      .hero-highlight {
+        position: relative;
+        color: var(--text);
+        background: linear-gradient(90deg, #ff3b8c, #ff6a00);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .hero-sub {
+        font-size: 1.1rem;
+        line-height: 1.75;
+        color: var(--muted);
+        max-width: 70ch;
+        margin-top: 24px;
+      }
+
+      .hero-actions {
+        margin-top: 36px;
+        display: flex;
+        gap: 14px;
+        flex-wrap: wrap;
+      }
+
+      @media (max-width: 860px) {
+        .hero {
+          padding-top: 48px;
+          padding-bottom: 64px;
+        }
+      }
+
+      /* ============ Services Showcase ============ */
       .svc-showcase-section,
       .contact-section {
         padding: 140px 0;
@@ -142,32 +221,25 @@
         order: 2;
       }
 
-    .svc-showcase-color {
-  position: absolute;
-  inset: 0;
-  opacity: 0;
-  transition: opacity 0.6s ease;
-  overflow: hidden;
-  border-radius: inherit;
-}
+      .svc-showcase-color {
+        position: absolute;
+        inset: 0;
+        opacity: 0;
+        transition: opacity 0.6s ease;
+        overflow: hidden;
+        border-radius: inherit;
+      }
 
-.svc-showcase-color.is-active {
-  opacity: 1;
-}
+      .svc-showcase-color.is-active {
+        opacity: 1;
+      }
 
-.svc-showcase-color img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-#svc-showcase-img-0 img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
+      .svc-showcase-color img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
 
       .svc-showcase-thumbs {
         order: 1;
@@ -192,12 +264,6 @@
         flex-shrink: 0;
       }
 
-      .svc-showcase-thumb-color {
-        width: 100%;
-        height: 100%;
-        display: block;
-      }
-
       .svc-showcase-thumb.is-active {
         opacity: 1;
       }
@@ -207,24 +273,11 @@
       }
 
       .svc-showcase-thumb-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: inherit;
-  display: block;
-}
-
-      .svc-color-0 {
-        background: linear-gradient(135deg, #ff6a3d, #ffd3b3);
-      }
-      .svc-color-1 {
-        background: linear-gradient(135deg, #8ec5fc, #e0c3fc);
-      }
-      .svc-color-2 {
-        background: linear-gradient(135deg, #84fab0, #8fd3f4);
-      }
-      .svc-color-3 {
-        background: linear-gradient(135deg, #f6d365, #fda085);
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: inherit;
+        display: block;
       }
 
       /* ============ Contact Section ============ */
@@ -308,44 +361,6 @@
         justify-self: start;
       }
 
-      /* ── hero fixes ── */
-      .hero {
-        padding-top: 96px;
-      }
-
-      .hero-title {
-        overflow: visible;
-        padding-top: 0.1em;
-      }
-
-      .rotating-wheel {
-        display: inline-block;
-        position: relative;
-        height: 1.3em;
-        min-width: 1000px;
-        width: max-content;
-        overflow: hidden;
-        perspective: 600px;
-        transform-style: preserve-3d;
-        vertical-align: bottom;
-        white-space: nowrap;
-      }
-
-      .wheel-item {
-  display: block;
-  position: absolute;
-  left: 0;
-  width: 100%;
-  text-align: left;
-  opacity: 0;
-  transform-style: preserve-3d;
-  backface-visibility: hidden;
-  overflow: hidden;
-}
-.wheel-item.active {
-  opacity: 1;
-}
-
       /* ============ Responsive ============ */
       @media (max-width: 860px) {
         .svc-showcase-section,
@@ -393,7 +408,6 @@
           <a href="work.html">Projects</a>
           <a href="about.html">About</a>
           <a href="#message">Contact</a>
-
         </nav>
         <button
           class="theme-toggle"
@@ -460,261 +474,38 @@
         <div class="hero-shell">
           <div class="hero-content">
             <h1 class="hero-title">
-              Digital marketing services and consultation for brands that
-              want<span class="rotating-wheel">
+              Digital marketing services and consultation for brands that want
+              <span class="rotating-wheel">
                 <span class="wheel-item active"
-                  >to ditch their AI strategy.</span
+                  >to ditch their
+                  <span class="hero-highlight">AI strategy</span>.</span
                 >
                 <span class="wheel-item"
-                  >their business to rank efficiently.</span
+                  >their business to
+                  <span class="hero-highlight">rank efficiently</span>.</span
                 >
-                <span class="wheel-item">to work with a human.</span>
-                <span class="wheel-item">trustworthy SEO research.</span>
+                <span class="wheel-item"
+                  >to work with a
+                  <span class="hero-highlight">human</span>.</span
+                >
+                <span class="wheel-item"
+                  ><span class="hero-highlight">trustworthy</span> SEO
+                  research.</span
+                >
               </span>
             </h1>
             <p class="hero-sub">
-              Stand out and get SEO marketing strategies that set your brand apart from the current AI-driven narrative. 
-              At the core of my services is SEO (including local SEO), AEO, and GEO. 
-              I'll help you with keyword research, on-page optimization, and content strategy to improve your ranking and traffic.
+              Stand out and get SEO marketing strategies that set your brand
+              apart from the current AI-driven narrative. At the core of my
+              services is SEO (including local SEO), AEO, and GEO. I'll help you
+              with keyword research, on-page optimization, and content strategy
+              to improve your ranking and traffic.
             </p>
             <div class="hero-actions">
               <a class="button primary" href="services.html#book"
                 >Book consultation — CA$175</a
               >
-              <a class="button secondary" href="#message"
-                >Contact me</a
-              >
-            </div>
-          </div>
-
-          <div
-            class="hero-quote-zone"
-            aria-label="Interactive quote builder preview"
-          >
-            <div class="quote-drag-bounds" id="quote-drag-bounds">
-              <aside
-                class="quote-module"
-                id="quote-module"
-                role="button"
-                tabindex="0"
-                aria-expanded="false"
-                aria-label="Open quote builder"
-              >
-                <div class="quote-module-aurora quote-aurora-a"></div>
-                <div class="quote-module-aurora quote-aurora-b"></div>
-                <div class="quote-module-aurora quote-aurora-c"></div>
-                <div class="quote-module-inner">
-                  <div class="quote-module-body">
-                    <h3 class="quote-module-title">
-                      Build a project quote in minutes.
-                    </h3>
-                    <p class="quote-module-copy">
-                      Get an estimate for your project before booking a
-                      consultation.
-                    </p>
-                    <button
-                      class="quote-launch"
-                      id="quote-launch"
-                      type="button"
-                    >
-                      Build quote
-                    </button>
-                  </div>
-                </div>
-              </aside>
-            </div>
-
-            <div class="quote-popup" id="quote-popup" aria-hidden="true">
-              <div class="quote-popup-backdrop" id="quote-popup-backdrop"></div>
-              <div class="quote-popup-panel">
-                <div class="quote-popup-glow quote-popup-glow-a"></div>
-                <div class="quote-popup-glow quote-popup-glow-b"></div>
-                <div class="quote-popup-content">
-                  <div class="quote-popup-header">
-                    <div>
-                      <p class="quote-popup-kicker">Quote Builder</p>
-                      <h3 class="quote-popup-title">
-                        What are you working on?
-                      </h3>
-                      <p class="quote-popup-copy">
-                        Answer the following questions and get a rough scope
-                        estimate before booking.
-                      </p>
-                    </div>
-                    <button
-                      class="quote-popup-close"
-                      id="quote-popup-close"
-                      type="button"
-                      aria-label="Close quote builder"
-                    >
-                      ×
-                    </button>
-                  </div>
-
-                  <div class="quote-steps-grid">
-                    <div class="quote-step" data-step="1">
-                      <span class="quote-step-label"
-                        >What service do you need?</span
-                      >
-                      <div class="quote-choice-row" data-group="service">
-                        <button type="button" data-val="Strategy & Content">
-                          Strategy &amp; Content
-                        </button>
-                        <button type="button" data-val="SEO / AEO">
-                          SEO / AEO
-                        </button>
-                        <button type="button" data-val="CRO & Optimisation">
-                          CRO &amp; Optimisation
-                        </button>
-                        <button type="button" data-val="Website Copy">
-                          Website Copy
-                        </button>
-                        <button type="button" data-val="Market Analysis">
-                          Market Analysis
-                        </button>
-                        <button type="button" data-val="Social & Email">
-                          Social &amp; Email
-                        </button>
-                        <button type="button" data-val="Reputation & GMB">
-                          Reputation &amp; GMB
-                        </button>
-                        <button type="button" data-val="Full Package">
-                          Full Package (bundled)
-                        </button>
-                        <button type="button" data-val="Not sure yet">
-                          Not sure yet
-                        </button>
-                      </div>
-                    </div>
-
-                    <div class="quote-step" data-step="2">
-                      <span class="quote-step-label"
-                        >Where are you starting from?</span
-                      >
-                      <div class="quote-choice-row" data-group="start">
-                        <button type="button" data-val="Starting from scratch">
-                          Starting from scratch
-                        </button>
-                        <button
-                          type="button"
-                          data-val="Rewrite existing content"
-                        >
-                          Rewrite existing content
-                        </button>
-                        <button
-                          type="button"
-                          data-val="Audit only — no deliverables"
-                        >
-                          Audit &amp; recommendations only
-                        </button>
-                        <button
-                          type="button"
-                          data-val="Ongoing monthly retainer"
-                        >
-                          Ongoing monthly retainer
-                        </button>
-                      </div>
-                    </div>
-
-                    <div class="quote-step" data-step="3">
-                      <span class="quote-step-label"
-                        >How much needs doing?</span
-                      >
-                      <div class="quote-choice-row" data-group="size">
-                        <button
-                          type="button"
-                          data-val="Small · 1–3 deliverables"
-                        >
-                          Small · 1–3 deliverables<br /><small
-                            >e.g. one blog post or landing page</small
-                          >
-                        </button>
-                        <button
-                          type="button"
-                          data-val="Medium · 4–8 deliverables"
-                        >
-                          Medium · 4–8 deliverables<br /><small
-                            >e.g. a small content batch or audit</small
-                          >
-                        </button>
-                        <button
-                          type="button"
-                          data-val="Large · 9+ deliverables"
-                        >
-                          Large · 9+ deliverables<br /><small
-                            >e.g. full site rewrite or campaign</small
-                          >
-                        </button>
-                        <button type="button" data-val="Not sure yet">
-                          Not sure yet — help me scope it
-                        </button>
-                      </div>
-                    </div>
-
-                    <div class="quote-step" data-step="4">
-                      <span class="quote-step-label"
-                        >What's your timeline?</span
-                      >
-                      <div class="quote-choice-row" data-group="timeline">
-                        <button type="button" data-val="Urgent · <2 weeks">
-                          Urgent · under 2 weeks<br /><small
-                            >+30% rush fee applies</small
-                          >
-                        </button>
-                        <button type="button" data-val="This month">
-                          This month
-                        </button>
-                        <button type="button" data-val="Next 1–3 months">
-                          Next 1–3 months
-                        </button>
-                        <button type="button" data-val="Just exploring">
-                          Just exploring
-                        </button>
-                      </div>
-                    </div>
-
-                    <div class="quote-step-summary">
-                      <div class="quote-estimate-box" id="quote-estimate-box">
-                        <p class="quote-estimate-prompt">
-                          Answer the questions above to see your estimated
-                          investment.
-                        </p>
-                      </div>
-                      <div
-                        class="quote-estimate-result"
-                        id="quote-estimate-result"
-                        style="display: none"
-                      >
-                        <span class="quote-estimate-label">Your estimate</span>
-                        <div
-                          class="quote-estimate-range"
-                          id="quote-estimate-range"
-                        >
-                          —
-                        </div>
-                        <p
-                          class="quote-estimate-hours"
-                          id="quote-estimate-hours"
-                        ></p>
-                        <p
-                          class="quote-estimate-note"
-                          id="quote-estimate-note"
-                        ></p>
-                        <div class="quote-estimate-actions">
-                          <a class="button primary" href="services.html#book"
-                            >Book a consultation</a
-                          >
-                          <a
-                            class="button secondary"
-                            href="#message"
-                            >Send a message first</a
-                          >
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <a class="button secondary" href="#message">Contact me</a>
             </div>
           </div>
         </div>
@@ -755,9 +546,7 @@
               </li>
             </ul>
             <p class="svc-showcase-desc" id="svc-showcase-desc">
-              New opportunities for engagement are easy to miss. In-depth
-              industry, competitor, and audience insights show you where to
-              look.
+              New opportunities for engagement are easy to miss. I'll help you update your website and make sure people will find your brand online.
             </p>
             <a class="button primary" href="services.html" id="svc-showcase-cta"
               >Explore services</a
@@ -766,37 +555,88 @@
 
           <div class="svc-showcase-right">
             <div class="svc-showcase-thumbs" id="svc-showcase-thumbs">
-             <button type="button" class="svc-showcase-thumb is-active" data-index="0" aria-label="View My services">
-  <img src="IMG/index-wheel/index-services.png" alt="" class="svc-showcase-thumb-img" />
-</button>
-             <button type="button" class="svc-showcase-thumb is-active" data-index="0" aria-label="View My services">
-  <img src="IMG/index-wheel/index-projects.png" alt="" class="svc-showcase-thumb-img" />
-</button>
-              <button type="button" class="svc-showcase-thumb is-active" data-index="0" aria-label="View My services">
-  <img src="IMG/index-wheel/index-profile.jpeg" alt="" class="svc-showcase-thumb-img" />
-</button>
-               <button type="button" class="svc-showcase-thumb is-active" data-index="0" aria-label="View My services">
-  <img src="IMG/index-wheel/index-pricing.png" alt="" class="svc-showcase-thumb-img" />
-</button>
+              <button
+                type="button"
+                class="svc-showcase-thumb is-active"
+                data-index="0"
+                aria-label="View My services"
+              >
+                <img
+                  src="IMG/index-wheel/index-services.png"
+                  alt=""
+                  class="svc-showcase-thumb-img"
+                />
+              </button>
+              <button
+                type="button"
+                class="svc-showcase-thumb"
+                data-index="1"
+                aria-label="View My projects"
+              >
+                <img
+                  src="IMG/index-wheel/index-projects.png"
+                  alt=""
+                  class="svc-showcase-thumb-img"
+                />
+              </button>
+              <button
+                type="button"
+                class="svc-showcase-thumb"
+                data-index="2"
+                aria-label="View About me"
+              >
+                <img
+                  src="IMG/index-wheel/index-profile.jpeg"
+                  alt=""
+                  class="svc-showcase-thumb-img"
+                />
+              </button>
+              <button
+                type="button"
+                class="svc-showcase-thumb"
+                data-index="3"
+                aria-label="View Pricing"
+              >
+                <img
+                  src="IMG/index-wheel/index-pricing.png"
+                  alt=""
+                  class="svc-showcase-thumb-img"
+                />
+              </button>
             </div>
 
             <div class="svc-showcase-frame" id="svc-showcase-frame">
-  <div class="svc-showcase-color svc-color-0 is-active" id="svc-showcase-img-0">
-    <img src="IMG/index-wheel/index-services.png" alt="My services" loading="lazy" />
-  </div>
-  <div class="svc-showcase-color svc-color-1" id="svc-showcase-img-1">
-    <img src="IMG/index-wheel/index-projects.png" alt="My projects" loading="lazy" />
-  </div>
-  <div class="svc-showcase-color svc-color-2" id="svc-showcase-img-2">
-    <img src="IMG/index-wheel/index-profile.jpeg" alt="About me" loading="lazy" />
-  </div>
-  <div class="svc-showcase-color svc-color-3" id="svc-showcase-img-3">
-    <img src="IMG/index-wheel/index-pricing.png" alt="Pricing" loading="lazy" />
-  </div>
-</div>
+              <div class="svc-showcase-color is-active" id="svc-showcase-img-0">
+                <img
+                  src="IMG/index-wheel/index-services.png"
+                  alt="My services"
+                  loading="lazy"
+                />
+              </div>
+              <div class="svc-showcase-color" id="svc-showcase-img-1">
+                <img
+                  src="IMG/index-wheel/index-projects.png"
+                  alt="My projects"
+                  loading="lazy"
+                />
+              </div>
+              <div class="svc-showcase-color" id="svc-showcase-img-2">
+                <img
+                  src="IMG/index-wheel/index-profile.jpeg"
+                  alt="About me"
+                  loading="lazy"
+                />
+              </div>
+              <div class="svc-showcase-color" id="svc-showcase-img-3">
+                <img
+                  src="IMG/index-wheel/index-pricing.png"
+                  alt="Pricing"
+                  loading="lazy"
+                />
+              </div>
+            </div>
           </div>
         </div>
-        <!-- <div class="svc-cursor-tag" id="svc-cursor-tag">Explore services</div> -->
       </section>
 
       <!-- Contact form -->
@@ -888,100 +728,218 @@
         <div class="hero-client-strip" aria-label="Brands written for">
           <div class="hero-client-track" id="client-logos-track">
             <div class="client-logo-wrap">
-              <img
-                src="IMG/company-logos/industrios-logo.png"
-                alt="Industrios"
-                class="client-logo-img client-logo-img--large"/>
+              <a
+                href="https://www.industrios.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Industrios website"
+              >
+                <img
+                  src="IMG/company-logos/industrios-logo.png"
+                  alt="Industrios"
+                  class="client-logo-img client-logo-img--large"
+                />
+              </a>
             </div>
             <div class="client-logo-wrap">
-              <img
-                src="IMG/company-logos/Procom_Logo_Path.svg"
-                alt="Procom"
-                class="client-logo-img"/>
+              <a
+                href="https://procomservices.com/en-ca/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Procom website"
+              >
+                <img
+                  src="IMG/company-logos/Procom_Logo_Path.svg"
+                  alt="Procom"
+                  class="client-logo-img"
+                />
+              </a>
             </div>
             <div class="client-logo-wrap">
-              <img
-                src="IMG/company-logos/Shoplogix_Logo.svg"
-                alt="Shoplogix"
-                class="client-logo-img"/>
+              <a
+                href="https://shoplogix.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Shoplogix website"
+              >
+                <img
+                  src="IMG/company-logos/Shoplogix_Logo.svg"
+                  alt="Shoplogix"
+                  class="client-logo-img"
+                />
+              </a>
             </div>
             <div class="client-logo-wrap">
-              <img
-                src="IMG/company-logos/glass-place-wordmark.svg"
-                alt="The Glass Place"
-                class="client-logo-img client-logo-img--no-filter"/>
+              <a
+                href="https://glassplace.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Glass place website"
+              >
+                <img
+                  src="IMG/company-logos/glass-place-wordmark.svg"
+                  alt="The Glass Place"
+                  class="client-logo-img client-logo-img--no-filter"
+              /></a>
             </div>
             <div class="client-logo-wrap">
-              <img
-                src="IMG/company-logos/Cartoon_Net_transparent.svg"
-                alt="Cartoon Network"
-                class="client-logo-img"/>
+              <a
+                href="https://www.wbd.com/details-of-broadcaster/germany"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Cartoon Network website"
+              >
+                <img
+                  src="IMG/company-logos/Cartoon_Net_transparent.svg"
+                  alt="Cartoon Network"
+                  class="client-logo-img"
+              /></a>
             </div>
             <div class="client-logo-wrap">
-              <img
-                src="IMG/company-logos/logo-white.png"
-                alt="DASH"
-                class="client-logo-img"/>
+              <a
+                href="https://www.dashpm.ca/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="DASH website"
+              >
+                <img
+                  src="IMG/company-logos/logo-white.png"
+                  alt="DASH"
+                  class="client-logo-img"
+              /></a>
             </div>
             <div class="client-logo-wrap">
-              <img
-                src="IMG/company-logos/FINN-black.svg"
-                alt="FINN"
-                class="client-logo-img">
+              <a
+                href="https://www.finn.com/en-DE/blog"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="FINN website"
+              >
+                <img
+                  src="IMG/company-logos/FINN-black.svg"
+                  alt="FINN"
+                  class="client-logo-img"
+              /></a>
             </div>
             <div class="client-logo-wrap">
-              <img
-                src="IMG/company-logos/simple-folds.svg"
-                alt="Simple Folds"
-                class="client-logo-img"/>
+              <a
+                href="https://simplefolds.ca/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Simple Folds website"
+              >
+                <img
+                  src="IMG/company-logos/simple-folds.svg"
+                  alt="Simple Folds"
+                  class="client-logo-img"
+              /></a>
             </div>
             <div class="client-logo-wrap" aria-hidden="true">
-              <img
-                src="IMG/company-logos/industrios-logo.png"
-                alt="Industrios"
-                class="client-logo-img client-logo-img--large"/>
+              <a
+                href="https://www.industrios.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Industrios website"
+              >
+                <img
+                  src="IMG/company-logos/industrios-logo.png"
+                  alt="Industrios"
+                  class="client-logo-img client-logo-img--large"
+                />
+              </a>
             </div>
             <div class="client-logo-wrap" aria-hidden="true">
-              <img
-                src="IMG/company-logos/Procom_Logo_Path.svg"
-                alt=""
-                class="client-logo-img"/>
+              <a
+                href="https://procomservices.com/en-ca/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Procom website"
+              >
+                <img
+                  src="IMG/company-logos/Procom_Logo_Path.svg"
+                  alt="Procom"
+                  class="client-logo-img"
+                />
+              </a>
             </div>
             <div class="client-logo-wrap" aria-hidden="true">
-              <img
-                src="IMG/company-logos/Shoplogix_Logo.svg"
-                alt="Shoplogix"
-                class="client-logo-img"/>
+              <a
+                href="https://shoplogix.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Shoplogix website"
+              >
+                <img
+                  src="IMG/company-logos/Shoplogix_Logo.svg"
+                  alt="Shoplogix"
+                  class="client-logo-img"
+                />
+              </a>
             </div>
             <div class="client-logo-wrap">
-              <img
-                src="IMG/company-logos/glass-place-wordmark.svg"
-                alt="The Glass Place"
-                class="client-logo-img client-logo-img--no-filter"/>
+              <a
+                href="https://glassplace.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Glass place website"
+              >
+                <img
+                  src="IMG/company-logos/glass-place-wordmark.svg"
+                  alt="The Glass Place"
+                  class="client-logo-img client-logo-img--no-filter"
+              /></a>
             </div>
             <div class="client-logo-wrap" aria-hidden="true">
-              <img
-                src="IMG/company-logos/Cartoon_Net_transparent.svg"
-                alt="Cartoon Network"
-                class="client-logo-img">
+              <a
+                href="https://www.wbd.com/details-of-broadcaster/germany"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Cartoon Network website"
+              >
+                <img
+                  src="IMG/company-logos/Cartoon_Net_transparent.svg"
+                  alt="Cartoon Network"
+                  class="client-logo-img"
+              /></a>
             </div>
             <div class="client-logo-wrap" aria-hidden="true">
-              <img
-                src="IMG/company-logos/logo-white.png"
-                alt="Dash"
-                class="client-logo-img"/>
+              <a
+                href="https://www.dashpm.ca/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="DASH website"
+              >
+                <img
+                  src="IMG/company-logos/logo-white.png"
+                  alt="DASH"
+                  class="client-logo-img"
+              /></a>
             </div>
             <div class="client-logo-wrap" aria-hidden="true">
-              <img
-                src="IMG/company-logos/FINN-black.svg"
-                alt="FINN"
-                class="client-logo-img">
+              <a
+                href="https://www.finn.com/en-DE/blog"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="FINN website"
+              >
+                <img
+                  src="IMG/company-logos/FINN-black.svg"
+                  alt="FINN"
+                  class="client-logo-img"
+              /></a>
             </div>
             <div class="client-logo-wrap" aria-hidden="true">
-              <img
-                src="IMG/company-logos/simple-folds.svg"
-                alt="Simple Folds"
-                class="client-logo-img"/>
+              <a
+                href="https://simplefolds.ca/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Simple Folds website"
+              >
+                <img
+                  src="IMG/company-logos/simple-folds.svg"
+                  alt="Simple Folds"
+                  class="client-logo-img"
+              /></a>
             </div>
           </div>
         </div>
@@ -993,7 +951,8 @@
                 width="60"
                 height="60"
                 alt="Sipply Consulting"
-                loading="lazy"/>
+                loading="lazy"
+              />
             </a>
             <p class="footer-tagline">
               Let us go back to reliable marketing strategies for brands that do
@@ -1011,7 +970,7 @@
             </div>
             <div class="footer-col">
               <span class="footer-col-title">Connect</span>
-              <a href="l#message">Contact</a>
+              <a href="index.html#message">Contact</a>
               <a href="faq.html">FAQ</a>
             </div>
             <div class="footer-col">
@@ -1090,16 +1049,16 @@
 
       (function () {
         var descriptions = [
-          "New opportunities for engagement are easy to miss. In-depth industry, competitor, and audience insights show you where to look.",
-          "I look at your past work and case studies to show real, applied results rather than theory.",
-          "Get to know how I work, my background, and why I ditched the AI-flavored approach to marketing.",
+          "New opportunities for engagement are easy to miss. I help you update your website and make sure people find your brand online.",
+          "Look through my project and past clients I've worked with.",
+          "Get to know me more and how I work.",
           "Transparent pricing for every service tier, so you know exactly what you're investing in before you book.",
         ];
 
         var ctaLabels = [
           "Explore services",
           "Explore projects",
-          "Explore about me",
+          "More about me",
           "Explore pricing",
         ];
 
@@ -1108,8 +1067,6 @@
         var colors = document.querySelectorAll(".svc-showcase-color");
         var descEl = document.getElementById("svc-showcase-desc");
         var ctaEl = document.getElementById("svc-showcase-cta");
-        var cursorTag = document.getElementById("svc-cursor-tag");
-        var frame = document.getElementById("svc-showcase-frame");
 
         function setActive(index) {
           items.forEach(function (el) {
@@ -1132,7 +1089,6 @@
             ctaEl.setAttribute("href", items[index].dataset.target);
           }
           ctaEl.textContent = ctaLabels[index];
-          if (cursorTag) cursorTag.textContent = ctaLabels[index];
         }
 
         items.forEach(function (el) {
@@ -1145,26 +1101,6 @@
             setActive(parseInt(el.dataset.index, 10));
           });
         });
-
-        if (frame && cursorTag) {
-          frame.addEventListener("mouseenter", function () {
-            cursorTag.classList.add("is-visible");
-          });
-          frame.addEventListener("mousemove", function (e) {
-            cursorTag.style.transform =
-              "translate(" +
-              (e.clientX + 18) +
-              "px, " +
-              (e.clientY + 18) +
-              "px)";
-          });
-          frame.addEventListener("mouseleave", function () {
-            cursorTag.classList.remove("is-visible");
-          });
-          frame.addEventListener("click", function () {
-            window.location.href = ctaEl.getAttribute("href");
-          });
-        }
 
         setActive(0);
 

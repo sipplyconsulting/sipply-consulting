@@ -480,43 +480,40 @@ document.querySelectorAll('a[href*="#"]').forEach((anchor) => {
 });
 
 /* ─── SMOOTH SCROLL TO HASH ON PAGE LOAD (cross-page links) ──
-   When arriving from another page via "page.html#section", the
-   browser performs an instant native jump before our JS runs.
-   This masks that jump with a fade, then replays it smoothly. ── */
+   When arriving from another page via "page.html#section", jump
+   instantly to the target while hidden, then fade the page in
+   already in position — no visible scroll animation. ── */
 if (window.location.hash) {
   const initialHash = window.location.hash;
   const initialTarget = document.querySelector(initialHash);
 
   if (initialTarget) {
-    history.replaceState(
-      null,
-      "",
-      window.location.pathname + window.location.search,
-    );
-
     document.documentElement.style.visibility = "hidden";
-    window.scrollTo(0, 0);
 
     window.addEventListener("load", () => {
       ScrollTrigger.refresh();
 
       requestAnimationFrame(() => {
-        document.documentElement.style.transition = "opacity 0.4s ease";
-        document.documentElement.style.opacity = "0";
-        document.documentElement.style.visibility = "visible";
+        const rect = initialTarget.getBoundingClientRect();
+        const targetY = rect.top + window.scrollY - 90;
+        window.scrollTo(0, Math.max(targetY, 0));
 
-        requestAnimationFrame(() => {
-          document.documentElement.style.opacity = "1";
-        });
-
-        setTimeout(() => {
+        if (typeof lenis.scrollTo === "function") {
           lenis.scrollTo(initialTarget, {
             offset: -90,
-            duration: 2.4,
-            easing: (t) => 1 - Math.pow(1 - t, 3),
+            immediate: true,
           });
-          history.replaceState(null, "", initialHash);
-        }, 250);
+        }
+
+        requestAnimationFrame(() => {
+          document.documentElement.style.transition = "opacity 0.4s ease";
+          document.documentElement.style.opacity = "0";
+          document.documentElement.style.visibility = "visible";
+
+          requestAnimationFrame(() => {
+            document.documentElement.style.opacity = "1";
+          });
+        });
       });
     });
   }

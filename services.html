@@ -2,18 +2,18 @@
 <html lang="en">
 
 <head>
-   <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-D6DXEQFZNW"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", "G-D6DXEQFZNW");
-    </script>
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-D6DXEQFZNW"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+    gtag("config", "G-D6DXEQFZNW");
+  </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>
@@ -455,22 +455,117 @@
     }
 
     .book-head {
-      margin: 0 0 40px;
-      max-width: 62ch;
+  margin: 0 0 32px;
+  max-width: 62ch;
+}
+
+    .book-head-copy {
+      max-width: 56ch;
     }
 
-    .book-head h2 {
-      font-size: clamp(2.2rem, 3.6vw, 3rem);
-      font-weight: 500;
-      letter-spacing: -0.03em;
-      margin: 0 0 14px;
-    }
+ .book-head h2 {
+  font-size: clamp(2.2rem, 3.6vw, 3rem);
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  margin: 0 0 14px;
+}
 
-    .book-head p {
-      color: var(--muted);
-      line-height: 1.7;
-      margin: 0;
-    }
+  .book-head p {
+  color: var(--muted);
+  line-height: 1.7;
+  margin: 0;
+}
+
+   .book-tz-note {
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.6;
+  margin: 18px 0 0;
+}
+
+  .book-tz-note strong {
+  color: var(--text);
+}
+
+   
+.tz-calc {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  flex-wrap: wrap;
+  padding: 18px 28px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--card);
+  margin-bottom: 20px;
+}
+.tz-calc-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  flex-shrink: 0;
+}
+
+.tz-calc-label svg {
+  width: 13px;
+  height: 13px;
+}
+
+.tz-calc-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.tz-calc-row label {
+  font-size: 0.85rem;
+  color: var(--muted);
+  white-space: nowrap;
+}
+.tz-calc-row input[type="time"] {
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 6px 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--bg);
+  color: var(--text);
+}
+.tz-calc-row input[type="time"]:focus {
+  outline: none;
+  border-color: var(--text);
+}
+
+.tz-calc-divider {
+  width: 1px;
+  height: 24px;
+  background: var(--line);
+  flex-shrink: 0;
+}
+
+
+.tz-calc-result {
+  font-size: 0.9rem;
+  color: var(--muted);
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.tz-calc-result strong {
+  color: var(--text);
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+
 
     .book-grid {
       display: flex;
@@ -555,6 +650,11 @@
         padding-left: 8px;
       }
 
+      .book-head {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+
       .book-above {
         flex-direction: column;
         align-items: flex-start;
@@ -594,6 +694,13 @@
         min-height: 620px;
       }
     }
+    @media (max-width: 700px) {
+  .tz-calc {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+}
   </style>
 </head>
 
@@ -703,195 +810,219 @@
 
     <section class="book-section" id="book">
       <div style="width: min(1200px, calc(100% - 40px)); margin: 0 auto">
-        <div class="book-head">
-          <h2>Book a consultation - $175/hr</h2>
-          <p>
-            This is for people who want an expert opinion before committing to
-            a project. A 60-minute working
-            session, CA$175, with a written follow-up within 48 hours.
-          </p>
-          <!-- <a class="button secondary" href="faq.html">More FAQs</a> -->
-        </div>
-        <div class="book-grid">
-          <div id="cal-booking-inline" data-lenis-prevent></div>
-        </div>
+       <div class="book-head">
+  <h2>Book a consultation - $175/hr</h2>
+  <p>
+    This is for people who want an expert opinion before committing to
+    a project. A 60-minute working
+    session, CA$175, with a written follow-up within 48 hours.
+  </p>
+  <p class="book-tz-note">
+    Please keep your <strong>timezone</strong> in mind when booking.
+    I'm based in Calgary, Canada (Mountain Time) — use the calculator
+    below to check what a time slot means for you.
+  </p>
+</div>
+
+<div class="tz-calc" id="tz-calc">
+  <div class="tz-calc-label">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <circle cx="12" cy="12" r="10" />
+      <polyline points="12 6 12 12 16 14" />
+    </svg>
+    Timezone calculator
+  </div>
+  <div class="tz-calc-row">
+    <label for="tz-calc-input">Calgary time</label>
+    <input type="time" id="tz-calc-input" value="15:00" />
+  </div>
+  <div class="tz-calc-divider"></div>
+  <div class="tz-calc-result">
+    Your time: <strong id="tz-calc-output">--:--</strong>
+    <span id="tz-calc-zone"></span>
+  </div>
+</div>
+
+<div class="book-grid">
+  <div id="cal-booking-inline" data-lenis-prevent></div>
+</div>
       </div>
     </section>
   </main>
 
-   <footer class="site-footer">
-      <div class="footer-inner">
-        <div class="hero-client-strip" aria-label="Brands written for">
-          <div class="hero-client-track" id="client-logos-track">
-            <div class="client-logo-wrap">
-             <a href="https://www.industrios.com" target="_blank" rel="noopener noreferrer" aria-label="Industrios website">
-            <img
-              src="IMG/company-logos/industrios-logo.png"
-              alt="Industrios"
-              class="client-logo-img client-logo-img--large"/>
-          </a>
-            </div>
-            <div class="client-logo-wrap">
-              <a href="https://procomservices.com/en-ca/" target="_blank" rel="noopener noreferrer" aria-label="Procom website">
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="hero-client-strip" aria-label="Brands written for">
+        <div class="hero-client-track" id="client-logos-track">
+          <div class="client-logo-wrap">
+            <a href="https://www.industrios.com" target="_blank" rel="noopener noreferrer" aria-label="Industrios website">
+              <img
+                src="IMG/company-logos/industrios-logo.png"
+                alt="Industrios"
+                class="client-logo-img client-logo-img--large" />
+            </a>
+          </div>
+          <div class="client-logo-wrap">
+            <a href="https://procomservices.com/en-ca/" target="_blank" rel="noopener noreferrer" aria-label="Procom website">
               <img
                 src="IMG/company-logos/Procom_Logo_Path.svg"
                 alt="Procom"
-                class="client-logo-img"/>
-              </a>
-            </div>
-            <div class="client-logo-wrap">
-               <a href="https://shoplogix.com/" target="_blank" rel="noopener noreferrer" aria-label="Shoplogix website">
+                class="client-logo-img" />
+            </a>
+          </div>
+          <div class="client-logo-wrap">
+            <a href="https://shoplogix.com/" target="_blank" rel="noopener noreferrer" aria-label="Shoplogix website">
               <img
                 src="IMG/company-logos/Shoplogix_Logo.svg"
                 alt="Shoplogix"
-                class="client-logo-img"/>
-              </a>
-            </div>
-            <div class="client-logo-wrap">
-             <a href="https://glassplace.com/" target="_blank" rel="noopener noreferrer" aria-label="Glass place website">
+                class="client-logo-img" />
+            </a>
+          </div>
+          <div class="client-logo-wrap">
+            <a href="https://glassplace.com/" target="_blank" rel="noopener noreferrer" aria-label="Glass place website">
               <img
                 src="IMG/company-logos/glass-place-wordmark.svg"
                 alt="The Glass Place"
-                class="client-logo-img client-logo-img--no-filter"/></a>
-            </div>
-            <div class="client-logo-wrap">
-             <a href="https://www.wbd.com/details-of-broadcaster/germany" target="_blank" rel="noopener noreferrer" aria-label="Cartoon Network website">
-              <img
-                src="IMG/company-logos/Cartoon_Net_transparent.svg"
-                alt="Cartoon Network"
-                class="client-logo-img"></a>
-            </div>
-            <div class="client-logo-wrap">
-            <a href="https://www.dashpm.ca/" target="_blank" rel="noopener noreferrer" aria-label="DASH website">
-              <img
-                src="IMG/company-logos/logo-white.png"
-                alt="DASH"
-                class="client-logo-img"/></a>
-            </div>
-            <div class="client-logo-wrap">
-             <a href="https://www.finn.com/en-DE/blog" target="_blank" rel="noopener noreferrer" aria-label="FINN website">
-              <img
-                src="IMG/company-logos/FINN-black.svg"
-                alt="FINN"
-                class="client-logo-img"></a>
-            </div>
-            <div class="client-logo-wrap">
-           <a href="https://simplefolds.ca/" target="_blank" rel="noopener noreferrer" aria-label="Simple Folds website">
-              <img
-                src="IMG/company-logos/simple-folds.svg"
-                alt="Simple Folds"
-                class="client-logo-img"/></a>
-            </div>
-            <div class="client-logo-wrap" aria-hidden="true">
-               <a href="https://www.industrios.com" target="_blank" rel="noopener noreferrer" aria-label="Industrios website">
-            <img
-              src="IMG/company-logos/industrios-logo.png"
-              alt="Industrios"
-              class="client-logo-img client-logo-img--large"/>
-          </a>
-            </div>
-            <div class="client-logo-wrap" aria-hidden="true">
-               <a href="https://procomservices.com/en-ca/" target="_blank" rel="noopener noreferrer" aria-label="Procom website">
-              <img
-                src="IMG/company-logos/Procom_Logo_Path.svg"
-                alt="Procom"
-                class="client-logo-img"/>
-              </a>
-            </div>
-            <div class="client-logo-wrap" aria-hidden="true">
-               <a href="https://shoplogix.com/" target="_blank" rel="noopener noreferrer" aria-label="Shoplogix website">
-              <img
-                src="IMG/company-logos/Shoplogix_Logo.svg"
-                alt="Shoplogix"
-                class="client-logo-img"/>
-              </a>
-            </div>
-            <div class="client-logo-wrap">
-              <a href="https://glassplace.com/" target="_blank" rel="noopener noreferrer" aria-label="Glass place website">
-              <img
-                src="IMG/company-logos/glass-place-wordmark.svg"
-                alt="The Glass Place"
-                class="client-logo-img client-logo-img--no-filter"/></a>
-            </div>
-            <div class="client-logo-wrap" aria-hidden="true">
+                class="client-logo-img client-logo-img--no-filter" /></a>
+          </div>
+          <div class="client-logo-wrap">
             <a href="https://www.wbd.com/details-of-broadcaster/germany" target="_blank" rel="noopener noreferrer" aria-label="Cartoon Network website">
               <img
                 src="IMG/company-logos/Cartoon_Net_transparent.svg"
                 alt="Cartoon Network"
-                class="client-logo-img"></a>
-            </div>
-            <div class="client-logo-wrap" aria-hidden="true">
-               <a href="https://www.dashpm.ca/" target="_blank" rel="noopener noreferrer" aria-label="DASH website">
+                class="client-logo-img" /></a>
+          </div>
+          <div class="client-logo-wrap">
+            <a href="https://www.dashpm.ca/" target="_blank" rel="noopener noreferrer" aria-label="DASH website">
               <img
                 src="IMG/company-logos/logo-white.png"
                 alt="DASH"
-                class="client-logo-img"/></a>
-            </div>
-            <div class="client-logo-wrap" aria-hidden="true">
-              <a href="https://www.finn.com/en-DE/blog" target="_blank" rel="noopener noreferrer" aria-label="FINN website">
+                class="client-logo-img" /></a>
+          </div>
+          <div class="client-logo-wrap">
+            <a href="https://www.finn.com/en-DE/blog" target="_blank" rel="noopener noreferrer" aria-label="FINN website">
               <img
                 src="IMG/company-logos/FINN-black.svg"
                 alt="FINN"
-                class="client-logo-img"></a>
-            </div>
-            <div class="client-logo-wrap" aria-hidden="true">
+                class="client-logo-img" /></a>
+          </div>
+          <div class="client-logo-wrap">
             <a href="https://simplefolds.ca/" target="_blank" rel="noopener noreferrer" aria-label="Simple Folds website">
               <img
                 src="IMG/company-logos/simple-folds.svg"
                 alt="Simple Folds"
-                class="client-logo-img"/></a>
-            </div>
+                class="client-logo-img" /></a>
           </div>
-        </div>
-        <div class="footer-top">
-          <div class="footer-brand">
-            <a href="index.html">
+          <div class="client-logo-wrap" aria-hidden="true">
+            <a href="https://www.industrios.com" target="_blank" rel="noopener noreferrer" aria-label="Industrios website">
               <img
-                src="IMG/logo.svg"
-                width="60"
-                height="60"
-                alt="Sipply Consulting"
-                loading="lazy"/>
+                src="IMG/company-logos/industrios-logo.png"
+                alt="Industrios"
+                class="client-logo-img client-logo-img--large" />
             </a>
-            <p class="footer-tagline">
-              Let us go back to reliable marketing strategies for brands that do
-              not come from a chatbot and won't harm our planet.
-            </p>
           </div>
-
-          <nav class="footer-nav-grid">
-            <div class="footer-col">
-              <span class="footer-col-title">Site</span>
-              <a href="services.html">Services</a>
-              <a href="work.html">Projects</a>
-              <a href="pricing.html">Pricing</a>
-              <a href="about.html">About</a>
-            </div>
-            <div class="footer-col">
-              <span class="footer-col-title">Connect</span>
-              <a href="index.html#message">Contact</a>
-              <a href="faq.html">FAQ</a>
-            </div>
-            <div class="footer-col">
-              <span class="footer-col-title">Legal</span>
-              <a href="privacy-policy.html">Privacy Policy</a>
-              <a href="terms.html">Terms &amp; Conditions</a>
-            </div>
-            <div class="footer-col">
-              <span class="footer-col-title">Extra</span>
-              <a href="no-ai.html">No AI</a>
-            </div>
-          </nav>
-        </div>
-
-        <div class="footer-bottom">
-          <p>
-            Sipply Consulting &copy; 2026. All rights reserved. Website
-            development by Tom Sipply.
-          </p>
+          <div class="client-logo-wrap" aria-hidden="true">
+            <a href="https://procomservices.com/en-ca/" target="_blank" rel="noopener noreferrer" aria-label="Procom website">
+              <img
+                src="IMG/company-logos/Procom_Logo_Path.svg"
+                alt="Procom"
+                class="client-logo-img" />
+            </a>
+          </div>
+          <div class="client-logo-wrap" aria-hidden="true">
+            <a href="https://shoplogix.com/" target="_blank" rel="noopener noreferrer" aria-label="Shoplogix website">
+              <img
+                src="IMG/company-logos/Shoplogix_Logo.svg"
+                alt="Shoplogix"
+                class="client-logo-img" />
+            </a>
+          </div>
+          <div class="client-logo-wrap">
+            <a href="https://glassplace.com/" target="_blank" rel="noopener noreferrer" aria-label="Glass place website">
+              <img
+                src="IMG/company-logos/glass-place-wordmark.svg"
+                alt="The Glass Place"
+                class="client-logo-img client-logo-img--no-filter" /></a>
+          </div>
+          <div class="client-logo-wrap" aria-hidden="true">
+            <a href="https://www.wbd.com/details-of-broadcaster/germany" target="_blank" rel="noopener noreferrer" aria-label="Cartoon Network website">
+              <img
+                src="IMG/company-logos/Cartoon_Net_transparent.svg"
+                alt="Cartoon Network"
+                class="client-logo-img" /></a>
+          </div>
+          <div class="client-logo-wrap" aria-hidden="true">
+            <a href="https://www.dashpm.ca/" target="_blank" rel="noopener noreferrer" aria-label="DASH website">
+              <img
+                src="IMG/company-logos/logo-white.png"
+                alt="DASH"
+                class="client-logo-img" /></a>
+          </div>
+          <div class="client-logo-wrap" aria-hidden="true">
+            <a href="https://www.finn.com/en-DE/blog" target="_blank" rel="noopener noreferrer" aria-label="FINN website">
+              <img
+                src="IMG/company-logos/FINN-black.svg"
+                alt="FINN"
+                class="client-logo-img" /></a>
+          </div>
+          <div class="client-logo-wrap" aria-hidden="true">
+            <a href="https://simplefolds.ca/" target="_blank" rel="noopener noreferrer" aria-label="Simple Folds website">
+              <img
+                src="IMG/company-logos/simple-folds.svg"
+                alt="Simple Folds"
+                class="client-logo-img" /></a>
+          </div>
         </div>
       </div>
-    </footer>
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html">
+            <img
+              src="IMG/logo.svg"
+              width="60"
+              height="60"
+              alt="Sipply Consulting"
+              loading="lazy" />
+          </a>
+          <p class="footer-tagline">
+            Let us go back to reliable marketing strategies for brands that do
+            not come from a chatbot and won't harm our planet.
+          </p>
+        </div>
+
+        <nav class="footer-nav-grid">
+          <div class="footer-col">
+            <span class="footer-col-title">Site</span>
+            <a href="services.html">Services</a>
+            <a href="work.html">Projects</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="about.html">About</a>
+          </div>
+          <div class="footer-col">
+            <span class="footer-col-title">Connect</span>
+            <a href="index.html#message">Contact</a>
+            <a href="faq.html">FAQ</a>
+          </div>
+          <div class="footer-col">
+            <span class="footer-col-title">Legal</span>
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="terms.html">Terms &amp; Conditions</a>
+          </div>
+          <div class="footer-col">
+            <span class="footer-col-title">Extra</span>
+            <a href="no-ai.html">No AI</a>
+          </div>
+        </nav>
+      </div>
+
+      <div class="footer-bottom">
+        <p>
+          Sipply Consulting &copy; 2026. All rights reserved. Website
+          development by Tom Sipply.
+        </p>
+      </div>
+    </div>
+  </footer>
 
   <script src="script.js"></script>
 
@@ -1199,6 +1330,42 @@
     );
 
     window.addEventListener("load", () => ScrollTrigger.refresh());
+  </script>
+  <script>
+    function getTimezoneOffsetMinutes(timeZone) {
+      const now = new Date();
+      const tzDate = new Date(now.toLocaleString('en-US', { timeZone }));
+      const utcDate = new Date(now.toLocaleString('en-US', { timeZone: 'UTC' }));
+      return (tzDate.getTime() - utcDate.getTime()) / 60000;
+    }
+
+    function updateTZCalculator() {
+      const input = document.getElementById('tz-calc-input');
+      const output = document.getElementById('tz-calc-output');
+      const zoneLabel = document.getElementById('tz-calc-zone');
+      if (!input || !output) return;
+
+      const [hh, mm] = input.value.split(':').map(Number);
+      if (isNaN(hh) || isNaN(mm)) return;
+
+      const calgaryOffset = getTimezoneOffsetMinutes('America/Edmonton');
+      const localOffset = getTimezoneOffsetMinutes(Intl.DateTimeFormat().resolvedOptions().timeZone);
+      const diffMinutes = localOffset - calgaryOffset;
+
+      let totalMinutes = hh * 60 + mm + diffMinutes;
+      totalMinutes = ((totalMinutes % 1440) + 1440) % 1440;
+
+      const outHH = Math.floor(totalMinutes / 60);
+      const outMM = Math.round(totalMinutes % 60);
+      const period = outHH >= 12 ? 'PM' : 'AM';
+      const displayHH = outHH % 12 === 0 ? 12 : outHH % 12;
+
+      output.textContent = `${displayHH}:${String(outMM).padStart(2, '0')} ${period}`;
+      zoneLabel.textContent = `(${Intl.DateTimeFormat().resolvedOptions().timeZone.replace('_', ' ')})`;
+    }
+
+    document.getElementById('tz-calc-input')?.addEventListener('input', updateTZCalculator);
+    updateTZCalculator();
   </script>
 </body>
 

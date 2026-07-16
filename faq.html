@@ -1,18 +1,6 @@
 <!doctype html>
 <html lang="en">
   <head>
-     <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-D6DXEQFZNW"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", "G-D6DXEQFZNW");
-    </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FAQ — Sipply Consulting</title>
@@ -22,7 +10,6 @@
       name="meta description"
       content="Frequently asked questions about Sipply Consulting and our approach to digital marketing."
     />
-
     <script>
       (function () {
         var t;
@@ -41,6 +28,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
     <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="stylesheet" href="site-consent/site-consent.css" />
     <link
       rel="icon"
       type="image/png"
@@ -835,6 +823,7 @@
               <span class="footer-col-title">Legal</span>
               <a href="privacy-policy.html">Privacy Policy</a>
               <a href="terms.html">Terms &amp; Conditions</a>
+              <a href="#" onclick="window.reopenCookieConsent(); return false;">Cookie Settings</a>
             </div>
             <div class="footer-col">
               <span class="footer-col-title">Extra</span>
@@ -1023,5 +1012,6 @@
         ScrollTrigger.refresh();
       });
     </script>
+    <script src="site-consent/site-consent.js"></script>
   </body>
 </html>

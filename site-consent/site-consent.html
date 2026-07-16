@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="site-consent" role="dialog" aria-live="polite" aria-label="Site consent">
+  <p>
+    We use cookies to run this site and understand how it's used. Essential cookies are always on.
+    You can choose whether to allow analytics cookies (Google Analytics). See our
+    <a href="privacy-policy.html">Privacy Policy</a> for details.
+  </p>
+
+  <div class="cc-options" id="cc-options">
+    <div class="cc-option-row">
+      <div class="cc-option-text">
+        <strong>Essential</strong>
+        <span>Required for the site to function. Cannot be turned off.</span>
+      </div>
+      <label class="cc-switch">
+        <input type="checkbox" checked disabled />
+        <span class="cc-slider"></span>
+      </label>
+    </div>
+    <div class="cc-option-row">
+      <div class="cc-option-text">
+        <strong>Analytics</strong>
+        <span>Google Analytics — helps us understand traffic and improve the site.</span>
+      </div>
+      <label class="cc-switch">
+        <input type="checkbox" id="cc-analytics-toggle" />
+        <span class="cc-slider"></span>
+      </label>
+    </div>
+  </div>
+
+  <div class="cc-actions">
+    <button class="cc-btn primary" id="cc-accept-all">Accept all</button>
+    <button class="cc-btn" id="cc-reject-all">Reject non-essential</button>
+    <button class="cc-btn link" id="cc-customize">Customize</button>
+    <button class="cc-btn link" id="cc-save" style="display:none;">Save preferences</button>
+  </div>
+</div>
+</body>
+</html>

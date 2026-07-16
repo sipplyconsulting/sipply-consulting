@@ -1,911 +1,1154 @@
 <!doctype html>
 <html lang="en">
-
-<head>
-   <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-D6DXEQFZNW"
-    ></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pricing — Sipply Consulting | SEO, Content & CRO Rates</title>
+    <meta
+      name="description"
+      content="Transparent starting prices for SEO, content strategy, CRO, copywriting, and marketing packages from Sipply Consulting. See ranges by project size."
+    />
+    <link rel="canonical" href="https://www.sipplyconsulting.ca/pricing.html" />
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", "G-D6DXEQFZNW");
+      (function () {
+        var t;
+        try {
+          t = localStorage.getItem("sipply-theme");
+        } catch (e) {}
+        if (!t)
+          t = matchMedia("(prefers-color-scheme:dark)").matches
+            ? "dark"
+            : "light";
+        document.documentElement.setAttribute("data-theme", t);
+      })();
     </script>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pricing — Sipply Consulting | SEO, Content & CRO Rates</title>
-  <meta name="description"
-    content="Transparent starting prices for SEO, content strategy, CRO, copywriting, and marketing packages from Sipply Consulting. See ranges by project size." />
-  <link rel="canonical" href="https://www.sipplyconsulting.ca/pricing.html" />
-  <script>
-    (function () {
-      var t;
-      try { t = localStorage.getItem("sipply-theme"); } catch (e) { }
-      if (!t) t = matchMedia("(prefers-color-scheme:dark)").matches ? "dark" : "light";
-      document.documentElement.setAttribute("data-theme", t);
-    })();
-  </script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
-  <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+    <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/IMG/apple-touch-icon.png" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/IMG/favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="/IMG/favicon-16x16.png" />
-  <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="site-consent/site-consent.css" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/IMG/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/IMG/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/IMG/favicon-16x16.png"
+    />
+    <link rel="stylesheet" href="styles.css" />
 
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "serviceType": "Digital Marketing Consulting Pricing",
-      "provider": {
-        "@type": "LocalBusiness",
-        "name": "Sipply Consulting",
-        "areaServed": ["Calgary", "Canada", "United States"]
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "serviceType": "Digital Marketing Consulting Pricing",
+        "provider": {
+          "@type": "LocalBusiness",
+          "name": "Sipply Consulting",
+          "areaServed": ["Calgary", "Canada", "United States"]
+        }
       }
-    }
-  </script>
-
-  <style>
-    .pr-hero {
-      padding: 70px 0 60px;
-    }
-
-    .pr-hero-head {
-      max-width: 780px;
-    }
-
-    .pr-eyebrow {
-      display: block;
-      overflow: hidden;
-      margin-bottom: 18px;
-    }
-
-    .pr-eyebrow span {
-      display: inline-block;
-      font-size: 0.78rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
-
-    .pr-title {
-      font-size: clamp(2.6rem, 5vw, 4rem);
-      font-weight: 500;
-      letter-spacing: -0.03em;
-      line-height: 1.06;
-      margin: 0 0 22px;
-    }
-
-    .pr-desc {
-      font-size: 1.05rem;
-      color: var(--muted);
-      line-height: 1.7;
-      max-width: 62ch;
-      margin: 0 0 8px;
-    }
-
-    .pr-desc a {
-      color: var(--text);
-      text-decoration: underline;
-    }
-
-    .pr-desc strong {
-      color: var(--text);
-    }
-
-    /* ── SERVICE PRICE CARDS ── */
-    .pr-section {
-      padding: 20px 0 90px;
-      border-top: 1px solid var(--line);
-    }
-
-    .pr-section-head {
-      margin: 40px 0 40px;
-      max-width: 68ch;
-    }
-
-    .pr-section-eyebrow {
-      font-size: 0.75rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin: 0 20 20px;
-    }
-
-    .pr-section-title {
-      font-size: clamp(2rem, 3.4vw, 2.8rem);
-      font-weight: 500;
-      letter-spacing: -0.03em;
-      line-height: 1.1;
-      margin: 0 0 12px;
-    }
-
-    .pr-section-sub {
-      color: var(--muted);
-      font-size: 0.98rem;
-      margin: 0;
-    }
-
-    .pr-list {
-      border-top: 1px solid var(--line);
-    }
-
-    .pr-item {
-      border-bottom: 1px solid var(--line);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .pr-item::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 0;
-      bottom: 0;
-      width: 4px;
-      transform: scaleY(0);
-      transform-origin: top;
-      transition: transform 0.45s ease;
-    }
-
-    .pr-item.is-open::before {
-      transform: scaleY(1);
-    }
-
-    .pr-item[data-accent="1"]::before {
-      background: #7c5cff;
-    }
-
-    .pr-item[data-accent="2"]::before {
-      background: #00c2ff;
-    }
-
-    .pr-item[data-accent="3"]::before {
-      background: #ff3b3b;
-    }
-
-    .pr-item[data-accent="4"]::before {
-      background: #34c759;
-    }
-
-    .pr-item[data-accent="5"]::before {
-      background: #ff9500;
-    }
-
-    .pr-item[data-accent="6"]::before {
-      background: #ffd60a;
-    }
-
-    .pr-item[data-accent="7"]::before {
-      background: #bf5af2;
-    }
-
-    .pr-trigger {
-      width: 100%;
-      display: flex;
-      align-items: center;
-      gap: 24px;
-      background: none;
-      border: none;
-      padding: 28px 8px;
-      cursor: pointer;
-      text-align: left;
-      font-family: inherit;
-    }
-
-    .pr-trigger-num {
-      font-size: 0.85rem;
-      color: var(--muted);
-      font-weight: 500;
-      width: 32px;
-      flex-shrink: 0;
-    }
-
-    .pr-trigger-title-wrap {
-      flex: 1;
-      display: flex;
-      align-items: baseline;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-
-    .pr-trigger-title {
-      font-size: clamp(1.2rem, 2vw, 1.5rem);
-      font-weight: 500;
-      letter-spacing: -0.02em;
-      transition: color 0.3s ease;
-    }
-
-    .pr-item.is-open .pr-trigger-title {
-      color: var(--text);
-    }
-
-    .pr-trigger-from {
-      font-size: 0.86rem;
-      color: var(--muted);
-      white-space: nowrap;
-    }
-
-    .pr-trigger-from strong {
-      color: var(--text);
-      font-weight: 600;
-    }
-
-    .pr-trigger-icon {
-      width: 34px;
-      height: 34px;
-      flex-shrink: 0;
-      border: 1px solid var(--line);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: transform 0.4s ease, border-color 0.3s ease;
-    }
-
-    .pr-item.is-open .pr-trigger-icon {
-      transform: rotate(45deg);
-      border-color: var(--text);
-    }
-
-    .pr-trigger-icon svg {
-      width: 14px;
-      height: 14px;
-    }
-
-    .pr-body {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.5s ease;
-    }
-
-    .pr-body-inner {
-      padding: 0 8px 36px 64px;
-    }
-
-    .pr-tiers {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-      margin-bottom: 18px;
-    }
-
-    .pr-tier {
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      padding: 18px 20px;
-      background: var(--card);
-    }
-
-    .pr-tier-label {
-      display: block;
-      font-size: 0.78rem;
-      color: var(--muted);
-      margin-bottom: 8px;
-      line-height: 1.4;
-    }
-
-    .pr-tier-range {
-      font-size: 1.15rem;
-      font-weight: 600;
-      color: var(--text);
-      letter-spacing: -0.01em;
-    }
-
-    .pr-tier-example {
-      display: block;
-      font-size: 0.78rem;
-      color: var(--muted);
-      margin-top: 6px;
-    }
-
-    .pr-item-note {
-      font-size: 0.85rem;
-      color: var(--muted);
-      line-height: 1.6;
-      margin: 0;
-      max-width: 60ch;
-    }
-
-    .pr-item-note a {
-      color: var(--text);
-      text-decoration: underline;
-    }
-
-    /* ── PACKAGES — 3-tier vertical pricing cards ── */
-    .pr-pkg-head {
-      margin: 0 0 44px;
-      max-width: 68ch;
-    }
-
-    .pr-pkg-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 24px;
-      align-items: start;
-    }
-
-    .pr-pkg-card {
-      position: relative;
-      border: 1px solid var(--line);
-      border-radius: 22px;
-      padding: 36px 32px 32px;
-      background: var(--card);
-      display: flex;
-      flex-direction: column;
-      transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
-    }
-
-    .pr-pkg-card:hover {
-      transform: translateY(-6px);
-    }
-
-    .pr-pkg-card.is-recommended {
-      border-color: #7c5cff;
-      background: var(--bg);
-      box-shadow: 0 20px 50px -20px rgba(124, 92, 255, 0.35);
-      transform: scale(1.03);
-      z-index: 2;
-    }
-
-    .pr-pkg-card.is-recommended:hover {
-      transform: scale(1.03) translateY(-6px);
-    }
-
-    .pr-pkg-badge {
-      position: absolute;
-      top: -13px;
-      left: 32px;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: #fff;
-      background: #7c5cff;
-      padding: 6px 14px;
-      border-radius: 999px;
-    }
-
-    .pr-pkg-badge svg {
-      width: 12px;
-      height: 12px;
-    }
-
-    .pr-pkg-accent-dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      margin-bottom: 18px;
-    }
-
-    .pr-pkg-card.pkg-a .pr-pkg-accent-dot {
-      background: #00c2ff;
-    }
-
-    .pr-pkg-card.pkg-b .pr-pkg-accent-dot {
-      background: #7c5cff;
-    }
-
-    .pr-pkg-card.pkg-c .pr-pkg-accent-dot {
-      background: #ff9500;
-    }
-
-    .pr-pkg-tag {
-      display: block;
-      font-size: 0.72rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 10px;
-    }
-
-    .pr-pkg-title {
-      font-size: 1.3rem;
-      font-weight: 600;
-      letter-spacing: -0.015em;
-      margin: 0 0 10px;
-    }
-
-    .pr-pkg-desc {
-      font-size: 0.9rem;
-      color: var(--muted);
-      line-height: 1.55;
-      margin: 0 0 24px;
-      min-height: 42px;
-    }
-
-    .pr-pkg-price-row {
-      margin-bottom: 24px;
-      padding-bottom: 24px;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .pr-pkg-price {
-      display: block;
-      font-size: 1.5rem;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      line-height: 1.2;
-    }
-
-    .pr-pkg-price-unit {
-      display: block;
-      font-size: 0.8rem;
-      color: var(--muted);
-      margin-top: 4px;
-    }
-
-    .pr-pkg-features {
-      list-style: none;
-      margin: 0 0 28px;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 13px;
-      flex: 1;
-    }
-
-    .pr-pkg-features li {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      font-size: 0.87rem;
-      line-height: 1.5;
-      color: var(--text);
-    }
-
-    .pr-pkg-features svg {
-      width: 15px;
-      height: 15px;
-      flex-shrink: 0;
-      margin-top: 2px;
-      color: #34c759;
-    }
-
-    .pr-pkg-cta {
-      width: 100%;
-      text-align: center;
-      justify-content: center;
-    }
-
-    /* ── CONSULT CTA BAND ── */
-    .pr-cta-band {
-      padding: 70px 0 100px;
-      border-top: 1px solid var(--line);
-    }
-
-    .pr-cta-card {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      gap: 32px;
-      border: 1px solid var(--line);
-      border-radius: 20px;
-      background: var(--card);
-      padding: 40px 44px;
-    }
-
-    .pr-cta-left h2 {
-      font-size: clamp(1.6rem, 2.6vw, 2.2rem);
-      font-weight: 500;
-      letter-spacing: -0.02em;
-      margin: 0 0 10px;
-    }
-
-    .pr-cta-left p {
-      color: var(--muted);
-      line-height: 1.65;
-      margin: 0;
-      max-width: 50ch;
-    }
-
-    .pr-cta-right {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      flex-shrink: 0;
-    }
-
-    .pr-cta-price {
-      font-size: 1.4rem;
-      font-weight: 700;
-      white-space: nowrap;
-    }
-
-    @media (max-width: 900px) {
-      .pr-tiers {
-        grid-template-columns: 1fr;
+    </script>
+
+    <style>
+      .pr-hero {
+        padding: 70px 0 60px;
       }
 
-      .pr-body-inner {
-        padding-left: 8px;
+      .pr-hero-head {
+        max-width: 780px;
       }
 
-      .pr-pkg-grid {
-        grid-template-columns: 1fr;
+      .pr-eyebrow {
+        display: block;
+        overflow: hidden;
+        margin-bottom: 18px;
       }
 
-      .pr-pkg-card.is-recommended {
-        transform: none;
+      .pr-eyebrow span {
+        display: inline-block;
+        font-size: 0.78rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--muted);
       }
 
-      .pr-pkg-card.is-recommended:hover {
-        transform: translateY(-6px);
+      .pr-title {
+        font-size: clamp(2.6rem, 5vw, 4rem);
+        font-weight: 500;
+        letter-spacing: -0.03em;
+        line-height: 1.06;
+        margin: 0 0 22px;
       }
 
-      .pr-cta-card {
-        flex-direction: column;
-        align-items: flex-start;
+      .pr-desc {
+        font-size: 1.05rem;
+        color: var(--muted);
+        line-height: 1.7;
+        max-width: 62ch;
+        margin: 0 0 8px;
       }
 
-      .pr-cta-right {
-        width: 100%;
-        justify-content: space-between;
+      .pr-desc a {
+        color: var(--text);
+        text-decoration: underline;
       }
-    }
 
-    @media (max-width: 560px) {
+      .pr-desc strong {
+        color: var(--text);
+      }
+
+      /* ── SERVICE PRICE CARDS ── */
+      .pr-section {
+        padding: 20px 0 90px;
+        border-top: 1px solid var(--line);
+      }
+
+      .pr-section-head {
+        margin: 40px 0 40px;
+        max-width: 68ch;
+      }
+
+      .pr-section-eyebrow {
+        font-size: 0.75rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin: 0 20 20px;
+      }
+
+      .pr-section-title {
+        font-size: clamp(2rem, 3.4vw, 2.8rem);
+        font-weight: 500;
+        letter-spacing: -0.03em;
+        line-height: 1.1;
+        margin: 0 0 12px;
+      }
+
+      .pr-section-sub {
+        color: var(--muted);
+        font-size: 0.98rem;
+        margin: 0;
+      }
+
+      .pr-list {
+        border-top: 1px solid var(--line);
+      }
+
+      .pr-item {
+        border-bottom: 1px solid var(--line);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .pr-item::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 4px;
+        transform: scaleY(0);
+        transform-origin: top;
+        transition: transform 0.45s ease;
+      }
+
+      .pr-item.is-open::before {
+        transform: scaleY(1);
+      }
+
+      .pr-item[data-accent="1"]::before {
+        background: #7c5cff;
+      }
+
+      .pr-item[data-accent="2"]::before {
+        background: #00c2ff;
+      }
+
+      .pr-item[data-accent="3"]::before {
+        background: #ff3b3b;
+      }
+
+      .pr-item[data-accent="4"]::before {
+        background: #34c759;
+      }
+
+      .pr-item[data-accent="5"]::before {
+        background: #ff9500;
+      }
+
+      .pr-item[data-accent="6"]::before {
+        background: #ffd60a;
+      }
+
+      .pr-item[data-accent="7"]::before {
+        background: #bf5af2;
+      }
+
       .pr-trigger {
-        gap: 14px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 24px;
+        background: none;
+        border: none;
+        padding: 28px 8px;
+        cursor: pointer;
+        text-align: left;
+        font-family: inherit;
       }
 
       .pr-trigger-num {
-        width: 22px;
+        font-size: 0.85rem;
+        color: var(--muted);
+        font-weight: 500;
+        width: 32px;
+        flex-shrink: 0;
       }
 
       .pr-trigger-title-wrap {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 4px;
+        flex: 1;
+        display: flex;
+        align-items: baseline;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+
+      .pr-trigger-title {
+        font-size: clamp(1.2rem, 2vw, 1.5rem);
+        font-weight: 500;
+        letter-spacing: -0.02em;
+        transition: color 0.3s ease;
+      }
+
+      .pr-item.is-open .pr-trigger-title {
+        color: var(--text);
+      }
+
+      .pr-trigger-from {
+        font-size: 0.86rem;
+        color: var(--muted);
+        white-space: nowrap;
+      }
+
+      .pr-trigger-from strong {
+        color: var(--text);
+        font-weight: 600;
+      }
+
+      .pr-trigger-icon {
+        width: 34px;
+        height: 34px;
+        flex-shrink: 0;
+        border: 1px solid var(--line);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition:
+          transform 0.4s ease,
+          border-color 0.3s ease;
+      }
+
+      .pr-item.is-open .pr-trigger-icon {
+        transform: rotate(45deg);
+        border-color: var(--text);
+      }
+
+      .pr-trigger-icon svg {
+        width: 14px;
+        height: 14px;
+      }
+
+      .pr-body {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease;
+      }
+
+      .pr-body-inner {
+        padding: 0 8px 36px 64px;
+      }
+
+      .pr-tiers {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 14px;
+        margin-bottom: 18px;
+      }
+
+      .pr-tier {
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 18px 20px;
+        background: var(--card);
+      }
+
+      .pr-tier-label {
+        display: block;
+        font-size: 0.78rem;
+        color: var(--muted);
+        margin-bottom: 8px;
+        line-height: 1.4;
+      }
+
+      .pr-tier-range {
+        font-size: 1.15rem;
+        font-weight: 600;
+        color: var(--text);
+        letter-spacing: -0.01em;
+      }
+
+      .pr-tier-example {
+        display: block;
+        font-size: 0.78rem;
+        color: var(--muted);
+        margin-top: 6px;
+      }
+
+      .pr-item-note {
+        font-size: 0.85rem;
+        color: var(--muted);
+        line-height: 1.6;
+        margin: 0;
+        max-width: 60ch;
+      }
+
+      .pr-item-note a {
+        color: var(--text);
+        text-decoration: underline;
+      }
+
+      /* ── PACKAGES — 3-tier vertical pricing cards ── */
+      .pr-pkg-head {
+        margin: 0 0 44px;
+        max-width: 68ch;
+      }
+
+      .pr-pkg-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 24px;
+        align-items: start;
       }
 
       .pr-pkg-card {
-        padding: 30px 24px 26px;
+        position: relative;
+        border: 1px solid var(--line);
+        border-radius: 22px;
+        padding: 36px 32px 32px;
+        background: var(--card);
+        display: flex;
+        flex-direction: column;
+        transition:
+          transform 0.35s ease,
+          border-color 0.35s ease,
+          box-shadow 0.35s ease;
       }
-    }
-  </style>
-</head>
 
-<body>
-  <header class="site-header">
-    <a class="logo" href="index.html">SIPPLY Consulting</a>
-    <div class="header-right">
-      <nav class="site-nav">
+      .pr-pkg-card:hover {
+        transform: translateY(-6px);
+      }
+
+      .pr-pkg-card.is-recommended {
+        border-color: #7c5cff;
+        background: var(--bg);
+        box-shadow: 0 20px 50px -20px rgba(124, 92, 255, 0.35);
+        transform: scale(1.03);
+        z-index: 2;
+      }
+
+      .pr-pkg-card.is-recommended:hover {
+        transform: scale(1.03) translateY(-6px);
+      }
+
+      .pr-pkg-badge {
+        position: absolute;
+        top: -13px;
+        left: 32px;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 0.7rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: #fff;
+        background: #7c5cff;
+        padding: 6px 14px;
+        border-radius: 999px;
+      }
+
+      .pr-pkg-badge svg {
+        width: 12px;
+        height: 12px;
+      }
+
+      .pr-pkg-accent-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        margin-bottom: 18px;
+      }
+
+      .pr-pkg-card.pkg-a .pr-pkg-accent-dot {
+        background: #00c2ff;
+      }
+
+      .pr-pkg-card.pkg-b .pr-pkg-accent-dot {
+        background: #7c5cff;
+      }
+
+      .pr-pkg-card.pkg-c .pr-pkg-accent-dot {
+        background: #ff9500;
+      }
+
+      .pr-pkg-tag {
+        display: block;
+        font-size: 0.72rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-bottom: 10px;
+      }
+
+      .pr-pkg-title {
+        font-size: 1.3rem;
+        font-weight: 600;
+        letter-spacing: -0.015em;
+        margin: 0 0 10px;
+      }
+
+      .pr-pkg-desc {
+        font-size: 0.9rem;
+        color: var(--muted);
+        line-height: 1.55;
+        margin: 0 0 24px;
+        min-height: 42px;
+      }
+
+      .pr-pkg-price-row {
+        margin-bottom: 24px;
+        padding-bottom: 24px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .pr-pkg-price {
+        display: block;
+        font-size: 1.5rem;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        line-height: 1.2;
+      }
+
+      .pr-pkg-price-unit {
+        display: block;
+        font-size: 0.8rem;
+        color: var(--muted);
+        margin-top: 4px;
+      }
+
+      .pr-pkg-features {
+        list-style: none;
+        margin: 0 0 28px;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 13px;
+        flex: 1;
+      }
+
+      .pr-pkg-features li {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        font-size: 0.87rem;
+        line-height: 1.5;
+        color: var(--text);
+      }
+
+      .pr-pkg-features svg {
+        width: 15px;
+        height: 15px;
+        flex-shrink: 0;
+        margin-top: 2px;
+        color: #34c759;
+      }
+
+      .pr-pkg-cta {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+      }
+
+      /* ── CONSULT CTA BAND ── */
+      .pr-cta-band {
+        padding: 70px 0 100px;
+        border-top: 1px solid var(--line);
+      }
+
+      .pr-cta-card {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 32px;
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        background: var(--card);
+        padding: 40px 44px;
+      }
+
+      .pr-cta-left h2 {
+        font-size: clamp(1.6rem, 2.6vw, 2.2rem);
+        font-weight: 500;
+        letter-spacing: -0.02em;
+        margin: 0 0 10px;
+      }
+
+      .pr-cta-left p {
+        color: var(--muted);
+        line-height: 1.65;
+        margin: 0;
+        max-width: 50ch;
+      }
+
+      .pr-cta-right {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        flex-shrink: 0;
+      }
+
+      .pr-cta-price {
+        font-size: 1.4rem;
+        font-weight: 700;
+        white-space: nowrap;
+      }
+
+      @media (max-width: 900px) {
+        .pr-tiers {
+          grid-template-columns: 1fr;
+        }
+
+        .pr-body-inner {
+          padding-left: 8px;
+        }
+
+        .pr-pkg-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .pr-pkg-card.is-recommended {
+          transform: none;
+        }
+
+        .pr-pkg-card.is-recommended:hover {
+          transform: translateY(-6px);
+        }
+
+        .pr-cta-card {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .pr-cta-right {
+          width: 100%;
+          justify-content: space-between;
+        }
+      }
+
+      @media (max-width: 560px) {
+        .pr-trigger {
+          gap: 14px;
+        }
+
+        .pr-trigger-num {
+          width: 22px;
+        }
+
+        .pr-trigger-title-wrap {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 4px;
+        }
+
+        .pr-pkg-card {
+          padding: 30px 24px 26px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="site-header">
+      <a class="logo" href="index.html">SIPPLY Consulting</a>
+      <div class="header-right">
+        <nav class="site-nav">
+          <a href="services.html">Services</a>
+          <a href="pricing.html" aria-current="page" style="color: var(--text)"
+            >Pricing</a
+          >
+          <a href="work.html">Projects</a>
+          <a href="about.html">About</a>
+        </nav>
+        <button
+          class="theme-toggle"
+          id="theme-toggle"
+          type="button"
+          aria-label="Toggle theme"
+        >
+          <span class="theme-icon sun">☾</span>
+          <span class="theme-icon moon">☀</span>
+        </button>
+        <button
+          class="burger"
+          id="burger"
+          type="button"
+          aria-label="Open menu"
+          aria-expanded="false"
+        >
+          <span class="burger-line"></span>
+          <span class="burger-line"></span>
+          <span class="burger-line"></span>
+        </button>
+      </div>
+    </header>
+
+    <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+      <button
+        class="mobile-nav-close"
+        id="mobile-nav-close"
+        type="button"
+        aria-label="Close menu"
+      >
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+        >
+          <line x1="5" y1="5" x2="19" y2="19" />
+          <line x1="19" y1="5" x2="5" y2="19" />
+        </svg>
+      </button>
+      <nav class="mobile-nav-links">
         <a href="services.html">Services</a>
-        <a href="pricing.html" aria-current="page" style="color: var(--text)">Pricing</a>
+        <a href="pricing.html">Pricing</a>
         <a href="work.html">Projects</a>
         <a href="about.html">About</a>
+        <a href="index.html#message">Contact</a>
       </nav>
-      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle theme">
-        <span class="theme-icon sun">☾</span>
-        <span class="theme-icon moon">☀</span>
-      </button>
-      <button class="burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false">
-        <span class="burger-line"></span>
-        <span class="burger-line"></span>
-        <span class="burger-line"></span>
-      </button>
+      <div class="mobile-nav-footer">
+        <button
+          class="theme-toggle theme-toggle-mobile"
+          id="theme-toggle-mobile"
+          type="button"
+          aria-label="Toggle theme"
+        >
+          <span class="theme-icon sun">☾</span>
+          <span class="theme-icon moon">☀</span>
+        </button>
+      </div>
     </div>
-  </header>
 
-  <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
-    <button class="mobile-nav-close" id="mobile-nav-close" type="button" aria-label="Close menu">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-        <line x1="5" y1="5" x2="19" y2="19" />
-        <line x1="19" y1="5" x2="5" y2="19" />
-      </svg>
-    </button>
-    <nav class="mobile-nav-links">
-      <a href="services.html">Services</a>
-      <a href="pricing.html">Pricing</a>
-      <a href="work.html">Projects</a>
-      <a href="about.html">About</a>
-      <a href="index.html#message">Contact</a>
-    </nav>
-    <div class="mobile-nav-footer">
-      <button class="theme-toggle theme-toggle-mobile" id="theme-toggle-mobile" type="button" aria-label="Toggle theme">
-        <span class="theme-icon sun">☾</span>
-        <span class="theme-icon moon">☀</span>
-      </button>
-    </div>
-  </div>
-
-  <main>
-    <section class="pr-hero">
-      <div style="width: min(1200px, calc(100% - 40px)); margin: 0 auto">
-        <div class="pr-hero-head">
-          <span class="pr-eyebrow"><span>Pricing</span></span>
-          <h1 class="pr-title">Cost breakdown for Sipply Consulting.</h1>
-          <p class="pr-desc">
-            I've put together starting ranges based on past project
-            sizes — small, medium, or large. Open a service below for more information, or book a consultation for an exact quote.
-          </p>
-          <p class="pr-desc">
-            See <a href="faq.html#pricing">pricing FAQs</a> for rush fees,
-            package details, and how final quotes are confirmed.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="pr-section" id="services-pricing">
-      <div style="width: min(1200px, calc(100% - 40px)); margin: 0 auto">
-        <div class="pr-section-head">
-          <p class="pr-section-eyebrow">By service</p>
-          <h2 class="pr-section-title">Starting ranges, by project size.</h2>
-          <p class="pr-section-sub">
-            Small is usually 1–3 deliverables (e.g. one page), medium is
-            4–8, and large is 9+. Most first-time projects fall in the
-            small-to-medium range.
-          </p>
-        </div>
-
-        <div class="pr-list" id="pr-list"></div>
-      </div>
-    </section>
-
-    <section class="pr-section" id="packages" style="padding-top: 0">
-      <div style="width: min(1200px, calc(100% - 40px)); margin: 0 auto">
-        <div class="pr-pkg-head">
-          <p class="pr-section-eyebrow">Or, bundle it</p>
-          <h2 class="pr-section-title">Three ways to package it up.</h2>
-          <p class="pr-section-sub">
-            Combine services into one coordinated engagement instead of
-            hiring each one separately. Priced by scope, same as above.
-          </p>
-        </div>
-
-        <div class="pr-pkg-grid">
-          <!-- Starter -->
-          <div class="pr-pkg-card pkg-a">
-            <span class="pr-pkg-accent-dot"></span>
-            <span class="pr-pkg-tag">Starter</span>
-            <h3 class="pr-pkg-title">One targeted fix</h3>
-            <p class="pr-pkg-desc">For a single problem area, not a full overhaul.</p>
-            <div class="pr-pkg-price-row">
-              <span class="pr-pkg-price">$1,200 – $2,400</span>
-              <span class="pr-pkg-price-unit">per project</span>
-            </div>
-            <ul class="pr-pkg-features">
-              <li>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12" /></svg>
-                1 service, up to 3 deliverables
-              </li>
-              <li>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12" /></svg>
-                One kickoff call to confirm scope
-              </li>
-              <li>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12" /></svg>
-                2 revision rounds included
-              </li>
-              <li>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12" /></svg>
-                2–3 week turnaround
-              </li>
-            </ul>
-            <a class="button secondary pr-pkg-cta" href="index.html#message">Ask about this bundle</a>
-          </div>
-
-          <!-- Growth — recommended -->
-          <div class="pr-pkg-card pkg-b is-recommended">
-            <span class="pr-pkg-badge">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.26L21.7 9l-5.35 4.64L17.8 21 12 17.27 6.2 21l1.45-7.36L2.3 9l6.8-.74z" /></svg>
-              Recommended
-            </span>
-            <span class="pr-pkg-accent-dot"></span>
-            <span class="pr-pkg-tag">Growth bundle</span>
-            <h3 class="pr-pkg-title">Focused mini-overhaul</h3>
-            <p class="pr-pkg-desc">2–3 services working together on your highest-impact pages.</p>
-            <div class="pr-pkg-price-row">
-              <span class="pr-pkg-price">$2,200 – $3,800</span>
-              <span class="pr-pkg-price-unit">per project</span>
-            </div>
-            <ul class="pr-pkg-features">
-              <li>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12" /></svg>
-                2–3 services combined (e.g. SEO + copy)
-              </li>
-              <li>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12" /></svg>
-                Up to 5 pages or deliverables
-              </li>
-              <li>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12" /></svg>
-                Strategy call to align priorities
-              </li>
-              <li>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12" /></svg>
-                2 revision rounds included
-              </li>
-            </ul>
-            <a class="button primary pr-pkg-cta" href="index.html#message">Ask about this bundle</a>
-          </div>
-
-          <!-- Full package -->
-          <div class="pr-pkg-card pkg-c">
-            <span class="pr-pkg-accent-dot"></span>
-            <span class="pr-pkg-tag">Full package</span>
-            <h3 class="pr-pkg-title">Complete relaunch</h3>
-            <p class="pr-pkg-desc">Every service, coordinated, for a full marketing overhaul.</p>
-            <div class="pr-pkg-price-row">
-              <span class="pr-pkg-price">$4,800 – $16,000</span>
-              <span class="pr-pkg-price-unit">per project</span>
-            </div>
-            <ul class="pr-pkg-features">
-              <li>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12" /></svg>
-                Strategy, SEO, CRO, copy & reputation
-              </li>
-              <li>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12" /></svg>
-                Full site or multi-channel scope
-              </li>
-              <li>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12" /></svg>
-                Dedicated roadmap & priority scheduling
-              </li>
-              <li>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12" /></svg>
-                2 revision rounds included
-              </li>
-            </ul>
-            <a class="button secondary pr-pkg-cta" href="index.html#message">Ask about this bundle</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="pr-cta-band" id="book">
-      <div style="width: min(1200px, calc(100% - 40px)); margin: 0 auto">
-        <div class="pr-cta-card">
-          <div class="pr-cta-left">
-            <h2>Not sure which range fits your project?</h2>
-            <p>
-              Book a paid working session and leave with a written scope on how to improve your brand.
+    <main>
+      <section class="pr-hero">
+        <div style="width: min(1200px, calc(100% - 40px)); margin: 0 auto">
+          <div class="pr-hero-head">
+            <span class="pr-eyebrow"><span>Pricing</span></span>
+            <h1 class="pr-title">Cost breakdown for Sipply Consulting.</h1>
+            <p class="pr-desc">
+              I've put together starting ranges based on past project sizes —
+              small, medium, or large. Open a service below for more
+              information, or book a consultation for an exact quote.
+            </p>
+            <p class="pr-desc">
+              See <a href="faq.html#pricing">pricing FAQs</a> for rush fees,
+              package details, and how final quotes are confirmed.
             </p>
           </div>
-          <div class="pr-cta-right">
-            <span class="pr-cta-price">CA$175 / 60 min</span>
-            <a class="button primary" href="services.html#book">Book a consultation</a>
+        </div>
+      </section>
+
+      <section class="pr-section" id="services-pricing">
+        <div style="width: min(1200px, calc(100% - 40px)); margin: 0 auto">
+          <div class="pr-section-head">
+            <p class="pr-section-eyebrow">By service</p>
+            <h2 class="pr-section-title">Starting ranges, by project size.</h2>
+            <p class="pr-section-sub">
+              Small is usually 1–3 deliverables (e.g. one page), medium is 4–8,
+              and large is 9+. Most first-time projects fall in the
+              small-to-medium range.
+            </p>
+          </div>
+
+          <div class="pr-list" id="pr-list"></div>
+        </div>
+      </section>
+
+      <section class="pr-section" id="packages" style="padding-top: 0">
+        <div style="width: min(1200px, calc(100% - 40px)); margin: 0 auto">
+          <div class="pr-pkg-head">
+            <p class="pr-section-eyebrow">Or, bundle it</p>
+            <h2 class="pr-section-title">Three ways to package it up.</h2>
+            <p class="pr-section-sub">
+              Combine services into one coordinated engagement instead of hiring
+              each one separately. Priced by scope, same as above.
+            </p>
+          </div>
+
+          <div class="pr-pkg-grid">
+            <!-- Starter -->
+            <div class="pr-pkg-card pkg-a">
+              <span class="pr-pkg-accent-dot"></span>
+              <span class="pr-pkg-tag">Starter</span>
+              <h3 class="pr-pkg-title">One targeted fix</h3>
+              <p class="pr-pkg-desc">
+                For a single problem area, not a full overhaul.
+              </p>
+              <div class="pr-pkg-price-row">
+                <span class="pr-pkg-price">$1,200 – $2,400</span>
+                <span class="pr-pkg-price-unit">per project</span>
+              </div>
+              <ul class="pr-pkg-features">
+                <li>
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                  >
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  1 service, up to 3 deliverables
+                </li>
+                <li>
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                  >
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  One kickoff call to confirm scope
+                </li>
+                <li>
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                  >
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  2 revision rounds included
+                </li>
+                <li>
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                  >
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  2–3 week turnaround
+                </li>
+              </ul>
+              <a class="button secondary pr-pkg-cta" href="index.html#message"
+                >Ask about this bundle</a
+              >
+            </div>
+
+            <!-- Growth — recommended -->
+            <div class="pr-pkg-card pkg-b is-recommended">
+              <span class="pr-pkg-badge">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 2l2.9 6.26L21.7 9l-5.35 4.64L17.8 21 12 17.27 6.2 21l1.45-7.36L2.3 9l6.8-.74z"
+                  />
+                </svg>
+                Recommended
+              </span>
+              <span class="pr-pkg-accent-dot"></span>
+              <span class="pr-pkg-tag">Growth bundle</span>
+              <h3 class="pr-pkg-title">Focused mini-overhaul</h3>
+              <p class="pr-pkg-desc">
+                2–3 services working together on your highest-impact pages.
+              </p>
+              <div class="pr-pkg-price-row">
+                <span class="pr-pkg-price">$2,200 – $3,800</span>
+                <span class="pr-pkg-price-unit">per project</span>
+              </div>
+              <ul class="pr-pkg-features">
+                <li>
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                  >
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  2–3 services combined (e.g. SEO + copy)
+                </li>
+                <li>
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                  >
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  Up to 5 pages or deliverables
+                </li>
+                <li>
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                  >
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  Strategy call to align priorities
+                </li>
+                <li>
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                  >
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  2 revision rounds included
+                </li>
+              </ul>
+              <a class="button primary pr-pkg-cta" href="index.html#message"
+                >Ask about this bundle</a
+              >
+            </div>
+
+            <!-- Full package -->
+            <div class="pr-pkg-card pkg-c">
+              <span class="pr-pkg-accent-dot"></span>
+              <span class="pr-pkg-tag">Full package</span>
+              <h3 class="pr-pkg-title">Complete relaunch</h3>
+              <p class="pr-pkg-desc">
+                Every service, coordinated, for a full marketing overhaul.
+              </p>
+              <div class="pr-pkg-price-row">
+                <span class="pr-pkg-price">$4,800 – $16,000</span>
+                <span class="pr-pkg-price-unit">per project</span>
+              </div>
+              <ul class="pr-pkg-features">
+                <li>
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                  >
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  Strategy, SEO, CRO, copy & reputation
+                </li>
+                <li>
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                  >
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  Full site or multi-channel scope
+                </li>
+                <li>
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                  >
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  Dedicated roadmap & priority scheduling
+                </li>
+                <li>
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                  >
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  2 revision rounds included
+                </li>
+              </ul>
+              <a class="button secondary pr-pkg-cta" href="index.html#message"
+                >Ask about this bundle</a
+              >
+            </div>
           </div>
         </div>
-      </div>
-    </section>
-  </main>
+      </section>
 
-  <footer class="site-footer">
+      <section class="pr-cta-band" id="book">
+        <div style="width: min(1200px, calc(100% - 40px)); margin: 0 auto">
+          <div class="pr-cta-card">
+            <div class="pr-cta-left">
+              <h2>Not sure which range fits your project?</h2>
+              <p>
+                Book a paid working session and leave with a written scope on
+                how to improve your brand.
+              </p>
+            </div>
+            <div class="pr-cta-right">
+              <span class="pr-cta-price">CA$175 / 60 min</span>
+              <a class="button primary" href="services.html#book"
+                >Book a consultation</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
       <div class="footer-inner">
         <div class="hero-client-strip" aria-label="Brands written for">
           <div class="hero-client-track" id="client-logos-track">
             <div class="client-logo-wrap">
-             <a href="https://www.industrios.com" target="_blank" rel="noopener noreferrer" aria-label="Industrios website">
-            <img
-              src="IMG/company-logos/industrios-logo.png"
-              alt="Industrios"
-              class="client-logo-img client-logo-img--large"/>
-          </a>
-            </div>
-            <div class="client-logo-wrap">
-              <a href="https://procomservices.com/en-ca/" target="_blank" rel="noopener noreferrer" aria-label="Procom website">
-              <img
-                src="IMG/company-logos/Procom_Logo_Path.svg"
-                alt="Procom"
-                class="client-logo-img"/>
+              <a
+                href="https://www.industrios.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Industrios website"
+              >
+                <img
+                  src="IMG/company-logos/industrios-logo.png"
+                  alt="Industrios"
+                  class="client-logo-img client-logo-img--large"
+                />
               </a>
             </div>
             <div class="client-logo-wrap">
-               <a href="https://shoplogix.com/" target="_blank" rel="noopener noreferrer" aria-label="Shoplogix website">
-              <img
-                src="IMG/company-logos/Shoplogix_Logo.svg"
-                alt="Shoplogix"
-                class="client-logo-img"/>
+              <a
+                href="https://procomservices.com/en-ca/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Procom website"
+              >
+                <img
+                  src="IMG/company-logos/Procom_Logo_Path.svg"
+                  alt="Procom"
+                  class="client-logo-img"
+                />
               </a>
             </div>
             <div class="client-logo-wrap">
-             <a href="https://glassplace.com/" target="_blank" rel="noopener noreferrer" aria-label="Glass place website">
-              <img
-                src="IMG/company-logos/glass-place-wordmark.svg"
-                alt="The Glass Place"
-                class="client-logo-img client-logo-img--no-filter"/></a>
-            </div>
-            <div class="client-logo-wrap">
-             <a href="https://www.wbd.com/details-of-broadcaster/germany" target="_blank" rel="noopener noreferrer" aria-label="Cartoon Network website">
-              <img
-                src="IMG/company-logos/Cartoon_Net_transparent.svg"
-                alt="Cartoon Network"
-                class="client-logo-img"></a>
-            </div>
-            <div class="client-logo-wrap">
-            <a href="https://www.dashpm.ca/" target="_blank" rel="noopener noreferrer" aria-label="DASH website">
-              <img
-                src="IMG/company-logos/logo-white.png"
-                alt="DASH"
-                class="client-logo-img"/></a>
-            </div>
-            <div class="client-logo-wrap">
-             <a href="https://www.finn.com/en-DE/blog" target="_blank" rel="noopener noreferrer" aria-label="FINN website">
-              <img
-                src="IMG/company-logos/FINN-black.svg"
-                alt="FINN"
-                class="client-logo-img"></a>
-            </div>
-            <div class="client-logo-wrap">
-           <a href="https://simplefolds.ca/" target="_blank" rel="noopener noreferrer" aria-label="Simple Folds website">
-              <img
-                src="IMG/company-logos/simple-folds.svg"
-                alt="Simple Folds"
-                class="client-logo-img"/></a>
-            </div>
-            <div class="client-logo-wrap" aria-hidden="true">
-               <a href="https://www.industrios.com" target="_blank" rel="noopener noreferrer" aria-label="Industrios website">
-            <img
-              src="IMG/company-logos/industrios-logo.png"
-              alt="Industrios"
-              class="client-logo-img client-logo-img--large"/>
-          </a>
-            </div>
-            <div class="client-logo-wrap" aria-hidden="true">
-               <a href="https://procomservices.com/en-ca/" target="_blank" rel="noopener noreferrer" aria-label="Procom website">
-              <img
-                src="IMG/company-logos/Procom_Logo_Path.svg"
-                alt="Procom"
-                class="client-logo-img"/>
-              </a>
-            </div>
-            <div class="client-logo-wrap" aria-hidden="true">
-               <a href="https://shoplogix.com/" target="_blank" rel="noopener noreferrer" aria-label="Shoplogix website">
-              <img
-                src="IMG/company-logos/Shoplogix_Logo.svg"
-                alt="Shoplogix"
-                class="client-logo-img"/>
+              <a
+                href="https://shoplogix.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Shoplogix website"
+              >
+                <img
+                  src="IMG/company-logos/Shoplogix_Logo.svg"
+                  alt="Shoplogix"
+                  class="client-logo-img"
+                />
               </a>
             </div>
             <div class="client-logo-wrap">
-              <a href="https://glassplace.com/" target="_blank" rel="noopener noreferrer" aria-label="Glass place website">
-              <img
-                src="IMG/company-logos/glass-place-wordmark.svg"
-                alt="The Glass Place"
-                class="client-logo-img client-logo-img--no-filter"/></a>
+              <a
+                href="https://glassplace.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Glass place website"
+              >
+                <img
+                  src="IMG/company-logos/glass-place-wordmark.svg"
+                  alt="The Glass Place"
+                  class="client-logo-img client-logo-img--no-filter"
+              /></a>
+            </div>
+            <div class="client-logo-wrap">
+              <a
+                href="https://www.wbd.com/details-of-broadcaster/germany"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Cartoon Network website"
+              >
+                <img
+                  src="IMG/company-logos/Cartoon_Net_transparent.svg"
+                  alt="Cartoon Network"
+                  class="client-logo-img"
+              /></a>
+            </div>
+            <div class="client-logo-wrap">
+              <a
+                href="https://www.dashpm.ca/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="DASH website"
+              >
+                <img
+                  src="IMG/company-logos/logo-white.png"
+                  alt="DASH"
+                  class="client-logo-img"
+              /></a>
+            </div>
+            <div class="client-logo-wrap">
+              <a
+                href="https://www.finn.com/en-DE/blog"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="FINN website"
+              >
+                <img
+                  src="IMG/company-logos/FINN-black.svg"
+                  alt="FINN"
+                  class="client-logo-img"
+              /></a>
+            </div>
+            <div class="client-logo-wrap">
+              <a
+                href="https://simplefolds.ca/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Simple Folds website"
+              >
+                <img
+                  src="IMG/company-logos/simple-folds.svg"
+                  alt="Simple Folds"
+                  class="client-logo-img"
+              /></a>
             </div>
             <div class="client-logo-wrap" aria-hidden="true">
-            <a href="https://www.wbd.com/details-of-broadcaster/germany" target="_blank" rel="noopener noreferrer" aria-label="Cartoon Network website">
-              <img
-                src="IMG/company-logos/Cartoon_Net_transparent.svg"
-                alt="Cartoon Network"
-                class="client-logo-img"></a>
+              <a
+                href="https://www.industrios.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Industrios website"
+              >
+                <img
+                  src="IMG/company-logos/industrios-logo.png"
+                  alt="Industrios"
+                  class="client-logo-img client-logo-img--large"
+                />
+              </a>
             </div>
             <div class="client-logo-wrap" aria-hidden="true">
-               <a href="https://www.dashpm.ca/" target="_blank" rel="noopener noreferrer" aria-label="DASH website">
-              <img
-                src="IMG/company-logos/logo-white.png"
-                alt="DASH"
-                class="client-logo-img"/></a>
+              <a
+                href="https://procomservices.com/en-ca/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Procom website"
+              >
+                <img
+                  src="IMG/company-logos/Procom_Logo_Path.svg"
+                  alt="Procom"
+                  class="client-logo-img"
+                />
+              </a>
             </div>
             <div class="client-logo-wrap" aria-hidden="true">
-              <a href="https://www.finn.com/en-DE/blog" target="_blank" rel="noopener noreferrer" aria-label="FINN website">
-              <img
-                src="IMG/company-logos/FINN-black.svg"
-                alt="FINN"
-                class="client-logo-img"></a>
+              <a
+                href="https://shoplogix.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Shoplogix website"
+              >
+                <img
+                  src="IMG/company-logos/Shoplogix_Logo.svg"
+                  alt="Shoplogix"
+                  class="client-logo-img"
+                />
+              </a>
+            </div>
+            <div class="client-logo-wrap">
+              <a
+                href="https://glassplace.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Glass place website"
+              >
+                <img
+                  src="IMG/company-logos/glass-place-wordmark.svg"
+                  alt="The Glass Place"
+                  class="client-logo-img client-logo-img--no-filter"
+              /></a>
             </div>
             <div class="client-logo-wrap" aria-hidden="true">
-            <a href="https://simplefolds.ca/" target="_blank" rel="noopener noreferrer" aria-label="Simple Folds website">
-              <img
-                src="IMG/company-logos/simple-folds.svg"
-                alt="Simple Folds"
-                class="client-logo-img"/></a>
+              <a
+                href="https://www.wbd.com/details-of-broadcaster/germany"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Cartoon Network website"
+              >
+                <img
+                  src="IMG/company-logos/Cartoon_Net_transparent.svg"
+                  alt="Cartoon Network"
+                  class="client-logo-img"
+              /></a>
+            </div>
+            <div class="client-logo-wrap" aria-hidden="true">
+              <a
+                href="https://www.dashpm.ca/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="DASH website"
+              >
+                <img
+                  src="IMG/company-logos/logo-white.png"
+                  alt="DASH"
+                  class="client-logo-img"
+              /></a>
+            </div>
+            <div class="client-logo-wrap" aria-hidden="true">
+              <a
+                href="https://www.finn.com/en-DE/blog"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="FINN website"
+              >
+                <img
+                  src="IMG/company-logos/FINN-black.svg"
+                  alt="FINN"
+                  class="client-logo-img"
+              /></a>
+            </div>
+            <div class="client-logo-wrap" aria-hidden="true">
+              <a
+                href="https://simplefolds.ca/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Simple Folds website"
+              >
+                <img
+                  src="IMG/company-logos/simple-folds.svg"
+                  alt="Simple Folds"
+                  class="client-logo-img"
+              /></a>
             </div>
           </div>
         </div>
@@ -917,7 +1160,8 @@
                 width="60"
                 height="60"
                 alt="Sipply Consulting"
-                loading="lazy"/>
+                loading="lazy"
+              />
             </a>
             <p class="footer-tagline">
               Let us go back to reliable marketing strategies for brands that do
@@ -942,6 +1186,14 @@
               <span class="footer-col-title">Legal</span>
               <a href="privacy-policy.html">Privacy Policy</a>
               <a href="terms.html">Terms &amp; Conditions</a>
+              <a
+                href="#"
+                onclick="
+                  window.reopenCookieConsent();
+                  return false;
+                "
+                >Cookie Settings</a
+              >
             </div>
             <div class="footer-col">
               <span class="footer-col-title">Extra</span>
@@ -959,82 +1211,164 @@
       </div>
     </footer>
 
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 
-  <script>
-    gsap.fromTo(".pr-eyebrow span", { y: "110%" }, { y: "0%", duration: 1, ease: "power4.out", delay: 0.1 });
-    gsap.fromTo(".pr-title", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 1, ease: "power4.out", delay: 0.15 });
-    gsap.fromTo(".pr-desc", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.9, ease: "power3.out", stagger: 0.1, delay: 0.3 });
+    <script>
+      gsap.fromTo(
+        ".pr-eyebrow span",
+        { y: "110%" },
+        { y: "0%", duration: 1, ease: "power4.out", delay: 0.1 },
+      );
+      gsap.fromTo(
+        ".pr-title",
+        { opacity: 0, y: 30 },
+        { opacity: 1, y: 0, duration: 1, ease: "power4.out", delay: 0.15 },
+      );
+      gsap.fromTo(
+        ".pr-desc",
+        { opacity: 0, y: 24 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.9,
+          ease: "power3.out",
+          stagger: 0.1,
+          delay: 0.3,
+        },
+      );
 
-    const pricingData = [
-      {
-        title: "Content Strategy",
-        tiers: {
-          "Small · 1–3 pieces": { range: [800, 1500], example: "one blog post or content plan" },
-          "Medium · 4–8 pieces": { range: [1500, 3200], example: "editorial roadmap + samples" },
-          "Large · 9+ pieces": { range: [3200, 6000], example: "full content system build-out" },
+      const pricingData = [
+        {
+          title: "Content Strategy",
+          tiers: {
+            "Small · 1–3 pieces": {
+              range: [800, 1500],
+              example: "one blog post or content plan",
+            },
+            "Medium · 4–8 pieces": {
+              range: [1500, 3200],
+              example: "editorial roadmap + samples",
+            },
+            "Large · 9+ pieces": {
+              range: [3200, 6000],
+              example: "full content system build-out",
+            },
+          },
         },
-      },
-      {
-        title: "SEO & AEO",
-        tiers: {
-          "Small · 1–3 items": { range: [600, 1200], example: "a single-page technical fix" },
-          "Medium · 4–8 items": { range: [1200, 2800], example: "site-wide audit + fixes" },
-          "Large · 9+ items": { range: [2800, 5500], example: "full technical + local SEO overhaul" },
+        {
+          title: "SEO & AEO",
+          tiers: {
+            "Small · 1–3 items": {
+              range: [600, 1200],
+              example: "a single-page technical fix",
+            },
+            "Medium · 4–8 items": {
+              range: [1200, 2800],
+              example: "site-wide audit + fixes",
+            },
+            "Large · 9+ items": {
+              range: [2800, 5500],
+              example: "full technical + local SEO overhaul",
+            },
+          },
         },
-      },
-      {
-        title: "CRO & Optimisation",
-        tiers: {
-          "Small · 1 page": { range: [700, 1400], example: "one landing page rewrite" },
-          "Medium · 2–4 pages": { range: [1400, 3000], example: "funnel audit + key page fixes" },
-          "Large · full funnel": { range: [3000, 5800], example: "full funnel & checkout overhaul" },
+        {
+          title: "CRO & Optimisation",
+          tiers: {
+            "Small · 1 page": {
+              range: [700, 1400],
+              example: "one landing page rewrite",
+            },
+            "Medium · 2–4 pages": {
+              range: [1400, 3000],
+              example: "funnel audit + key page fixes",
+            },
+            "Large · full funnel": {
+              range: [3000, 5800],
+              example: "full funnel & checkout overhaul",
+            },
+          },
         },
-      },
-      {
-        title: "Website Copywriting",
-        tiers: {
-          "Small · 1 page": { range: [700, 1400], example: "homepage or one service page" },
-          "Medium · 2–5 pages": { range: [1400, 3200], example: "a small site's full copy" },
-          "Large · 6+ pages": { range: [3200, 6800], example: "full multi-page site rewrite" },
+        {
+          title: "Website Copywriting",
+          tiers: {
+            "Small · 1 page": {
+              range: [700, 1400],
+              example: "homepage or one service page",
+            },
+            "Medium · 2–5 pages": {
+              range: [1400, 3200],
+              example: "a small site's full copy",
+            },
+            "Large · 6+ pages": {
+              range: [3200, 6800],
+              example: "full multi-page site rewrite",
+            },
+          },
         },
-      },
-      {
-        title: "Market Analysis",
-        tiers: {
-          "Small · quick snapshot": { range: [500, 1000], example: "a competitor snapshot" },
-          "Medium · full report": { range: [1000, 2400], example: "positioning + SWOT report" },
-          "Large · in-depth study": { range: [2400, 4500], example: "full market & sentiment study" },
+        {
+          title: "Market Analysis",
+          tiers: {
+            "Small · quick snapshot": {
+              range: [500, 1000],
+              example: "a competitor snapshot",
+            },
+            "Medium · full report": {
+              range: [1000, 2400],
+              example: "positioning + SWOT report",
+            },
+            "Large · in-depth study": {
+              range: [2400, 4500],
+              example: "full market & sentiment study",
+            },
+          },
         },
-      },
-      {
-        title: "Social & Email",
-        tiers: {
-          "Small · 1 campaign": { range: [500, 1000], example: "one campaign or newsletter" },
-          "Medium · 1 month": { range: [1000, 2200], example: "a month of content + emails" },
-          "Large · full system": { range: [2200, 4200], example: "full social & email system" },
+        {
+          title: "Social & Email",
+          tiers: {
+            "Small · 1 campaign": {
+              range: [500, 1000],
+              example: "one campaign or newsletter",
+            },
+            "Medium · 1 month": {
+              range: [1000, 2200],
+              example: "a month of content + emails",
+            },
+            "Large · full system": {
+              range: [2200, 4200],
+              example: "full social & email system",
+            },
+          },
         },
-      },
-      {
-        title: "Reputation & GMB",
-        tiers: {
-          "Small · setup only": { range: [450, 900], example: "GMB setup & optimisation" },
-          "Medium · setup + strategy": { range: [900, 1900], example: "review strategy + monitoring" },
-          "Large · full management": { range: [1900, 3600], example: "full reputation management build" },
+        {
+          title: "Reputation & GMB",
+          tiers: {
+            "Small · setup only": {
+              range: [450, 900],
+              example: "GMB setup & optimisation",
+            },
+            "Medium · setup + strategy": {
+              range: [900, 1900],
+              example: "review strategy + monitoring",
+            },
+            "Large · full management": {
+              range: [1900, 3600],
+              example: "full reputation management build",
+            },
+          },
         },
-      },
-    ];
+      ];
 
-    function fmt(n) {
-      return "$" + n.toLocaleString();
-    }
+      function fmt(n) {
+        return "$" + n.toLocaleString();
+      }
 
-    const prList = document.getElementById("pr-list");
-    prList.innerHTML = pricingData
-      .map((s, i) => {
-        const tierKeys = Object.keys(s.tiers);
-        const lowest = s.tiers[tierKeys[0]].range[0];
-        return `
+      const prList = document.getElementById("pr-list");
+      prList.innerHTML = pricingData
+        .map((s, i) => {
+          const tierKeys = Object.keys(s.tiers);
+          const lowest = s.tiers[tierKeys[0]].range[0];
+          return `
         <div class="pr-item" data-accent="${i + 1}">
           <button class="pr-trigger" aria-expanded="false">
             <span class="pr-trigger-num">${String(i + 1).padStart(2, "0")}</span>
@@ -1071,63 +1405,91 @@
           </div>
         </div>
       `;
-      })
-      .join("");
+        })
+        .join("");
 
-    gsap.fromTo(
-      ".pr-item",
-      { opacity: 0, y: 24 },
-      {
-        opacity: 1, y: 0, duration: 0.6, ease: "power3.out", stagger: 0.06,
-        scrollTrigger: { trigger: "#pr-list", start: "top 85%", toggleActions: "play none none none" },
-      },
-    );
+      gsap.fromTo(
+        ".pr-item",
+        { opacity: 0, y: 24 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.6,
+          ease: "power3.out",
+          stagger: 0.06,
+          scrollTrigger: {
+            trigger: "#pr-list",
+            start: "top 85%",
+            toggleActions: "play none none none",
+          },
+        },
+      );
 
-    document.querySelectorAll(".pr-trigger").forEach((trigger) => {
-      trigger.addEventListener("click", () => {
-        const item = trigger.closest(".pr-item");
-        const body = item.querySelector(".pr-body");
-        const isOpen = item.classList.contains("is-open");
+      document.querySelectorAll(".pr-trigger").forEach((trigger) => {
+        trigger.addEventListener("click", () => {
+          const item = trigger.closest(".pr-item");
+          const body = item.querySelector(".pr-body");
+          const isOpen = item.classList.contains("is-open");
 
-        document.querySelectorAll(".pr-item.is-open").forEach((openItem) => {
-          if (openItem !== item) {
-            openItem.classList.remove("is-open");
-            openItem.querySelector(".pr-trigger").setAttribute("aria-expanded", "false");
-            openItem.querySelector(".pr-body").style.maxHeight = "0px";
+          document.querySelectorAll(".pr-item.is-open").forEach((openItem) => {
+            if (openItem !== item) {
+              openItem.classList.remove("is-open");
+              openItem
+                .querySelector(".pr-trigger")
+                .setAttribute("aria-expanded", "false");
+              openItem.querySelector(".pr-body").style.maxHeight = "0px";
+            }
+          });
+
+          if (!isOpen) {
+            item.classList.add("is-open");
+            trigger.setAttribute("aria-expanded", "true");
+            body.style.maxHeight = body.scrollHeight + "px";
+          } else {
+            item.classList.remove("is-open");
+            trigger.setAttribute("aria-expanded", "false");
+            body.style.maxHeight = "0px";
           }
+
+          setTimeout(() => ScrollTrigger.refresh(), 550);
         });
-
-        if (!isOpen) {
-          item.classList.add("is-open");
-          trigger.setAttribute("aria-expanded", "true");
-          body.style.maxHeight = body.scrollHeight + "px";
-        } else {
-          item.classList.remove("is-open");
-          trigger.setAttribute("aria-expanded", "false");
-          body.style.maxHeight = "0px";
-        }
-
-        setTimeout(() => ScrollTrigger.refresh(), 550);
       });
-    });
 
-    gsap.fromTo(
-      ".pr-pkg-card",
-      { opacity: 0, y: 40 },
-      {
-        opacity: 1, y: 0, duration: 0.9, ease: "power4.out", stagger: 0.12,
-        scrollTrigger: { trigger: "#packages", start: "top 85%", toggleActions: "play none none none" },
-      },
-    );
+      gsap.fromTo(
+        ".pr-pkg-card",
+        { opacity: 0, y: 40 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.9,
+          ease: "power4.out",
+          stagger: 0.12,
+          scrollTrigger: {
+            trigger: "#packages",
+            start: "top 85%",
+            toggleActions: "play none none none",
+          },
+        },
+      );
 
-    gsap.fromTo(
-      ".pr-cta-card",
-      { opacity: 0, y: 30 },
-      { opacity: 1, y: 0, duration: 1, ease: "power4.out", scrollTrigger: { trigger: ".pr-cta-band", start: "top 85%", toggleActions: "play none none none" } },
-    );
+      gsap.fromTo(
+        ".pr-cta-card",
+        { opacity: 0, y: 30 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          ease: "power4.out",
+          scrollTrigger: {
+            trigger: ".pr-cta-band",
+            start: "top 85%",
+            toggleActions: "play none none none",
+          },
+        },
+      );
 
-    window.addEventListener("load", () => ScrollTrigger.refresh());
-  </script>
-</body>
-
+      window.addEventListener("load", () => ScrollTrigger.refresh());
+    </script>
+    <script src="site-consent/site-consent.js"></script>
+  </body>
 </html>

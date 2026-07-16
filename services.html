@@ -2,18 +2,6 @@
 <html lang="en">
 
 <head>
-  <script
-    async
-    src="https://www.googletagmanager.com/gtag/js?id=G-D6DXEQFZNW"
-  ></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag("js", new Date());
-    gtag("config", "G-D6DXEQFZNW");
-  </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>
@@ -22,6 +10,7 @@
   <meta name="description"
     content="Hire Sipply Consulting for SEO, content, CRO, or copywriting — or book a 1-hour paid consultation for expert marketing advice. Calgary and Canada." />
   <link rel="canonical" href="https://www.sipplyconsulting.ca/services.html" />
+  <link rel="stylesheet" href="site-consent/site-consent.css" />
 
   <script>
     (function () {
@@ -1007,6 +996,7 @@
             <span class="footer-col-title">Legal</span>
             <a href="privacy-policy.html">Privacy Policy</a>
             <a href="terms.html">Terms &amp; Conditions</a>
+            <a href="#" onclick="window.reopenCookieConsent(); return false;">Cookie Settings</a>
           </div>
           <div class="footer-col">
             <span class="footer-col-title">Extra</span>
@@ -1367,6 +1357,8 @@
     document.getElementById('tz-calc-input')?.addEventListener('input', updateTZCalculator);
     updateTZCalculator();
   </script>
+      <script src="site-consent/site-consent.js"></script>
+
 </body>
 
 </html>

@@ -1,18 +1,6 @@
 <!doctype html>
 <html lang="en">
   <head>
-     <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-D6DXEQFZNW"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", "G-D6DXEQFZNW");
-    </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sipply Consulting</title>
@@ -20,7 +8,7 @@
       name="description"
       content="SEO marketing consulting that ditches AI-flavored content for human-driven strategy, SEO, CRO, and copywriting."
     />
-
+    <link rel="stylesheet" href="site-consent/site-consent.css" />
     <script>
       (function () {
         var t;
@@ -977,6 +965,7 @@
               <span class="footer-col-title">Legal</span>
               <a href="privacy-policy.html">Privacy Policy</a>
               <a href="terms.html">Terms &amp; Conditions</a>
+              <a href="#" onclick="window.reopenCookieConsent(); return false;">Cookie Settings</a>
             </div>
             <div class="footer-col">
               <span class="footer-col-title">Extra</span>
@@ -1127,5 +1116,6 @@
         }
       })();
     </script>
+    <script src="site-consent/site-consent.js"></script>
   </body>
 </html>
